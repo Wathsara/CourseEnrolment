@@ -6,35 +6,51 @@
 package courseenrolment;
 
 public class Users {
-    private String firstName;
-    private String lastName;
+    private String userName;
+    private String password;
+    private byte[] p;
 
     /**
-     * @return the firstName
+     * @return the userName
      */
-    public String getFirstName() {
-        return firstName;
+    public String getUserName() {
+        return userName;
     }
 
     /**
-     * @param firstName the firstName to set
+     * @param userName the userName to set
      */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
-     * @return the lastName
+     * @return the password
      */
-    public String getLastName() {
-        return lastName;
+    public String getPassword() {
+        return password;
     }
 
     /**
-     * @param lastName the lastName to set
+     * @param password the password to set
      */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+    /**
+     * @return the p
+     */
+    public byte[] getP() {
+        return p;
+    }
+
+    /**
+     * @param p the p to set
+     */
+    public void setP(byte[] p) {
+        this.p = p;
+    }
+
     
 }
