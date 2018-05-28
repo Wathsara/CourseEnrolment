@@ -264,13 +264,28 @@ public class NewAdmin extends javax.swing.JFrame {
        a.setContact(contactTxt.getText());
        a.setPassword(passwordTxt.getText());
        
-       d.insertAdmin(a);
+       boolean x=d.insertAdmin(a);
       
        
-//       if(d.insertAdmin(a)){
-//           JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
-//           
-//       }
+       if(x){
+           JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
+           fullNameTxt2.setText("");
+           emailTxt.setText("");
+           addressTxt.setText("");
+           contactTxt.setText("");
+           passwordTxt.setText("");
+           photoLabel.setForeground(new java.awt.Color(248, 250, 251));
+           photoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+           photoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-compact-camera-64.png"))); // NOI18N
+           photoLabel.setText("Photo");
+           photoLabel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(251, 246, 246)));
+           photoLabel.setDisplayedMnemonicIndex(0);
+          
+           
+       }else{
+           JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
+           
+       }
        
 
     }//GEN-LAST:event_inserbtnActionPerformed

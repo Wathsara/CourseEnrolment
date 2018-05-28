@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
  *
@@ -24,10 +25,12 @@ public class Db {
     Connection con = null;
     PreparedStatement pst = null;
     Users u = new Users();
-    Home h = new Home();
-    int total=0;
-    byte[] im=null;
     
+    int total=0;
+    int insertadmin =0;
+    byte[] im=null;
+    String logname;
+    int logid;
     void check(Users u){
         try{
             con = (Connection)DriverManager.getConnection(url,username,password);
@@ -39,11 +42,16 @@ public class Db {
              while(a.next()){
                  
                  if(u.getUserName().equals(a.getString("Email")) && u.getPassword().equals(a.getString("Password"))){
+                     logid =a.getInt("PersonID");
+                     
+                     logname=u.getUserName();
                      Home h = new Home();
                     
                      h.setVisible(true);
                      total =1;
-                     a=null;
+                    
+                     
+                     System.out.println(logname+" "+logid);
                      return;
                      
                  }
@@ -60,7 +68,7 @@ public class Db {
         }
     }
     
-    void insertAdmin(AdminInsert a){
+    public boolean insertAdmin(AdminInsert a){
         try {
             con = (Connection)DriverManager.getConnection(url,username,password);
             String query = "INSERT INTO users values (?,?,?,?,?,?,?)";
@@ -73,6 +81,9 @@ public class Db {
             pst.setString(6, a.getPassword());
             pst.setBytes(7, a.getPic());
             pst.executeUpdate();
+            return true;
+            
+            
             
             
             
@@ -80,6 +91,9 @@ public class Db {
         } 
         catch (Exception e) {
             System.err.print(e);
+            return false;
+            
+            
             
         }
         
@@ -95,7 +109,8 @@ public class Db {
              pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
              a= pst.executeQuery();
              while(a.next()){
-                 if(a.getInt("PersonID")==7){
+                 System.out.println(logid+" "+logname);
+                 if(a.getInt("PersonID")==5){
                      im =a.getBytes("Pic");
                      System.out.println(im);
                  }
@@ -108,6 +123,33 @@ public class Db {
             JOptionPane.showMessageDialog(null, e);
             
         }
+    }
+    
+    ArrayList<AdminInsert> getAdmin(){
+        try {
+             ArrayList<AdminInsert> list = new ArrayList<AdminInsert>();
+             con = (Connection)DriverManager.getConnection(url,username,password);
+             String query = "SELECT * FROM users";
+             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+             a= pst.executeQuery();
+             
+             while(a.next()){
+                 AdminInsert ad = new AdminInsert();
+                 ad.setFullName(a.getString(2));
+                 ad.setEmail(a.getString(3));
+                 ad.setAddress(a.getString(4));
+                 ad.setContact(a.getString(5));
+                 list.add(ad);
+                 
+             }
+             return list;
+            
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+        
+        
     }
     
         

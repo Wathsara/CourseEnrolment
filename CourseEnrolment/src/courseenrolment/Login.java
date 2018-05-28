@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
 
     Db d =new Db();
+   
     public Login() {
         initComponents();
         setResizable(false);
