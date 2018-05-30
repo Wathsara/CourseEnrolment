@@ -20,9 +20,9 @@ import javax.swing.JOptionPane;
  */
 public class Db {
 
-    String url = "jdbc:mysql://localhost:3306/course?useSSL=false";
+    String url = "jdbc:mysql://localhost:3360/course?useSSL=false";
     String username = "root";
-    String password = "9423738@";
+    String password = "";
     ResultSet a = null;
     Connection con = null;
     PreparedStatement pst = null;
