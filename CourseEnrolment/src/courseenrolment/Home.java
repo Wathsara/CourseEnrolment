@@ -66,7 +66,9 @@ public class Home extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         btnNewStdBuisness = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        btnNewStdComputing = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        btnNewStdEng = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -179,30 +181,58 @@ public class Home extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(1, 50, 67));
 
+        btnNewStdComputing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewStdComputing.setText("New Student");
+        btnNewStdComputing.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewStdComputingActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1242, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(665, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Computing", jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(1, 50, 67));
 
+        btnNewStdEng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewStdEng.setText("New Student");
+        btnNewStdEng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewStdEngActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1242, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(665, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Engineering", jPanel6);
@@ -468,6 +498,18 @@ public class Home extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnNewStdBuisnessActionPerformed
 
+    private void btnNewStdComputingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewStdComputingActionPerformed
+        // TODO add your handling code here:
+        NewComputingStd ncs = new NewComputingStd();
+        ncs.setVisible(true);
+    }//GEN-LAST:event_btnNewStdComputingActionPerformed
+
+    private void btnNewStdEngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewStdEngActionPerformed
+        // TODO add your handling code here:
+        NewEngineeringStd nes = new NewEngineeringStd();
+        nes.setVisible(true);
+    }//GEN-LAST:event_btnNewStdEngActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -506,6 +548,8 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addresslbl;
     private javax.swing.JButton btnNewStdBuisness;
+    private javax.swing.JButton btnNewStdComputing;
+    private javax.swing.JButton btnNewStdEng;
     private javax.swing.JLabel cnolbl;
     private javax.swing.JLabel emaillbl;
     private javax.swing.JLabel imagelabel;

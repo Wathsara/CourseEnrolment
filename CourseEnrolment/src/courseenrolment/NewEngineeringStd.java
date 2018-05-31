@@ -16,18 +16,16 @@ import java.io.FileInputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-
-public class NewBuisnessStd extends javax.swing.JFrame {
+public class NewEngineeringStd extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewBuisnessStd
+     * Creates new form NewEngineeringStd
      */
     Db d = new Db();
     String filename = null;
     byte[] pic = null;
     Student a = new Student();
-
-    public NewBuisnessStd() {
+    public NewEngineeringStd() {
         initComponents();
         setResizable(false);
     }
@@ -41,8 +39,6 @@ public class NewBuisnessStd extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        dateChooserDialog1 = new datechooser.beans.DateChooserDialog();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -78,34 +74,31 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         txtRank = new javax.swing.JTextField();
         txtDob = new javax.swing.JTextField();
 
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("School of Buisness");
+        setTitle("School of Engineering Intake");
 
         jPanel2.setBackground(new java.awt.Color(211, 84, 0));
 
         jLabel1.setFont(new java.awt.Font("Cantarell", 2, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(236, 240, 241));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("New Student Intake SoB");
+        jLabel1.setText("New Student Intake School of Engineering");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(61, 61, 61))
+                .addGap(35, 35, 35)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)
+                .addGap(80, 80, 80))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(1, 50, 67));
@@ -349,7 +342,7 @@ public class NewBuisnessStd extends javax.swing.JFrame {
                             .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(photoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)))
+                        .addComponent(photoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -391,10 +384,8 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1004, Short.MAX_VALUE)
-                .addGap(2, 2, 2))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,11 +425,9 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         a.setzScore(txtZscore.getText());
         a.setRank(txtRank.getText());
 
-        boolean x = d.sobStudent(a);
-        boolean y = d.sobSemOne(a);
-        boolean z = d.sobSemtwo(a);
-       
-        
+        boolean x = d.soeStudent(a);
+        boolean y = d.soeSemOne(a);
+        boolean z = d.soeSemtwo(a);
 
         if (x && y && z) {
             JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
@@ -455,13 +444,12 @@ public class NewBuisnessStd extends javax.swing.JFrame {
             photoLabel.setText("Photo");
             photoLabel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(251, 246, 246)));
             photoLabel.setDisplayedMnemonicIndex(0);
-//            home.loadAdmin();
+            //            home.loadAdmin();
 
         } else {
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
 
         }
-
     }//GEN-LAST:event_inserbtnActionPerformed
 
     private void txtCnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCnoActionPerformed
@@ -496,7 +484,6 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println(e);
         }
-
     }//GEN-LAST:event_photoLabelMouseClicked
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
@@ -532,20 +519,20 @@ public class NewBuisnessStd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewBuisnessStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewEngineeringStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewBuisnessStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewEngineeringStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewBuisnessStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewEngineeringStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewBuisnessStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewEngineeringStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewBuisnessStd().setVisible(true);
+                new NewEngineeringStd().setVisible(true);
             }
         });
     }
@@ -553,7 +540,6 @@ public class NewBuisnessStd extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addressTxt;
     private javax.swing.JComboBox<String> alStreame;
-    private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private javax.swing.JComboBox<String> firstsemFourth;
     private javax.swing.JComboBox<String> firstsemSecond;
     private javax.swing.JComboBox<String> firstsemThird;
@@ -561,7 +547,6 @@ public class NewBuisnessStd extends javax.swing.JFrame {
     private javax.swing.JButton inserbtn;
     private javax.swing.JComboBox<String> intakeMonth;
     private javax.swing.JComboBox<String> intakeYear;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
