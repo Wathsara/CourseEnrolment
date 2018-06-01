@@ -385,5 +385,217 @@ public class Db {
             
         }
     }
+    
+    boolean sobPostStudent(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getEmail());
+            pst.setString(4, a.getDob());
+            pst.setString(5, a.getAddress());
+            pst.setString(6, a.getCno());
+            pst.setString(7, a.getIntake());
+            pst.setInt(8, a.getYear());
+            pst.setInt(9, a.getAcademicYear());
+            pst.setString(10, a.getStream());
+            pst.setString(11, a.getzScore());
+            pst.setString(12, a.getRank());
+            pst.setString(13, a.getQualification());
+            pst.setString(14, a.getInstitution());
+            pst.setString(15, a.getGraYear());
+            pst.setBytes(16, a.getPic());
+           
+            
+            
+            pst.executeUpdate();
+            
+            return true;
+        } catch (Exception e) {
+            
+            return false;
+            
+        }
+    }
+    boolean sobPostSemOne(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobPostSemOne values (?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getFirstSemFirst());
+            pst.setString(4, a.getFirstSemSecond());
+            pst.setString(5, a.getFirstSemThird());
+            pst.setString(6, a.getFirstSemFourth());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+            
+        }
+    }
+    boolean sobPostSemTwo(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobPostSemTwo values (?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getSecondSemFirst());
+            pst.setString(4, a.getSecondSemSecond());
+            pst.setString(5, a.getSecondSemThird());
+            pst.setString(6, a.getSecondSemFourth());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+            
+        }
+    }
+    
+    boolean socPostStudent(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getEmail());
+            pst.setString(4, a.getDob());
+            pst.setString(5, a.getAddress());
+            pst.setString(6, a.getCno());
+            pst.setString(7, a.getIntake());
+            pst.setInt(8, a.getYear());
+            pst.setInt(9, a.getAcademicYear());
+            pst.setString(10, a.getStream());
+            pst.setString(11, a.getzScore());
+            pst.setString(12, a.getRank());
+            pst.setString(13, a.getQualification());
+            pst.setString(14, a.getInstitution());
+            pst.setString(15, a.getGraYear());
+            pst.setBytes(16, a.getPic());
+           
+            
+            
+            pst.executeUpdate();
+            
+            return true;
+        } catch (Exception e) {
+            
+            return false;
+            
+        }
+    }
+    boolean socPostSemOne(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socPostSemOne values (?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getFirstSemFirst());
+            pst.setString(4, a.getFirstSemSecond());
+            pst.setString(5, a.getFirstSemThird());
+            pst.setString(6, a.getFirstSemFourth());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+            
+        }
+    }
+    boolean socPostSemTwo(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socPostSemTwo values (?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getSecondSemFirst());
+            pst.setString(4, a.getSecondSemSecond());
+            pst.setString(5, a.getSecondSemThird());
+            pst.setString(6, a.getSecondSemFourth());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+            
+        }
+    }
+    boolean soePostStudent(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soePostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getEmail());
+            pst.setString(4, a.getDob());
+            pst.setString(5, a.getAddress());
+            pst.setString(6, a.getCno());
+            pst.setString(7, a.getIntake());
+            pst.setInt(8, a.getYear());
+            pst.setInt(9, a.getAcademicYear());
+            pst.setString(10, a.getStream());
+            pst.setString(11, a.getzScore());
+            pst.setString(12, a.getRank());
+            pst.setString(13, a.getQualification());
+            pst.setString(14, a.getInstitution());
+            pst.setString(15, a.getGraYear());
+            pst.setBytes(16, a.getPic());
+           
+            
+            
+            pst.executeUpdate();
+            
+            return true;
+        } catch (Exception e) {
+            
+            return false;
+            
+        }
+    }
+    boolean soePostSemOne(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soePostSemOne values (?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getFirstSemFirst());
+            pst.setString(4, a.getFirstSemSecond());
+            pst.setString(5, a.getFirstSemThird());
+            pst.setString(6, a.getFirstSemFourth());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+            
+        }
+    }
+    boolean soePostSemTwo(Student a){
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soePostSemTwo values (?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getSecondSemFirst());
+            pst.setString(4, a.getSecondSemSecond());
+            pst.setString(5, a.getSecondSemThird());
+            pst.setString(6, a.getSecondSemFourth());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+            
+        }
+    }
+
+
+
 
 }

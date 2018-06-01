@@ -31,6 +31,10 @@ public class Student {
     private String stream;
     private String zScore;
     private String rank;
+    private String qualification;
+    private String institution;
+    private String graYear;
+    
 
     /**
      * @return the name
@@ -324,6 +328,48 @@ public class Student {
      */
     public void setRank(String rank) {
         this.rank = rank;
+    }
+
+    /**
+     * @return the qualification
+     */
+    public String getQualification() {
+        return qualification;
+    }
+
+    /**
+     * @param qualification the qualification to set
+     */
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
+
+    /**
+     * @return the institution
+     */
+    public String getInstitution() {
+        return institution;
+    }
+
+    /**
+     * @param institution the institution to set
+     */
+    public void setInstitution(String institution) {
+        this.institution = institution;
+    }
+
+    /**
+     * @return the graYear
+     */
+    public String getGraYear() {
+        return graYear;
+    }
+
+    /**
+     * @param graYear the graYear to set
+     */
+    public void setGraYear(String graYear) {
+        this.graYear = graYear;
     }
     
     

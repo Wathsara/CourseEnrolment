@@ -57,6 +57,7 @@ public class Home extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jPopupMenu2 = new javax.swing.JPopupMenu();
         jPopupMenu3 = new javax.swing.JPopupMenu();
+        dateChooserDialog1 = new datechooser.beans.DateChooserDialog();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -65,14 +66,16 @@ public class Home extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         btnNewStdBuisness = new javax.swing.JButton();
+        btnNewPostBuisness = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnNewStdComputing = new javax.swing.JButton();
+        btnNewPostComputing = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         btnNewStdEng = new javax.swing.JButton();
+        btnNewPostEngineering = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         update = new javax.swing.JButton();
@@ -83,6 +86,7 @@ public class Home extends javax.swing.JFrame {
         addresslbl = new javax.swing.JLabel();
         cnolbl = new javax.swing.JLabel();
         namelbl = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NSBM Green University");
@@ -153,10 +157,18 @@ public class Home extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(1, 50, 67));
 
         btnNewStdBuisness.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
-        btnNewStdBuisness.setText("New Student");
+        btnNewStdBuisness.setText("New Undergraduate");
         btnNewStdBuisness.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewStdBuisnessActionPerformed(evt);
+            }
+        });
+
+        btnNewPostBuisness.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewPostBuisness.setText("New Postgraduate");
+        btnNewPostBuisness.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewPostBuisnessActionPerformed(evt);
             }
         });
 
@@ -166,15 +178,19 @@ public class Home extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1242, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1210, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(665, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(563, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Buisness", jPanel4);
@@ -182,10 +198,18 @@ public class Home extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(1, 50, 67));
 
         btnNewStdComputing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
-        btnNewStdComputing.setText("New Student");
+        btnNewStdComputing.setText("New Undergraduate");
         btnNewStdComputing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewStdComputingActionPerformed(evt);
+            }
+        });
+
+        btnNewPostComputing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewPostComputing.setText("New Postgraduate");
+        btnNewPostComputing.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewPostComputingActionPerformed(evt);
             }
         });
 
@@ -195,15 +219,19 @@ public class Home extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1242, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1210, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(665, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(561, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Computing", jPanel5);
@@ -211,10 +239,18 @@ public class Home extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(1, 50, 67));
 
         btnNewStdEng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
-        btnNewStdEng.setText("New Student");
+        btnNewStdEng.setText("New Undergraduate");
         btnNewStdEng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewStdEngActionPerformed(evt);
+            }
+        });
+
+        btnNewPostEngineering.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewPostEngineering.setText("New Postgraduate");
+        btnNewPostEngineering.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewPostEngineeringActionPerformed(evt);
             }
         });
 
@@ -224,15 +260,19 @@ public class Home extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1242, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1210, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(665, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(550, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Engineering", jPanel6);
@@ -283,22 +323,6 @@ public class Home extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Subjects", jPanel9);
-
-        jPanel10.setBackground(new java.awt.Color(1, 50, 67));
-        jPanel10.setToolTipText("");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Profile", jPanel10);
 
         jPanel11.setBackground(new java.awt.Color(1, 50, 67));
         jPanel11.setForeground(new java.awt.Color(211, 84, 0));
@@ -419,6 +443,22 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Users", jPanel11);
 
+        jPanel10.setBackground(new java.awt.Color(1, 50, 67));
+        jPanel10.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1492, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 755, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Profile", jPanel10);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -510,6 +550,24 @@ public class Home extends javax.swing.JFrame {
         nes.setVisible(true);
     }//GEN-LAST:event_btnNewStdEngActionPerformed
 
+    private void btnNewPostBuisnessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPostBuisnessActionPerformed
+        // TODO add your handling code here:
+        NewBuisnessPost nbp = new NewBuisnessPost();
+        nbp.setVisible(true);
+    }//GEN-LAST:event_btnNewPostBuisnessActionPerformed
+
+    private void btnNewPostComputingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPostComputingActionPerformed
+        // TODO add your handling code here:
+        NewComputingPost ncp = new NewComputingPost();
+        ncp.setVisible(true);
+    }//GEN-LAST:event_btnNewPostComputingActionPerformed
+
+    private void btnNewPostEngineeringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPostEngineeringActionPerformed
+        // TODO add your handling code here:
+        NewEngineeringPost nep = new NewEngineeringPost();
+        nep.setVisible(true);
+    }//GEN-LAST:event_btnNewPostEngineeringActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -547,10 +605,14 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addresslbl;
+    private javax.swing.JButton btnNewPostBuisness;
+    private javax.swing.JButton btnNewPostComputing;
+    private javax.swing.JButton btnNewPostEngineering;
     private javax.swing.JButton btnNewStdBuisness;
     private javax.swing.JButton btnNewStdComputing;
     private javax.swing.JButton btnNewStdEng;
     private javax.swing.JLabel cnolbl;
+    private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private javax.swing.JLabel emaillbl;
     private javax.swing.JLabel imagelabel;
     private javax.swing.JButton jButton1;
