@@ -34,6 +34,8 @@ public class Student {
     private String qualification;
     private String institution;
     private String graYear;
+    private String gender;
+    
     
 
     /**
@@ -370,6 +372,20 @@ public class Student {
      */
     public void setGraYear(String graYear) {
         this.graYear = graYear;
+    }
+
+    /**
+     * @return the gender
+     */
+    public String getGender() {
+        return gender;
+    }
+
+    /**
+     * @param gender the gender to set
+     */
+    public void setGender(String gender) {
+        this.gender = gender;
     }
     
     

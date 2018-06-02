@@ -74,8 +74,10 @@ public class Home extends javax.swing.JFrame {
         btnNewStdEng = new javax.swing.JButton();
         btnNewPostEngineering = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
+        btnNewLec = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
+        btnNewSub = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         update = new javax.swing.JButton();
@@ -279,15 +281,29 @@ public class Home extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(1, 50, 67));
 
+        btnNewLec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewLec.setText("New Lecturer");
+        btnNewLec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewLecActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(btnNewLec, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1218, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(btnNewLec, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(654, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Lecturers", jPanel7);
@@ -311,15 +327,29 @@ public class Home extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(1, 50, 67));
 
+        btnNewSub.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewSub.setText("New Subject");
+        btnNewSub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewSubActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(btnNewSub, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1218, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(btnNewSub, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(654, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Subjects", jPanel9);
@@ -568,6 +598,18 @@ public class Home extends javax.swing.JFrame {
         nep.setVisible(true);
     }//GEN-LAST:event_btnNewPostEngineeringActionPerformed
 
+    private void btnNewLecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewLecActionPerformed
+        // TODO add your handling code here:
+        NewLecturer nl = new NewLecturer();
+        nl.setVisible(true);
+    }//GEN-LAST:event_btnNewLecActionPerformed
+
+    private void btnNewSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewSubActionPerformed
+        // TODO add your handling code here:
+        NewSubject ns = new NewSubject();
+        ns.setVisible(true);
+    }//GEN-LAST:event_btnNewSubActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -605,12 +647,14 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addresslbl;
+    private javax.swing.JButton btnNewLec;
     private javax.swing.JButton btnNewPostBuisness;
     private javax.swing.JButton btnNewPostComputing;
     private javax.swing.JButton btnNewPostEngineering;
     private javax.swing.JButton btnNewStdBuisness;
     private javax.swing.JButton btnNewStdComputing;
     private javax.swing.JButton btnNewStdEng;
+    private javax.swing.JButton btnNewSub;
     private javax.swing.JLabel cnolbl;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private javax.swing.JLabel emaillbl;

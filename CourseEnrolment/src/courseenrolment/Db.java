@@ -23,7 +23,7 @@ public class Db {
     String url = "jdbc:mysql://localhost:3360/course?useSSL=false";
     String username = "root";
     String password = "";
-    ResultSet a = null;
+    ResultSet rs = null;
     Connection con = null;
     PreparedStatement pst = null;
     Users u = new Users();
@@ -39,30 +39,29 @@ public class Db {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "SELECT * FROM users";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-            a = pst.executeQuery();
+            rs = pst.executeQuery();
 
-            while (a.next()) {
+            while (rs.next()) {
 
-                if (u.getUserName().equals(a.getString("Email")) && u.getPassword().equals(a.getString("Password"))) {
+                if (u.getUserName().equals(rs.getString("Email")) && u.getPassword().equals(rs.getString("Password"))) {
                     GetUser g = new GetUser();
-                    g.setId(a.getInt("PersonID"));
-                    g.setName(a.getString("FullName"));
-                    g.setAddress(a.getString("Address"));
-                    g.setEmail(a.getString("Email"));
-                    g.setCno(a.getString("ContactNo"));
+                    g.setId(rs.getInt("PersonID"));
+                    g.setName(rs.getString("FullName"));
+                    g.setAddress(rs.getString("Address"));
+                    g.setEmail(rs.getString("Email"));
+                    g.setCno(rs.getString("ContactNo"));
 
                     logname = u.getUserName();
                     Home h = new Home();
-                    h.q=g.getId();
-                    h.name=g.getName();
-                    h.email=g.getEmail();
-                    h.cno=g.getCno();
-                    h.address=g.getAddress();
+                    h.q = g.getId();
+                    h.name = g.getName();
+                    h.email = g.getEmail();
+                    h.cno = g.getCno();
+                    h.address = g.getAddress();
                     h.setVisible(true);
                     total = 1;
 
                     System.out.println(logname + " " + logid);
-                    
 
                     return;
 
@@ -109,11 +108,11 @@ public class Db {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "SELECT * FROM users";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-            a = pst.executeQuery();
-            while (a.next()) {
+            rs = pst.executeQuery();
+            while (rs.next()) {
 
-                if (a.getInt("PersonID") == x) {
-                    im = a.getBytes("Pic");
+                if (rs.getInt("PersonID") == x) {
+                    im = rs.getBytes("Pic");
                     System.out.println(im);
                 }
 
@@ -131,16 +130,16 @@ public class Db {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "SELECT * FROM users";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-            a = pst.executeQuery();
+            rs = pst.executeQuery();
 
-            while (a.next()) {
+            while (rs.next()) {
                 AdminInsert ad = new AdminInsert();
-                ad.setFullName(a.getString(2));
-                ad.setEmail(a.getString(3));
-                ad.setAddress(a.getString(4));
-                ad.setContact(a.getString(5));
-                ad.setId(a.getInt(1));
-                ad.setPic(a.getBytes(7));
+                ad.setFullName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setAddress(rs.getString(4));
+                ad.setContact(rs.getString(5));
+                ad.setId(rs.getInt(1));
+                ad.setPic(rs.getBytes(7));
                 list.add(ad);
 
             }
@@ -148,47 +147,47 @@ public class Db {
 
         } catch (Exception e) {
             System.out.println(e);
+
             return null;
         }
 
     }
-    
-    public boolean updateAdmin(AdminInsert ai){
+
+    public boolean updateAdmin(AdminInsert ai) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "UPDATE users SET FirstName='"+ai.getFullName()+"',Email='"+ai.getEmail()+"',Address='"+ai.getAddress()+"',ContactNo='"+ai.getContact()+"' WHERE PersonID="+ai.getId();
+            String query = "UPDATE users SET FirstName='" + ai.getFullName() + "',Email='" + ai.getEmail() + "',Address='" + ai.getAddress() + "',ContactNo='" + ai.getContact() + "' WHERE PersonID=" + ai.getId();
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.executeUpdate();
             return true;
-            
-        } 
-        catch (Exception e) {
+
+        } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    
-    public boolean deleteAdmin(AdminInsert ai){
+
+    public boolean deleteAdmin(AdminInsert ai) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "DELETE FROM users WHERE PersonID="+ai.getId();
+            String query = "DELETE FROM users WHERE PersonID=" + ai.getId();
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.executeUpdate();
             return true;
-            
-        } 
-        catch (Exception e) {
+
+        } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
-        
+
     }
-    
-    
-    boolean sobStudent(Student a){
+
+    boolean sobStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO sobIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -203,19 +202,19 @@ public class Db {
             pst.setString(11, a.getzScore());
             pst.setString(12, a.getRank());
             pst.setBytes(13, a.getPic());
-           
-            
-            
+            pst.setString(14, a.getGender());
+
             pst.executeUpdate();
-            
+
             return true;
         } catch (Exception e) {
-            
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean sobSemOne(Student a){
+
+    boolean sobSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO sobSemOne values (?,?,?,?,?,?)";
@@ -229,11 +228,13 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean sobSemtwo(Student a){
+
+    boolean sobSemtwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO sobSemTwo values (?,?,?,?,?,?)";
@@ -247,15 +248,16 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    
-    boolean socStudent(Student a){
+
+    boolean socStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO socIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO socIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -270,19 +272,19 @@ public class Db {
             pst.setString(11, a.getzScore());
             pst.setString(12, a.getRank());
             pst.setBytes(13, a.getPic());
-           
-            
-            
+            pst.setString(14, a.getGender());
+
             pst.executeUpdate();
-            
+
             return true;
         } catch (Exception e) {
-            
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean socSemOne(Student a){
+
+    boolean socSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO socSemOne values (?,?,?,?,?,?)";
@@ -296,11 +298,13 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean socSemtwo(Student a){
+
+    boolean socSemtwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO socSemTwo values (?,?,?,?,?,?)";
@@ -314,15 +318,16 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    
-    boolean soeStudent(Student a){
+
+    boolean soeStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO soeIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO soeIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -337,19 +342,19 @@ public class Db {
             pst.setString(11, a.getzScore());
             pst.setString(12, a.getRank());
             pst.setBytes(13, a.getPic());
-           
-            
-            
+            pst.setString(14, a.getGender());
+
             pst.executeUpdate();
-            
+
             return true;
         } catch (Exception e) {
-            
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean soeSemOne(Student a){
+
+    boolean soeSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO soeSemOne values (?,?,?,?,?,?)";
@@ -363,11 +368,13 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean soeSemtwo(Student a){
+
+    boolean soeSemtwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO soeSemTwo values (?,?,?,?,?,?)";
@@ -381,15 +388,16 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    
-    boolean sobPostStudent(Student a){
+
+    boolean sobPostStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO sobPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -407,19 +415,19 @@ public class Db {
             pst.setString(14, a.getInstitution());
             pst.setString(15, a.getGraYear());
             pst.setBytes(16, a.getPic());
-           
-            
-            
+            pst.setString(17, a.getGender());
+
             pst.executeUpdate();
-            
+
             return true;
         } catch (Exception e) {
-            
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean sobPostSemOne(Student a){
+
+    boolean sobPostSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO sobPostSemOne values (?,?,?,?,?,?)";
@@ -433,11 +441,13 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean sobPostSemTwo(Student a){
+
+    boolean sobPostSemTwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO sobPostSemTwo values (?,?,?,?,?,?)";
@@ -451,15 +461,16 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    
-    boolean socPostStudent(Student a){
+
+    boolean socPostStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO socPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO socPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -477,19 +488,19 @@ public class Db {
             pst.setString(14, a.getInstitution());
             pst.setString(15, a.getGraYear());
             pst.setBytes(16, a.getPic());
-           
-            
-            
+            pst.setString(17, a.getGender());
+
             pst.executeUpdate();
-            
+
             return true;
         } catch (Exception e) {
-            
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean socPostSemOne(Student a){
+
+    boolean socPostSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO socPostSemOne values (?,?,?,?,?,?)";
@@ -503,11 +514,13 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean socPostSemTwo(Student a){
+
+    boolean socPostSemTwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO socPostSemTwo values (?,?,?,?,?,?)";
@@ -521,14 +534,16 @@ public class Db {
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean soePostStudent(Student a){
+
+    boolean soePostStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO soePostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO soePostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -546,19 +561,19 @@ public class Db {
             pst.setString(14, a.getInstitution());
             pst.setString(15, a.getGraYear());
             pst.setBytes(16, a.getPic());
-           
-            
-            
+            pst.setString(17, a.getGender());
+
             pst.executeUpdate();
-            
+
             return true;
         } catch (Exception e) {
-            
+            System.err.println(e);
             return false;
-            
+
         }
     }
-    boolean soePostSemOne(Student a){
+
+    boolean soePostSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO soePostSemOne values (?,?,?,?,?,?)";
@@ -573,10 +588,11 @@ public class Db {
             return true;
         } catch (Exception e) {
             return false;
-            
+
         }
     }
-    boolean soePostSemTwo(Student a){
+
+    boolean soePostSemTwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "INSERT INTO soePostSemTwo values (?,?,?,?,?,?)";
@@ -591,11 +607,117 @@ public class Db {
             return true;
         } catch (Exception e) {
             return false;
-            
+
         }
     }
 
+    boolean newLec(Lecturer a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO lecturer values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getLecID());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getEmail());
+            pst.setString(4, a.getGender());
+            pst.setString(5, a.getDob());
+            pst.setString(6, a.getAddress());
+            pst.setString(7, a.getCno());
+            pst.setString(8, a.getQualification());
+            pst.setString(9, a.getInstitution());
+            pst.setString(10, a.getGraYear());
+            pst.setString(11, a.getFaculty());
+            pst.setString(12, a.getType());
+            pst.setBytes(13, a.getPic());
+            pst.executeUpdate();
 
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
 
+        }
 
+    }
+
+    boolean sobSubject(Subject a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobSubject values (?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setString(1, a.getSubCode());
+            pst.setString(2, a.getSubName());
+            pst.setString(3, a.getFaculty());
+            pst.setString(4, a.getType());
+            pst.setString(5, a.getAcademicYear());
+            pst.setString(6, a.getSemester());
+            pst.setString(7, a.getSubType());
+            pst.setInt(8, a.getCredit());
+            pst.setInt(9, a.getSubFee());
+            pst.setString(10, a.getLecturerIncharge());
+
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    boolean socSubject(Subject a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socSubject values (?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setString(1, a.getSubCode());
+            pst.setString(2, a.getSubName());
+            pst.setString(3, a.getFaculty());
+            pst.setString(4, a.getType());
+            pst.setString(5, a.getAcademicYear());
+            pst.setString(6, a.getSemester());
+            pst.setString(7, a.getSubType());
+            pst.setInt(8, a.getCredit());
+            pst.setInt(9, a.getSubFee());
+            pst.setString(10, a.getLecturerIncharge());
+
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    boolean soeSubject(Subject a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soeSubject values (?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setString(1, a.getSubCode());
+            pst.setString(2, a.getSubName());
+            pst.setString(3, a.getFaculty());
+            pst.setString(4, a.getType());
+            pst.setString(5, a.getAcademicYear());
+            pst.setString(6, a.getSemester());
+            pst.setString(7, a.getSubType());
+            pst.setInt(8, a.getCredit());
+            pst.setInt(9, a.getSubFee());
+            pst.setString(10, a.getLecturerIncharge());
+
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
 }
