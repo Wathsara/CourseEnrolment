@@ -76,8 +76,10 @@ public class Home extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         btnNewLec = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
+        btnNewInstructor = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         btnNewSub = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         update = new javax.swing.JButton();
@@ -88,7 +90,6 @@ public class Home extends javax.swing.JFrame {
         addresslbl = new javax.swing.JLabel();
         cnolbl = new javax.swing.JLabel();
         namelbl = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NSBM Green University");
@@ -147,7 +148,7 @@ public class Home extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
+            .addGap(0, 1480, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +184,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1210, Short.MAX_VALUE))
+                .addContainerGap(1198, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,7 +225,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1210, Short.MAX_VALUE))
+                .addContainerGap(1198, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +266,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1210, Short.MAX_VALUE))
+                .addContainerGap(1198, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,7 +297,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(btnNewLec, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1218, Short.MAX_VALUE))
+                .addContainerGap(1206, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,15 +313,29 @@ public class Home extends javax.swing.JFrame {
         jPanel8.setToolTipText("");
         jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        btnNewInstructor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewInstructor.setText("New Lecturer");
+        btnNewInstructor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewInstructorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(btnNewInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1206, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(btnNewInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(654, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Instructors", jPanel8);
@@ -342,7 +357,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(btnNewSub, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1218, Short.MAX_VALUE))
+                .addContainerGap(1206, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,6 +368,22 @@ public class Home extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Subjects", jPanel9);
+
+        jPanel10.setBackground(new java.awt.Color(1, 50, 67));
+        jPanel10.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1480, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 755, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Profile", jPanel10);
 
         jPanel11.setBackground(new java.awt.Color(1, 50, 67));
         jPanel11.setForeground(new java.awt.Color(211, 84, 0));
@@ -443,7 +474,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addresslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cnolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,28 +504,13 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Users", jPanel11);
 
-        jPanel10.setBackground(new java.awt.Color(1, 50, 67));
-        jPanel10.setToolTipText("");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1492, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Profile", jPanel10);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
@@ -502,9 +518,9 @@ public class Home extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -610,6 +626,12 @@ public class Home extends javax.swing.JFrame {
         ns.setVisible(true);
     }//GEN-LAST:event_btnNewSubActionPerformed
 
+    private void btnNewInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewInstructorActionPerformed
+        // TODO add your handling code here:
+        NewInstructor ni = new NewInstructor();
+        ni.setVisible(true);
+    }//GEN-LAST:event_btnNewInstructorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -647,6 +669,7 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addresslbl;
+    private javax.swing.JButton btnNewInstructor;
     private javax.swing.JButton btnNewLec;
     private javax.swing.JButton btnNewPostBuisness;
     private javax.swing.JButton btnNewPostComputing;

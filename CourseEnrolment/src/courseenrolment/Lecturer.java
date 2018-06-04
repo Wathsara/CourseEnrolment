@@ -23,6 +23,7 @@ public class Lecturer {
     private String graYear;
     private String gender;
     private byte[] Pic;
+    private String subject;
 
     /**
      * @return the faculty
@@ -204,6 +205,20 @@ public class Lecturer {
      */
     public void setLecID(int lecID) {
         this.lecID = lecID;
+    }
+
+    /**
+     * @return the subject
+     */
+    public String getSubject() {
+        return subject;
+    }
+
+    /**
+     * @param subject the subject to set
+     */
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
 }

@@ -73,7 +73,8 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jTabbedPane1" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -83,9 +84,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel2" min="-2" pref="71" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jTabbedPane1" min="-2" pref="802" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTabbedPane1" min="-2" pref="802" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -185,7 +186,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1492" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1480" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -218,7 +219,7 @@
                               <Component id="btnNewPostBuisness" min="-2" pref="240" max="-2" attributes="0"/>
                               <Component id="btnNewStdBuisness" min="-2" pref="240" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="1210" max="32767" attributes="0"/>
+                          <EmptySpace pref="1198" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -282,7 +283,7 @@
                               <Component id="btnNewPostComputing" min="-2" pref="240" max="-2" attributes="0"/>
                               <Component id="btnNewStdComputing" min="-2" pref="240" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="1210" max="32767" attributes="0"/>
+                          <EmptySpace pref="1198" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -346,7 +347,7 @@
                               <Component id="btnNewPostEngineering" min="-2" pref="240" max="-2" attributes="0"/>
                               <Component id="btnNewStdEng" min="-2" pref="240" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="1210" max="32767" attributes="0"/>
+                          <EmptySpace pref="1198" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -407,7 +408,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="btnNewLec" min="-2" pref="240" max="-2" attributes="0"/>
-                          <EmptySpace pref="1218" max="32767" attributes="0"/>
+                          <EmptySpace pref="1206" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -456,15 +457,36 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1492" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="btnNewInstructor" min="-2" pref="240" max="-2" attributes="0"/>
+                          <EmptySpace pref="1206" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="755" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="btnNewInstructor" min="-2" pref="68" max="-2" attributes="0"/>
+                          <EmptySpace pref="654" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="btnNewInstructor">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="New Lecturer"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewInstructorActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel9">
               <Properties>
@@ -486,7 +508,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="btnNewSub" min="-2" pref="240" max="-2" attributes="0"/>
-                          <EmptySpace pref="1218" max="32767" attributes="0"/>
+                          <EmptySpace pref="1206" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -513,6 +535,34 @@
                   </Events>
                 </Component>
               </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel10">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="43" green="32" red="1" type="rgb"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Profile">
+                    <Property name="tabTitle" type="java.lang.String" value="Profile"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="1480" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="755" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel11">
               <Properties>
@@ -556,7 +606,7 @@
                               <Component id="addresslbl" alignment="0" min="-2" pref="396" max="-2" attributes="0"/>
                               <Component id="cnolbl" min="-2" pref="396" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="208" max="32767" attributes="0"/>
+                          <EmptySpace pref="196" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -771,34 +821,6 @@
                   </Properties>
                 </Component>
               </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="jPanel10">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="43" green="32" red="1" type="rgb"/>
-                </Property>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Profile">
-                    <Property name="tabTitle" type="java.lang.String" value="Profile"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1492" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="755" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
             </Container>
           </SubComponents>
         </Container>
