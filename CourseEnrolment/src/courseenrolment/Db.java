@@ -720,4 +720,35 @@ public class Db {
 
         }
     }
+    
+    boolean newInstructor(Lecturer a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO instructor values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getLecID());
+            pst.setString(2, a.getName());
+            pst.setString(3, a.getEmail());
+            pst.setString(4, a.getGender());
+            pst.setString(5, a.getDob());
+            pst.setString(6, a.getAddress());
+            pst.setString(7, a.getCno());
+            pst.setString(8, a.getSubject());
+            pst.setString(9, a.getQualification());
+            pst.setString(10, a.getInstitution());
+            pst.setString(11, a.getGraYear());
+            pst.setString(12, a.getFaculty());
+            pst.setString(13, a.getType());
+            pst.setBytes(14, a.getPic());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+
+    }
+
 }

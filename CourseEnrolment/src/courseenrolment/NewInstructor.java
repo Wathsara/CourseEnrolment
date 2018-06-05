@@ -473,7 +473,7 @@ public class NewInstructor extends javax.swing.JFrame {
         a.setGraYear(txtGraYear.getText());
         a.setGender(cmbGender.getSelectedItem().toString());
         a.setSubject(cmbSub.getSelectedItem().toString());
-        boolean x = true;
+        boolean x = d.newInstructor(a);
         if (x) {
             JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
             txtFullname.setText("");
