@@ -27,6 +27,7 @@ public class NewLecturer extends javax.swing.JFrame {
     Lecturer a = new Lecturer();
     public NewLecturer() {
         initComponents();
+        setResizable(false);
     }
 
     /**

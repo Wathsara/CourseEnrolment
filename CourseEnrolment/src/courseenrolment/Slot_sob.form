@@ -808,7 +808,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="inserbtn3" min="-2" pref="119" max="-2" attributes="0"/>
+                          <Component id="addHall" min="-2" pref="119" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -831,9 +831,9 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="cmbDay" max="32767" attributes="0"/>
-                              <Component id="cmbType3" alignment="0" pref="188" max="32767" attributes="0"/>
-                              <Component id="cmbYear3" alignment="0" pref="188" max="32767" attributes="0"/>
-                              <Component id="cmbSemester3" alignment="0" pref="188" max="32767" attributes="0"/>
+                              <Component id="cmbType" alignment="0" pref="188" max="32767" attributes="0"/>
+                              <Component id="cmbYear" alignment="0" pref="188" max="32767" attributes="0"/>
+                              <Component id="cmbSemester" alignment="0" pref="188" max="32767" attributes="0"/>
                               <Component id="cmbSub" alignment="0" pref="188" max="32767" attributes="0"/>
                               <Component id="cmbLecIns" alignment="0" max="32767" attributes="0"/>
                               <Component id="cmbRoomLab" alignment="0" pref="188" max="32767" attributes="0"/>
@@ -852,17 +852,17 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel43" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="cmbType3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbType" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel37" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="cmbYear3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbYear" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel38" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="cmbSemester3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbSemester" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -895,7 +895,7 @@
                       <Component id="jLabel42" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="inserbtn3" min="-2" max="-2" attributes="0"/>
+                  <Component id="addHall" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -979,7 +979,7 @@
             <Property name="text" type="java.lang.String" value="Type"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbYear3">
+        <Component class="javax.swing.JComboBox" name="cmbYear">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -994,7 +994,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbType3">
+        <Component class="javax.swing.JComboBox" name="cmbType">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -1007,7 +1007,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cmbSemester3">
+        <Component class="javax.swing.JComboBox" name="cmbSemester">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -1065,7 +1065,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="inserbtn3">
+        <Component class="javax.swing.JButton" name="addHall">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="b9" red="6b" type="rgb"/>
@@ -1079,7 +1079,7 @@
             <Property name="text" type="java.lang.String" value="Insert"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inserbtn3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addHallActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbLecIns">

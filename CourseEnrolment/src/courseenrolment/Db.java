@@ -750,5 +750,82 @@ public class Db {
         }
 
     }
+    boolean sobHall(RoomAllocation a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobHall values (?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setString(1, a.getType());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSubject());
+            pst.setString(5, a.getLecIns());
+            pst.setString(6, a.getDay());
+            pst.setString(7, a.getTimeFrom());
+            pst.setString(8, a.getTimeTo());
+            pst.setString(9, a.getRoom());
+
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+    
+    boolean socHall(RoomAllocation a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socHall values (?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setString(1, a.getType());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSubject());
+            pst.setString(5, a.getLecIns());
+            pst.setString(6, a.getDay());
+            pst.setString(7, a.getTimeFrom());
+            pst.setString(8, a.getTimeTo());
+            pst.setString(9, a.getRoom());
+
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+    
+    boolean soeHall(RoomAllocation a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soeHall values (?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setString(1, a.getType());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSubject());
+            pst.setString(5, a.getLecIns());
+            pst.setString(6, a.getDay());
+            pst.setString(7, a.getTimeFrom());
+            pst.setString(8, a.getTimeTo());
+            pst.setString(9, a.getRoom());
+
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
 
 }

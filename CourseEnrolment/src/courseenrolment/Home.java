@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-
 /**
  *
  * @author wathsara
@@ -23,28 +22,27 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
-    
     ArrayList<AdminInsert> aList;
-    Db d =new Db();
+    Db d = new Db();
     int q;
     String name;
     String address;
     String cno;
     String email;
-    
+
     public Home() {
         initComponents();
         loadAdmin();
     }
-    
-    void loadAdmin(){
-        
+
+    void loadAdmin() {
+
         aList = d.getAdmin();
         AdminTable ad = new AdminTable(aList);
         tblAdmin.setModel(ad);
-        
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,9 +69,11 @@ public class Home extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         btnNewStdComputing = new javax.swing.JButton();
         btnNewPostComputing = new javax.swing.JButton();
+        btnNewRoomAllocationSoc = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         btnNewStdEng = new javax.swing.JButton();
         btnNewPostEngineering = new javax.swing.JButton();
+        btnNewRoomAllocationSoe = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         btnNewLec = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
@@ -228,25 +228,36 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnNewRoomAllocationSoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewRoomAllocationSoc.setText("Allocate Lecture Rooms");
+        btnNewRoomAllocationSoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewRoomAllocationSocActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1198, Short.MAX_VALUE))
+                .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(691, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(561, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(665, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Computing", jPanel5);
@@ -269,25 +280,36 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnNewRoomAllocationSoe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnNewRoomAllocationSoe.setText("Allocate Lecture Rooms");
+        btnNewRoomAllocationSoe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewRoomAllocationSoeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1198, Short.MAX_VALUE))
+                .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(692, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(550, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(665, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Engineering", jPanel6);
@@ -567,11 +589,11 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-        
-        Db d =new Db();
-        
+
+        Db d = new Db();
+
         d.view(q);
-        byte[] m =  d.im;
+        byte[] m = d.im;
         System.out.println(m);
         try {
             InputStream in = new ByteArrayInputStream(m);
@@ -593,9 +615,9 @@ public class Home extends javax.swing.JFrame {
 
     private void btnNewStdBuisnessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewStdBuisnessActionPerformed
         // TODO add your handling code here:
-        NewBuisnessStd nbs =new  NewBuisnessStd();
+        NewBuisnessStd nbs = new NewBuisnessStd();
         nbs.setVisible(true);
-        
+
     }//GEN-LAST:event_btnNewStdBuisnessActionPerformed
 
     private void btnNewStdComputingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewStdComputingActionPerformed
@@ -652,6 +674,19 @@ public class Home extends javax.swing.JFrame {
         ss.setVisible(true);
     }//GEN-LAST:event_btnNewRoomAllocationActionPerformed
 
+    private void btnNewRoomAllocationSocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewRoomAllocationSocActionPerformed
+        // TODO add your handling code here:
+        Slot_soc ss = new Slot_soc();
+        ss.setVisible(true);
+    }//GEN-LAST:event_btnNewRoomAllocationSocActionPerformed
+
+    private void btnNewRoomAllocationSoeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewRoomAllocationSoeActionPerformed
+        // TODO add your handling code here:
+        Slot_soe ss = new Slot_soe();
+        ss.setVisible(true); 
+        
+    }//GEN-LAST:event_btnNewRoomAllocationSoeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -695,6 +730,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnNewPostComputing;
     private javax.swing.JButton btnNewPostEngineering;
     private javax.swing.JButton btnNewRoomAllocation;
+    private javax.swing.JButton btnNewRoomAllocationSoc;
+    private javax.swing.JButton btnNewRoomAllocationSoe;
     private javax.swing.JButton btnNewStdBuisness;
     private javax.swing.JButton btnNewStdComputing;
     private javax.swing.JButton btnNewStdEng;

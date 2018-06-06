@@ -30,6 +30,7 @@ public class NewSubject extends javax.swing.JFrame {
     boolean x;
     public NewSubject() {
         initComponents();
+        setResizable(false);
         leccomboupdate();
     }
 

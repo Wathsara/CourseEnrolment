@@ -11,7 +11,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-
 /**
  *
  * @author wathsara
@@ -28,11 +27,13 @@ public class Slot_sob extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst = null;
     Db d = new Db();
+
     public Slot_sob() {
         initComponents();
         subupdate();
         lecupdate();
         insupdate();
+        setResizable(false);
     }
 
     /**
@@ -100,13 +101,13 @@ public class Slot_sob extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
-        cmbYear3 = new javax.swing.JComboBox<>();
-        cmbType3 = new javax.swing.JComboBox<>();
-        cmbSemester3 = new javax.swing.JComboBox<>();
+        cmbYear = new javax.swing.JComboBox<>();
+        cmbType = new javax.swing.JComboBox<>();
+        cmbSemester = new javax.swing.JComboBox<>();
         jLabel45 = new javax.swing.JLabel();
         cmbSub = new javax.swing.JComboBox<>();
         cmbRoomLab = new javax.swing.JComboBox<>();
-        inserbtn3 = new javax.swing.JButton();
+        addHall = new javax.swing.JButton();
         cmbLecIns = new javax.swing.JComboBox<>();
         cmbTimeFrom = new javax.swing.JComboBox<>();
         cmbTimeTo = new javax.swing.JComboBox<>();
@@ -488,11 +489,11 @@ public class Slot_sob extends javax.swing.JFrame {
         jLabel43.setForeground(new java.awt.Color(255, 255, 255));
         jLabel43.setText("Type");
 
-        cmbYear3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year", "2nd Year", "3rd Year", "4th Year" }));
+        cmbYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year", "2nd Year", "3rd Year", "4th Year" }));
 
-        cmbType3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Undergraduate", "Postgraduate" }));
+        cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Undergraduate", "Postgraduate" }));
 
-        cmbSemester3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Semester", "2nd Semester" }));
+        cmbSemester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Semester", "2nd Semester" }));
 
         jLabel45.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(255, 255, 255));
@@ -500,13 +501,13 @@ public class Slot_sob extends javax.swing.JFrame {
 
         cmbRoomLab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lab A", "Lab B", "Lab A and Lab B", "W001", "W002", "Mini Auditorium", "S001", "S002", "S003", "E001", "E002", " ", " " }));
 
-        inserbtn3.setBackground(new java.awt.Color(107, 185, 240));
-        inserbtn3.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        inserbtn3.setForeground(new java.awt.Color(255, 255, 255));
-        inserbtn3.setText("Insert");
-        inserbtn3.addActionListener(new java.awt.event.ActionListener() {
+        addHall.setBackground(new java.awt.Color(107, 185, 240));
+        addHall.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        addHall.setForeground(new java.awt.Color(255, 255, 255));
+        addHall.setText("Insert");
+        addHall.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inserbtn3ActionPerformed(evt);
+                addHallActionPerformed(evt);
             }
         });
 
@@ -529,7 +530,7 @@ public class Slot_sob extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(inserbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(addHall, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -547,9 +548,9 @@ public class Slot_sob extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cmbDay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cmbType3, 0, 188, Short.MAX_VALUE)
-                            .addComponent(cmbYear3, 0, 188, Short.MAX_VALUE)
-                            .addComponent(cmbSemester3, 0, 188, Short.MAX_VALUE)
+                            .addComponent(cmbType, 0, 188, Short.MAX_VALUE)
+                            .addComponent(cmbYear, 0, 188, Short.MAX_VALUE)
+                            .addComponent(cmbSemester, 0, 188, Short.MAX_VALUE)
                             .addComponent(cmbSub, 0, 188, Short.MAX_VALUE)
                             .addComponent(cmbLecIns, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cmbRoomLab, 0, 188, Short.MAX_VALUE)
@@ -563,15 +564,15 @@ public class Slot_sob extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbType3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbYear3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbSemester3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -597,7 +598,7 @@ public class Slot_sob extends javax.swing.JFrame {
                     .addComponent(cmbRoomLab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(inserbtn3)
+                .addComponent(addHall)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -622,102 +623,96 @@ public class Slot_sob extends javax.swing.JFrame {
 
     void subupdate() {
 //        int i = cmbSub.getSelectedIndex();
-       
-            try {
-                con = (Connection) DriverManager.getConnection(url, username, password);
-                String query = "SELECT * FROM sobSubject";
-                pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-                rs = pst.executeQuery();
-                while (rs.next()) {
-                    cmbSub.addItem(rs.getString("SubjectName"));
-                }
-            } catch (Exception e) {
-                System.err.println(e);
-            }
 
-        
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobSubject";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                cmbSub.addItem(rs.getString("SubjectName"));
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+
     }
-    
+
     void lecupdate() {
 //        int i = cmbSub.getSelectedIndex();
-       
-            try {
-                String fac="School of Buisness";
-                con = (Connection) DriverManager.getConnection(url, username, password);
-                String query = "SELECT * FROM lecturer WHERE Faculty = ?";
-                
-                pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-                pst.setString(1,fac);
-                rs = pst.executeQuery();
-                while (rs.next()) {
-                    cmbLecIns.addItem(rs.getString("FullName"));
-                }
-            } catch (Exception e) {
-                System.err.println(e);
-            }
 
-        
+        try {
+            String fac = "School of Buisness";
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM lecturer WHERE Faculty = ?";
+
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, fac);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                cmbLecIns.addItem(rs.getString("FullName"));
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+
     }
-    
+
     void insupdate() {
 //        int i = cmbSub.getSelectedIndex();
-       
-            try {
-                String fac="School of Buisness";
-                con = (Connection) DriverManager.getConnection(url, username, password);
-                String query = "SELECT * FROM instructor WHERE Faculty = ?";
-                
-                pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-                pst.setString(1,fac);
-                rs = pst.executeQuery();
-                while (rs.next()) {
-                    cmbLecIns.addItem(rs.getString("FullName"));
-                }
-            } catch (Exception e) {
-                System.err.println(e);
-            }
 
-        
+        try {
+            String fac = "School of Buisness";
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM instructor WHERE Faculty = ?";
+
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, fac);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                cmbLecIns.addItem(rs.getString("FullName"));
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+
     }
     private void inserbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserbtn1ActionPerformed
-//        Subject a = new Subject();
-//        a.setFaculty(cmbFaculty.getSelectedItem().toString());
-//        a.setType(cmbType.getSelectedItem().toString());
-//        a.setSemester(cmbSemester.getSelectedItem().toString());
-//        a.setSubType(cmbSubType.getSelectedItem().toString());
-//        a.setSubCode(txtSubCode.getText());
-//        a.setSubName(txtSubName.getText());
-//        a.setSubFee(Integer.parseInt(txtSubFee.getText()));
-//        a.setCredit(Integer.parseInt(cmbCredit.getSelectedItem().toString()));
-//        a.setLecturerIncharge(cmbLec.getSelectedItem().toString());
-//        a.setAcademicYear(cmbYear.getSelectedItem().toString());
 
-        
-
-        if (true) {
-            JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
-            txtSubCode.setText("");
-            txtSubFee.setText("");
-            txtSubName.setText("");
-
-        } else {
-            JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
-
-        }
     }//GEN-LAST:event_inserbtn1ActionPerformed
 
     private void inserbtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserbtn2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inserbtn2ActionPerformed
 
-    private void inserbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserbtn3ActionPerformed
+    private void addHallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addHallActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inserbtn3ActionPerformed
+        RoomAllocation a = new RoomAllocation();
+        a.setType(cmbType.getSelectedItem().toString());
+        a.setSemester(cmbSemester.getSelectedItem().toString());
+        a.setAcademicYear(cmbYear.getSelectedItem().toString());
+        a.setSubject(cmbSub.getSelectedItem().toString());
+        a.setLecIns(cmbLecIns.getSelectedItem().toString());
+        a.setDay(cmbDay.getSelectedItem().toString());
+        a.setTimeFrom(cmbTimeFrom.getSelectedItem().toString());
+        a.setTimeTo(cmbTimeTo.getSelectedItem().toString());
+        a.setRoom(cmbRoomLab.getSelectedItem().toString());
+        boolean x = d.sobHall(a);
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+        if (x) {
+            JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
+
+        } else {
+            JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
+
+        }
+    
+    }//GEN-LAST:event_addHallActionPerformed
+
+/**
+ * @param args the command line arguments
+ */
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -728,16 +723,32 @@ public class Slot_sob extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+                
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Slot_sob.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Slot_sob.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Slot_sob.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Slot_sob.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Slot_sob.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } 
+
+catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Slot_sob.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } 
+
+catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Slot_sob.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } 
+
+catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Slot_sob.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -750,15 +761,12 @@ public class Slot_sob extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField addressTxt;
-    private javax.swing.JComboBox<String> cmbCredit;
+    private javax.swing.JButton addHall;
     private javax.swing.JComboBox<String> cmbCredit1;
     private javax.swing.JComboBox<String> cmbCredit2;
     private javax.swing.JComboBox<String> cmbDay;
-    private javax.swing.JComboBox<String> cmbFaculty;
     private javax.swing.JComboBox<String> cmbFaculty1;
     private javax.swing.JComboBox<String> cmbFaculty2;
-    private javax.swing.JComboBox<String> cmbLec;
     private javax.swing.JComboBox<String> cmbLec1;
     private javax.swing.JComboBox<String> cmbLec2;
     private javax.swing.JComboBox<String> cmbLecIns;
@@ -766,9 +774,7 @@ public class Slot_sob extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbSemester;
     private javax.swing.JComboBox<String> cmbSemester1;
     private javax.swing.JComboBox<String> cmbSemester2;
-    private javax.swing.JComboBox<String> cmbSemester3;
     private javax.swing.JComboBox<String> cmbSub;
-    private javax.swing.JComboBox<String> cmbSubType;
     private javax.swing.JComboBox<String> cmbSubType1;
     private javax.swing.JComboBox<String> cmbSubType2;
     private javax.swing.JComboBox<String> cmbTimeFrom;
@@ -776,27 +782,16 @@ public class Slot_sob extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbType;
     private javax.swing.JComboBox<String> cmbType1;
     private javax.swing.JComboBox<String> cmbType2;
-    private javax.swing.JComboBox<String> cmbType3;
     private javax.swing.JComboBox<String> cmbYear;
     private javax.swing.JComboBox<String> cmbYear1;
     private javax.swing.JComboBox<String> cmbYear2;
-    private javax.swing.JComboBox<String> cmbYear3;
-    private javax.swing.JButton inserbtn;
     private javax.swing.JButton inserbtn1;
     private javax.swing.JButton inserbtn2;
-    private javax.swing.JButton inserbtn3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -807,7 +802,6 @@ public class Slot_sob extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -823,26 +817,16 @@ public class Slot_sob extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField txtSubCode;
     private javax.swing.JTextField txtSubCode1;
     private javax.swing.JTextField txtSubCode2;
-    private javax.swing.JTextField txtSubFee;
     private javax.swing.JTextField txtSubFee1;
     private javax.swing.JTextField txtSubFee2;
-    private javax.swing.JTextField txtSubName;
     private javax.swing.JTextField txtSubName1;
     private javax.swing.JTextField txtSubName2;
     // End of variables declaration//GEN-END:variables

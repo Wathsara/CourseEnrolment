@@ -39,6 +39,7 @@ public class NewInstructor extends javax.swing.JFrame {
 
     public NewInstructor() {
         initComponents();
+        setResizable(false);
         //subupdate();
         //subupdate(cmbSub.getSelectedIndex());
     }
