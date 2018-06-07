@@ -223,7 +223,9 @@
                           <Component id="btnNewPostBuisness" min="-2" pref="240" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnNewRoomAllocation" min="-2" pref="254" max="-2" attributes="0"/>
-                          <EmptySpace pref="668" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnMarks" min="-2" pref="254" max="-2" attributes="0"/>
+                          <EmptySpace pref="408" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -235,6 +237,7 @@
                               <Component id="btnNewStdBuisness" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnNewPostBuisness" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnNewRoomAllocation" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="665" max="32767" attributes="0"/>
                       </Group>
@@ -273,6 +276,17 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewRoomAllocationActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnMarks">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter Marks"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMarksActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

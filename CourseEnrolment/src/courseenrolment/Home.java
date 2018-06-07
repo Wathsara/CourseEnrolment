@@ -66,6 +66,7 @@ public class Home extends javax.swing.JFrame {
         btnNewStdBuisness = new javax.swing.JButton();
         btnNewPostBuisness = new javax.swing.JButton();
         btnNewRoomAllocation = new javax.swing.JButton();
+        btnMarks = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnNewStdComputing = new javax.swing.JButton();
         btnNewPostComputing = new javax.swing.JButton();
@@ -184,6 +185,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnMarks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnMarks.setText("Enter Marks");
+        btnMarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMarksActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -195,7 +204,9 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(668, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(408, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +215,8 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(665, Short.MAX_VALUE))
         );
 
@@ -687,6 +699,12 @@ public class Home extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnNewRoomAllocationSoeActionPerformed
 
+    private void btnMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarksActionPerformed
+        // TODO add your handling code here:
+        sobMarks sm = new sobMarks();
+        sm.setVisible(true);
+    }//GEN-LAST:event_btnMarksActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -724,6 +742,7 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addresslbl;
+    private javax.swing.JButton btnMarks;
     private javax.swing.JButton btnNewInstructor;
     private javax.swing.JButton btnNewLec;
     private javax.swing.JButton btnNewPostBuisness;

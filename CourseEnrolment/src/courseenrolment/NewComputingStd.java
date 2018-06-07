@@ -8,9 +8,13 @@ import java.awt.Image;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import java.sql.PreparedStatement;
 /**
  *
  * @author wathsara
@@ -20,6 +24,12 @@ public class NewComputingStd extends javax.swing.JFrame {
     /**
      * Creates new form NewComputingStd
      */
+    String url = "jdbc:mysql://localhost:3360/course?useSSL=false";
+    String username = "root";
+    String password = "";
+    ResultSet rs = null;
+    Connection con = null;
+    PreparedStatement pst = null;
     Db d = new Db();
     String filename = null;
     byte[] pic = null;
@@ -28,6 +38,8 @@ public class NewComputingStd extends javax.swing.JFrame {
     public NewComputingStd() {
         initComponents();
         setResizable(false);
+        subupdate();
+        subupdatesemtwo();
     }
 
     /**
@@ -168,7 +180,7 @@ public class NewComputingStd extends javax.swing.JFrame {
             }
         });
 
-        firstsemfirst.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "IT and Mangement", "HR Management", "Buisness Outlook", "Buisness Statistics", "Buisness Handling", "Economy For Buisness", " " }));
+        firstsemfirst.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
         firstsemfirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstsemfirstActionPerformed(evt);
@@ -179,24 +191,16 @@ public class NewComputingStd extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("1st Semester");
 
-        firstsemSecond.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "IT and Mangement", "HR Management", "Buisness Outlook", "Buisness Statistics", "Buisness Handling", "Economy For Buisness", " " }));
+        firstsemSecond.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
 
-        firstsemThird.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "IT and Mangement", "HR Management", "Buisness Outlook", "Buisness Statistics", "Buisness Handling", "Economy For Buisness", " " }));
+        firstsemThird.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
 
-        secondsemThird.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Advance IT and Mangement ", "Advance HR Management ", "Advance Buisness Outlook ", "Advance Buisness Statistics ", "Advance Buisness Handling", "Advance Economy For Buisness" }));
-
-        secondsemFourth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Advance IT and Mangement ", "Advance HR Management ", "Advance Buisness Outlook ", "Advance Buisness Statistics ", "Advance Buisness Handling", "Advance Economy For Buisness" }));
-
-        firstsemFourth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "IT and Mangement", "HR Management", "Buisness Outlook", "Buisness Statistics", "Buisness Handling", "Economy For Buisness", " " }));
+        firstsemFourth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
         firstsemFourth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstsemFourthActionPerformed(evt);
             }
         });
-
-        secondsemFirst.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Advance IT and Mangement ", "Advance HR Management ", "Advance Buisness Outlook ", "Advance Buisness Statistics ", "Advance Buisness Handling", "Advance Economy For Buisness" }));
-
-        secondsemSecond.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Advance IT and Mangement ", "Advance HR Management ", "Advance Buisness Outlook ", "Advance Buisness Statistics ", "Advance Buisness Handling", "Advance Economy For Buisness" }));
 
         jLabel7.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -416,6 +420,66 @@ public class NewComputingStd extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    void subupdate() {
+//        int i = cmbSub.getSelectedIndex();
+
+        try {
+            String sem="1st Semester";
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socSubject WHERE Semester = ? AND AcadamicYear = ? AND SubjectType = ? AND Type = ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, sem);
+            pst.setString(2, "1st Year");
+            pst.setString(3, "Optional");
+            pst.setString(4, "Undergraduate");
+            rs = pst.executeQuery();
+           
+            
+            
+            while (rs.next()) {
+                firstsemfirst.addItem(rs.getString("SubjectName"));
+                firstsemSecond.addItem(rs.getString("SubjectName"));
+                firstsemThird.addItem(rs.getString("SubjectName"));
+                firstsemFourth.addItem(rs.getString("SubjectName"));
+                secondsemFirst.addItem(rs.getString("SubjectName"));
+                secondsemSecond.addItem(rs.getString("SubjectName"));
+                secondsemThird.addItem(rs.getString("SubjectName"));
+                secondsemFourth.addItem(rs.getString("SubjectName"));
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+
+    }
+    
+     void subupdatesemtwo() {
+//        int i = cmbSub.getSelectedIndex();
+
+        try {
+            String sem="2nd Semester";
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socSubject WHERE Semester = ? AND AcadamicYear = ? AND SubjectType = ? AND Type = ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, sem);
+            pst.setString(2, "1st Year");
+            pst.setString(3, "Optional");
+            pst.setString(4, "Undergraduate");
+            rs = pst.executeQuery();
+           
+            
+            
+            while (rs.next()) {
+                secondsemFirst.addItem(rs.getString("SubjectName"));
+                secondsemSecond.addItem(rs.getString("SubjectName"));
+                secondsemThird.addItem(rs.getString("SubjectName"));
+                secondsemFourth.addItem(rs.getString("SubjectName"));
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+
+    }
     private void addressTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTxtActionPerformed
 
     }//GEN-LAST:event_addressTxtActionPerformed

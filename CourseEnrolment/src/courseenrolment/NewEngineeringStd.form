@@ -396,15 +396,8 @@
         <Component class="javax.swing.JComboBox" name="firstsemfirst">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="8">
+              <StringArray count="1">
                 <StringItem index="0" value="None"/>
-                <StringItem index="1" value="IT and Mangement"/>
-                <StringItem index="2" value="HR Management"/>
-                <StringItem index="3" value="Buisness Outlook"/>
-                <StringItem index="4" value="Buisness Statistics"/>
-                <StringItem index="5" value="Buisness Handling"/>
-                <StringItem index="6" value="Economy For Buisness"/>
-                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -429,15 +422,8 @@
         <Component class="javax.swing.JComboBox" name="firstsemSecond">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="8">
+              <StringArray count="1">
                 <StringItem index="0" value="None"/>
-                <StringItem index="1" value="IT and Mangement"/>
-                <StringItem index="2" value="HR Management"/>
-                <StringItem index="3" value="Buisness Outlook"/>
-                <StringItem index="4" value="Buisness Statistics"/>
-                <StringItem index="5" value="Buisness Handling"/>
-                <StringItem index="6" value="Economy For Buisness"/>
-                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -448,15 +434,8 @@
         <Component class="javax.swing.JComboBox" name="firstsemThird">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="8">
+              <StringArray count="1">
                 <StringItem index="0" value="None"/>
-                <StringItem index="1" value="IT and Mangement"/>
-                <StringItem index="2" value="HR Management"/>
-                <StringItem index="3" value="Buisness Outlook"/>
-                <StringItem index="4" value="Buisness Statistics"/>
-                <StringItem index="5" value="Buisness Handling"/>
-                <StringItem index="6" value="Economy For Buisness"/>
-                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -467,14 +446,7 @@
         <Component class="javax.swing.JComboBox" name="secondsemThird">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="Advance IT and Mangement "/>
-                <StringItem index="1" value="Advance HR Management "/>
-                <StringItem index="2" value="Advance Buisness Outlook "/>
-                <StringItem index="3" value="Advance Buisness Statistics "/>
-                <StringItem index="4" value="Advance Buisness Handling"/>
-                <StringItem index="5" value="Advance Economy For Buisness"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -484,14 +456,7 @@
         <Component class="javax.swing.JComboBox" name="secondsemFourth">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="Advance IT and Mangement "/>
-                <StringItem index="1" value="Advance HR Management "/>
-                <StringItem index="2" value="Advance Buisness Outlook "/>
-                <StringItem index="3" value="Advance Buisness Statistics "/>
-                <StringItem index="4" value="Advance Buisness Handling"/>
-                <StringItem index="5" value="Advance Economy For Buisness"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -501,15 +466,8 @@
         <Component class="javax.swing.JComboBox" name="firstsemFourth">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="8">
+              <StringArray count="1">
                 <StringItem index="0" value="None"/>
-                <StringItem index="1" value="IT and Mangement"/>
-                <StringItem index="2" value="HR Management"/>
-                <StringItem index="3" value="Buisness Outlook"/>
-                <StringItem index="4" value="Buisness Statistics"/>
-                <StringItem index="5" value="Buisness Handling"/>
-                <StringItem index="6" value="Economy For Buisness"/>
-                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -523,14 +481,7 @@
         <Component class="javax.swing.JComboBox" name="secondsemFirst">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="Advance IT and Mangement "/>
-                <StringItem index="1" value="Advance HR Management "/>
-                <StringItem index="2" value="Advance Buisness Outlook "/>
-                <StringItem index="3" value="Advance Buisness Statistics "/>
-                <StringItem index="4" value="Advance Buisness Handling"/>
-                <StringItem index="5" value="Advance Economy For Buisness"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -540,14 +491,7 @@
         <Component class="javax.swing.JComboBox" name="secondsemSecond">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="Advance IT and Mangement "/>
-                <StringItem index="1" value="Advance HR Management "/>
-                <StringItem index="2" value="Advance Buisness Outlook "/>
-                <StringItem index="3" value="Advance Buisness Statistics "/>
-                <StringItem index="4" value="Advance Buisness Handling"/>
-                <StringItem index="5" value="Advance Economy For Buisness"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
