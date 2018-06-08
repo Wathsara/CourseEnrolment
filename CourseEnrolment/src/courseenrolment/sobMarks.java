@@ -9,11 +9,19 @@ package courseenrolment;
  *
  * @author wathsara
  */
+import java.net.PasswordAuthentication;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 public class sobMarks extends javax.swing.JFrame {
 
@@ -202,11 +210,12 @@ public class sobMarks extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbYear, 0, 121, Short.MAX_VALUE)
+                        .addComponent(cmbYear, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
@@ -251,8 +260,7 @@ public class sobMarks extends javax.swing.JFrame {
                                         .addGap(89, 89, 89)
                                         .addComponent(addHall, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,10 +268,10 @@ public class sobMarks extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                    .addComponent(txtId)
+                    .addComponent(cmbYear)
+                    .addComponent(cmbSemester)
+                    .addComponent(jButton1))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -324,6 +332,7 @@ public class sobMarks extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+   
     private void addHallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addHallActionPerformed
         // TODO add your handling code here:
 //        RoomAllocation a = new RoomAllocation();
@@ -354,8 +363,8 @@ public class sobMarks extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        try {
+        if (cmbSemester.getSelectedItem().toString() == "1st Semester") {
+            try {
                 int id = Integer.parseInt(txtId.getText());
                 con = (Connection) DriverManager.getConnection(url, username, password);
                 String query = "SELECT * FROM sobSemOne WHERE StudentID = ?";
@@ -371,37 +380,60 @@ public class sobMarks extends javax.swing.JFrame {
                     lbl2.setText(rs.getString("Sub2"));
                     lbl3.setText(rs.getString("Sub3"));
                     lbl4.setText(rs.getString("Sub4"));
-                    
-                    
-                    
-                    
+                    try {
+                        
+                    } catch (Exception e) {
+                    }
+
                 }
             } catch (Exception e) {
                 System.err.println(e);
             }
-        
-        try {
-                String sem=cmbSemester.getSelectedItem().toString();
-                String ay=cmbYear.getSelectedItem().toString();
+        } else {
+            try {
+                int id = Integer.parseInt(txtId.getText());
                 con = (Connection) DriverManager.getConnection(url, username, password);
-                String query = "SELECT * FROM sobSubject WHERE Semester = ? AND AcadamicYear = ?";
+                String query = "SELECT * FROM sobSemTwo WHERE StudentID = ?";
                 pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-                pst.setString(1, sem);
-                pst.setString(2, ay);
-                
+                pst.setInt(1, id);
                 rs = pst.executeQuery();
                 while (rs.next()) {
-                    cmbSub.addItem(rs.getString("SubjectName"));
-                    cmbSub1.addItem(rs.getString("SubjectName"));
-                   
-                    
+                    cmbSub.removeAllItems();
+                    cmbSub1.removeAllItems();
+                    txtName.setText("");
+                    txtName.setText(rs.getString("FullName"));
+                    lbl1.setText(rs.getString("Sub1"));
+                    lbl2.setText(rs.getString("Sub2"));
+                    lbl3.setText(rs.getString("Sub3"));
+                    lbl4.setText(rs.getString("Sub4"));
+
                 }
             } catch (Exception e) {
                 System.err.println(e);
             }
 
+        }
 
-        
+        try {
+            String sem = cmbSemester.getSelectedItem().toString();
+            String ay = cmbYear.getSelectedItem().toString();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobSubject WHERE Semester = ? AND AcadamicYear = ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, sem);
+            pst.setString(2, ay);
+
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                cmbSub.addItem(rs.getString("SubjectName"));
+                cmbSub1.addItem(rs.getString("SubjectName"));
+
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

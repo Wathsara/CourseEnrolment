@@ -35,6 +35,7 @@ public class Student {
     private String institution;
     private String graYear;
     private String gender;
+    private double gp;
     
     
 
@@ -386,6 +387,20 @@ public class Student {
      */
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    /**
+     * @return the gp
+     */
+    public double getGp() {
+        return gp;
+    }
+
+    /**
+     * @param gp the gp to set
+     */
+    public void setGp(double gp) {
+        this.gp = gp;
     }
     
     

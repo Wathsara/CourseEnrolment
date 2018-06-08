@@ -515,10 +515,13 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         a.setzScore(txtZscore.getText());
         a.setRank(txtRank.getText());
         a.setGender(cmbGender.getSelectedItem().toString());
+        a.setGp(0);
+        
 
         boolean x = d.sobStudent(a);
         boolean y = d.sobSemOne(a);
         boolean z = d.sobSemtwo(a);
+        
        
         
 

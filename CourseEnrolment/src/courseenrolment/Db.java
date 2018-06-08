@@ -29,6 +29,7 @@ public class Db {
     Users u = new Users();
 
     int total = 0;
+    double gp=0.0000;
     int insertadmin = 0;
     byte[] im = null;
     String logname;
@@ -187,7 +188,7 @@ public class Db {
     boolean sobStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO sobIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -203,6 +204,7 @@ public class Db {
             pst.setString(12, a.getRank());
             pst.setBytes(13, a.getPic());
             pst.setString(14, a.getGender());
+            pst.setDouble(15, a.getGp());
 
             pst.executeUpdate();
 
