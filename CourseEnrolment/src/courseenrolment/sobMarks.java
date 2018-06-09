@@ -15,13 +15,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+
 
 public class sobMarks extends javax.swing.JFrame {
 
@@ -56,7 +50,7 @@ public class sobMarks extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         cmbSemester = new javax.swing.JComboBox<>();
         cmbSub = new javax.swing.JComboBox<>();
-        addHall = new javax.swing.JButton();
+        addMarks = new javax.swing.JButton();
         jLabel44 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -79,6 +73,19 @@ public class sobMarks extends javax.swing.JFrame {
         jLabel51 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         cmbYear = new javax.swing.JComboBox<>();
+        jLabel52 = new javax.swing.JLabel();
+        txtgpa = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        txtTotalCredit = new javax.swing.JTextField();
+        txtCom1 = new javax.swing.JTextField();
+        txtCom2 = new javax.swing.JTextField();
+        txtSub1 = new javax.swing.JTextField();
+        txtSub2 = new javax.swing.JTextField();
+        txtSub3 = new javax.swing.JTextField();
+        txtSub4 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        txtSemCredit = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("School of Buisness Marks");
@@ -115,13 +122,13 @@ public class sobMarks extends javax.swing.JFrame {
 
         cmbSemester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Semester", "2nd Semester" }));
 
-        addHall.setBackground(new java.awt.Color(107, 185, 240));
-        addHall.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        addHall.setForeground(new java.awt.Color(255, 255, 255));
-        addHall.setText("Insert");
-        addHall.addActionListener(new java.awt.event.ActionListener() {
+        addMarks.setBackground(new java.awt.Color(107, 185, 240));
+        addMarks.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        addMarks.setForeground(new java.awt.Color(255, 255, 255));
+        addMarks.setText("Insert");
+        addMarks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addHallActionPerformed(evt);
+                addMarksActionPerformed(evt);
             }
         });
 
@@ -142,7 +149,7 @@ public class sobMarks extends javax.swing.JFrame {
             }
         });
 
-        cmbGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", "F", " ", " " }));
+        cmbGrade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", " ", " " }));
 
         lbl1.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         lbl1.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,15 +187,15 @@ public class sobMarks extends javax.swing.JFrame {
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
         jLabel42.setText("Grade");
 
-        cmbGrade1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", "F", " ", " " }));
+        cmbGrade1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", " " }));
 
-        cmbGrade2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", "F", " ", " " }));
+        cmbGrade2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", " ", " " }));
 
-        cmbGrade3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", "F", " ", " " }));
+        cmbGrade3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", " ", " " }));
 
-        cmbGrade4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", "F", " ", " " }));
+        cmbGrade4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", " " }));
 
-        cmbGrade5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", "F", " ", " " }));
+        cmbGrade5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E", " " }));
 
         jLabel51.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(255, 255, 255));
@@ -198,6 +205,45 @@ public class sobMarks extends javax.swing.JFrame {
 
         cmbYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year", "2nd Year", "3rd Year", "4th Year" }));
 
+        jLabel52.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setText("Current GPA");
+
+        txtgpa.setEditable(false);
+        txtgpa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtgpaActionPerformed(evt);
+            }
+        });
+
+        jLabel53.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setText("Credits Completed");
+
+        txtTotalCredit.setEditable(false);
+
+        txtCom1.setEditable(false);
+
+        txtCom2.setEditable(false);
+
+        txtSub1.setEditable(false);
+
+        txtSub2.setEditable(false);
+
+        txtSub3.setEditable(false);
+
+        txtSub4.setEditable(false);
+
+        jLabel54.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setText("Credits");
+
+        jLabel55.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setText("Semester Total Credits");
+
+        txtSemCredit.setEditable(false);
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -205,23 +251,33 @@ public class sobMarks extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbYear, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbYear, 0, 124, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21)
+                                .addComponent(txtName)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTotalCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(29, 29, 29))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtgpa, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,7 +287,7 @@ public class sobMarks extends javax.swing.JFrame {
                                         .addComponent(lbl3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                                         .addComponent(lbl4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel7Layout.createSequentialGroup()
                                         .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,11 +312,27 @@ public class sobMarks extends javax.swing.JFrame {
                                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(cmbGrade4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(cmbGrade3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGap(89, 89, 89)
-                                        .addComponent(addHall, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCom1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCom2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSub1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSub2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSub3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSub4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtSemCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(96, 96, 96))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addComponent(addMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,49 +340,68 @@ public class sobMarks extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtId)
-                    .addComponent(cmbYear)
-                    .addComponent(cmbSemester)
-                    .addComponent(jButton1))
+                    .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(jButton1)
+                    .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTotalCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtgpa, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbSub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbSub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCom1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbSub1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbGrade1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbGrade1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCom2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbGrade2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbGrade2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSub1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbGrade3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbGrade3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSub2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbGrade4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSub3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbGrade5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addHall)
-                .addGap(23, 23, 23))
+                    .addComponent(cmbGrade5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSub4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSemCredit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(addMarks)
+                .addGap(37, 37, 37))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -333,29 +424,304 @@ public class sobMarks extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
    
-    private void addHallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addHallActionPerformed
+    private void addMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMarksActionPerformed
         // TODO add your handling code here:
-//        RoomAllocation a = new RoomAllocation();
-//        a.setType(cmbType.getSelectedItem().toString());
-//        a.setSemester(cmbSemester.getSelectedItem().toString());
-//        a.setAcademicYear(cmbYear.getSelectedItem().toString());
-//        a.setSubject(cmbSub.getSelectedItem().toString());
-//        a.setLecIns(cmbLecIns.getSelectedItem().toString());
-//        a.setDay(cmbDay.getSelectedItem().toString());
-//        a.setTimeFrom(cmbTimeFrom.getSelectedItem().toString());
-//        a.setTimeTo(cmbTimeTo.getSelectedItem().toString());
-//        a.setRoom(cmbRoomLab.getSelectedItem().toString());
-//        boolean x = d.sobHall(a);
-//
-//        if (x) {
-//            JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
-//
-//        } else {
-//            JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
-//
-//        }
-
-    }//GEN-LAST:event_addHallActionPerformed
+        double x= Double.parseDouble(txtgpa.getText())*Integer.parseInt(txtTotalCredit.getText());
+        switch(cmbGrade.getSelectedItem().toString()){
+            case "A+":
+                x=x+Integer.parseInt(txtCom1.getText())*4.25;
+                break;
+            case "A":
+                x=x+Integer.parseInt(txtCom1.getText())*4.00;
+                break;
+            case "A-":
+                x=x+Integer.parseInt(txtCom1.getText())*3.75;
+                break;  
+            case "B+":
+                x=x+Integer.parseInt(txtCom1.getText())*3.25;
+                break;
+            case "B":
+                x=x+Integer.parseInt(txtCom1.getText())*3.00;
+                break;
+            case "B-":
+                x=x+Integer.parseInt(txtCom1.getText())*2.75;
+                break;
+            case "C+":
+                x=x+Integer.parseInt(txtCom1.getText())*2.25;
+                break;
+            case "C":
+                x=x+Integer.parseInt(txtCom1.getText())*2.00;
+                break;
+            case "C-":
+                x=x+Integer.parseInt(txtCom1.getText())*1.75;
+                break;
+            case "D+":
+                x=x+Integer.parseInt(txtCom1.getText())*1.25;
+                break;
+            case "D":
+                x=x+Integer.parseInt(txtCom1.getText())*1.00;
+                break;
+            case "D-":
+                x=x+Integer.parseInt(txtCom1.getText())*0.75;
+                break;
+            case "E":
+                x=x+Integer.parseInt(txtCom1.getText())*0.00;
+                break;
+            default :
+                System.out.println("Invalid grade");
+            }
+        
+        switch(cmbGrade1.getSelectedItem().toString()){
+            case "A+":
+                x=x+Integer.parseInt(txtCom2.getText())*4.25;
+                break;
+            case "A":
+                x=x+Integer.parseInt(txtCom2.getText())*4.00;
+                break;
+            case "A-":
+                x=x+Integer.parseInt(txtCom2.getText())*3.75;
+                break;  
+            case "B+":
+                x=x+Integer.parseInt(txtCom2.getText())*3.25;
+                break;
+            case "B":
+                x=x+Integer.parseInt(txtCom2.getText())*3.00;
+                break;
+            case "B-":
+                x=x+Integer.parseInt(txtCom2.getText())*2.75;
+                break;
+            case "C+":
+                x=x+Integer.parseInt(txtCom2.getText())*2.25;
+                break;
+            case "C":
+                x=x+Integer.parseInt(txtCom2.getText())*2.00;
+                break;
+            case "C-":
+                x=x+Integer.parseInt(txtCom2.getText())*1.75;
+                break;
+            case "D+":
+                x=x+Integer.parseInt(txtCom2.getText())*1.25;
+                break;
+            case "D":
+                x=x+Integer.parseInt(txtCom2.getText())*1.00;
+                break;
+            case "D-":
+                x=x+Integer.parseInt(txtCom2.getText())*0.75;
+                break;
+            case "E":
+                x=x+Integer.parseInt(txtCom2.getText())*0.00;
+                break;
+            default :
+                System.out.println("Invalid grade");
+            }
+        switch(cmbGrade2.getSelectedItem().toString()){
+            case "A+":
+                x=x+Integer.parseInt(txtSub1.getText())*4.25;
+                break;
+            case "A":
+                x=x+Integer.parseInt(txtSub1.getText())*4.00;
+                break;
+            case "A-":
+                x=x+Integer.parseInt(txtSub1.getText())*3.75;
+                break;  
+            case "B+":
+                x=x+Integer.parseInt(txtSub1.getText())*3.25;
+                break;
+            case "B":
+                x=x+Integer.parseInt(txtSub1.getText())*3.00;
+                break;
+            case "B-":
+                x=x+Integer.parseInt(txtSub1.getText())*2.75;
+                break;
+            case "C+":
+                x=x+Integer.parseInt(txtSub1.getText())*2.25;
+                break;
+            case "C":
+                x=x+Integer.parseInt(txtSub1.getText())*2.00;
+                break;
+            case "C-":
+                x=x+Integer.parseInt(txtSub1.getText())*1.75;
+                break;
+            case "D+":
+                x=x+Integer.parseInt(txtSub1.getText())*1.25;
+                break;
+            case "D":
+                x=x+Integer.parseInt(txtSub1.getText())*1.00;
+                break;
+            case "D-":
+                x=x+Integer.parseInt(txtSub1.getText())*0.75;
+                break;
+            case "E":
+                x=x+Integer.parseInt(txtSub1.getText())*0.00;
+                break;
+            default :
+                System.out.println("Invalid grade");
+            }
+        
+        switch(cmbGrade3.getSelectedItem().toString()){
+            case "A+":
+                x=x+Integer.parseInt(txtSub2.getText())*4.25;
+                break;
+            case "A":
+                x=x+Integer.parseInt(txtSub2.getText())*4.00;
+                break;
+            case "A-":
+                x=x+Integer.parseInt(txtSub2.getText())*3.75;
+                break;  
+            case "B+":
+                x=x+Integer.parseInt(txtSub2.getText())*3.25;
+                break;
+            case "B":
+                x=x+Integer.parseInt(txtSub2.getText())*3.00;
+                break;
+            case "B-":
+                x=x+Integer.parseInt(txtSub2.getText())*2.75;
+                break;
+            case "C+":
+                x=x+Integer.parseInt(txtSub2.getText())*2.25;
+                break;
+            case "C":
+                x=x+Integer.parseInt(txtSub2.getText())*2.00;
+                break;
+            case "C-":
+                x=x+Integer.parseInt(txtSub2.getText())*1.75;
+                break;
+            case "D+":
+                x=x+Integer.parseInt(txtSub2.getText())*1.25;
+                break;
+            case "D":
+                x=x+Integer.parseInt(txtSub2.getText())*1.00;
+                break;
+            case "D-":
+                x=x+Integer.parseInt(txtSub2.getText())*0.75;
+                break;
+            case "E":
+                x=x+Integer.parseInt(txtSub2.getText())*0.00;
+                break;
+            default :
+                System.out.println("Invalid grade");
+            }
+        
+        switch(cmbGrade4.getSelectedItem().toString()){
+            case "A+":
+                x=x+Integer.parseInt(txtSub3.getText())*4.25;
+                break;
+            case "A":
+                x=x+Integer.parseInt(txtSub3.getText())*4.00;
+                break;
+            case "A-":
+                x=x+Integer.parseInt(txtSub3.getText())*3.75;
+                break;  
+            case "B+":
+                x=x+Integer.parseInt(txtSub3.getText())*3.25;
+                break;
+            case "B":
+                x=x+Integer.parseInt(txtSub3.getText())*3.00;
+                break;
+            case "B-":
+                x=x+Integer.parseInt(txtSub3.getText())*2.75;
+                break;
+            case "C+":
+                x=x+Integer.parseInt(txtSub3.getText())*2.25;
+                break;
+            case "C":
+                x=x+Integer.parseInt(txtSub3.getText())*2.00;
+                break;
+            case "C-":
+                x=x+Integer.parseInt(txtSub3.getText())*1.75;
+                break;
+            case "D+":
+                x=x+Integer.parseInt(txtSub3.getText())*1.25;
+                break;
+            case "D":
+                x=x+Integer.parseInt(txtSub3.getText())*1.00;
+                break;
+            case "D-":
+                x=x+Integer.parseInt(txtSub3.getText())*0.75;
+                break;
+            case "E":
+                x=x+Integer.parseInt(txtSub3.getText())*0.00;
+                break;
+            default :
+                System.out.println("Invalid grade");
+            }
+        switch(cmbGrade5.getSelectedItem().toString()){
+            case "A+":
+                x=x+Integer.parseInt(txtSub4.getText())*4.25;
+                break;
+            case "A":
+                x=x+Integer.parseInt(txtSub4.getText())*4.00;
+                break;
+            case "A-":
+                x=x+Integer.parseInt(txtSub4.getText())*3.75;
+                break;  
+            case "B+":
+                x=x+Integer.parseInt(txtSub4.getText())*3.25;
+                break;
+            case "B":
+                x=x+Integer.parseInt(txtSub4.getText())*3.00;
+                break;
+            case "B-":
+                x=x+Integer.parseInt(txtSub4.getText())*2.75;
+                break;
+            case "C+":
+                x=x+Integer.parseInt(txtSub4.getText())*2.25;
+                break;
+            case "C":
+                x=x+Integer.parseInt(txtSub4.getText())*2.00;
+                break;
+            case "C-":
+                x=x+Integer.parseInt(txtSub4.getText())*1.75;
+                break;
+            case "D+":
+                x=x+Integer.parseInt(txtSub4.getText())*1.25;
+                break;
+            case "D":
+                x=x+Integer.parseInt(txtSub4.getText())*1.00;
+                break;
+            case "D-":
+                x=x+Integer.parseInt(txtSub4.getText())*0.75;
+                break;
+            case "E":
+                x=x+Integer.parseInt(txtSub4.getText())*0.00;
+                break;
+            default :
+                System.out.println("Invalid grade");
+            }
+        int totalCredit = Integer.parseInt(txtSemCredit.getText())+Integer.parseInt(txtTotalCredit.getText());
+        Double finalGPA = x/totalCredit;
+        
+        Marks a = new Marks();
+        a.setGpa(finalGPA);
+        a.setCredit(totalCredit);
+        a.setId(Integer.parseInt(txtId.getText()));
+        a.setAcademicYear(cmbYear.getSelectedItem().toString());
+        a.setSemester(cmbSemester.getSelectedItem().toString());
+        
+        a.setSub1(cmbSub.getSelectedItem().toString());
+        a.setGrade1(cmbGrade.getSelectedItem().toString());
+        a.setSub2(cmbSub1.getSelectedItem().toString());
+        a.setGrade2(cmbGrade1.getSelectedItem().toString());
+        a.setSub3(lbl1.getText());
+        a.setGrade3(cmbGrade2.getSelectedItem().toString());
+        a.setSub4(lbl2.getText());
+        a.setGrade4(cmbGrade3.getSelectedItem().toString());
+        a.setSub5(lbl3.getText());
+        a.setGrade5(cmbGrade4.getSelectedItem().toString());
+        a.setSub6(lbl4.getText());
+        a.setGrade6(cmbGrade5.getSelectedItem().toString());
+        
+        boolean z = d.sobMarks(a);
+        boolean y = d.sobGpaUpdate(a);
+        
+        if(z && y){
+            JOptionPane.showMessageDialog(this, "Marks Entered Sucessfully");
+        }else{
+            JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
+        }
+        
+        
+    }//GEN-LAST:event_addMarksActionPerformed
 
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
@@ -380,10 +746,7 @@ public class sobMarks extends javax.swing.JFrame {
                     lbl2.setText(rs.getString("Sub2"));
                     lbl3.setText(rs.getString("Sub3"));
                     lbl4.setText(rs.getString("Sub4"));
-                    try {
-                        
-                    } catch (Exception e) {
-                    }
+                   
 
                 }
             } catch (Exception e) {
@@ -417,11 +780,13 @@ public class sobMarks extends javax.swing.JFrame {
         try {
             String sem = cmbSemester.getSelectedItem().toString();
             String ay = cmbYear.getSelectedItem().toString();
+            String type = "Compulsory";
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobSubject WHERE Semester = ? AND AcadamicYear = ?";
+            String query = "SELECT * FROM sobSubject WHERE Semester = ? AND AcadamicYear = ? AND SubjectType = ?";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.setString(1, sem);
             pst.setString(2, ay);
+            pst.setString(3, type);
 
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -432,9 +797,104 @@ public class sobMarks extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println(e);
         }
+        
+        try {
+            int id=Integer.parseInt(txtId.getText());
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobIntake WHERE StudentID = ? ";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, id);
+           
+
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                txtgpa.setText(Double.toString(rs.getDouble("gpa")));
+                txtTotalCredit.setText(Integer.toString(rs.getInt("Credits")));
+                txtCom1.setText("3");
+                txtCom2.setText("3");
+
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        try {
+            String sub = lbl1.getText();
+            String ay = cmbYear.getSelectedItem().toString();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobSubject WHERE SubjectName = ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, sub);
+            
+
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                txtSub1.setText(Integer.toString(rs.getInt("Credit")));
+
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        try {
+            String sub = lbl2.getText();
+            String ay = cmbYear.getSelectedItem().toString();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobSubject WHERE SubjectName = ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, sub);
+            
+
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                txtSub2.setText(Integer.toString(rs.getInt("Credit")));
+
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        try {
+            String sub = lbl3.getText();
+            String ay = cmbYear.getSelectedItem().toString();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobSubject WHERE SubjectName = ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, sub);
+            
+
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                txtSub3.setText(Integer.toString(rs.getInt("Credit")));
+
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        try {
+            String sub = lbl4.getText();
+            String ay = cmbYear.getSelectedItem().toString();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobSubject WHERE SubjectName = ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, sub);
+            
+
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                txtSub4.setText(Integer.toString(rs.getInt("Credit")));
+
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        
+        txtSemCredit.setText(Integer.toString(6+Integer.parseInt(txtSub1.getText())+Integer.parseInt(txtSub2.getText())+Integer.parseInt(txtSub3.getText())+Integer.parseInt(txtSub4.getText())));
+
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtgpaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgpaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtgpaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -472,7 +932,7 @@ public class sobMarks extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addHall;
+    private javax.swing.JButton addMarks;
     private javax.swing.JComboBox<String> cmbGrade;
     private javax.swing.JComboBox<String> cmbGrade1;
     private javax.swing.JComboBox<String> cmbGrade2;
@@ -493,13 +953,26 @@ public class sobMarks extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lbl3;
     private javax.swing.JLabel lbl4;
+    private javax.swing.JTextField txtCom1;
+    private javax.swing.JTextField txtCom2;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtSemCredit;
+    private javax.swing.JTextField txtSub1;
+    private javax.swing.JTextField txtSub2;
+    private javax.swing.JTextField txtSub3;
+    private javax.swing.JTextField txtSub4;
+    private javax.swing.JTextField txtTotalCredit;
+    private javax.swing.JTextField txtgpa;
     // End of variables declaration//GEN-END:variables
 }

@@ -94,24 +94,37 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel44" min="-2" pref="122" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtId" min="-2" pref="70" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cmbYear" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cmbSemester" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="140" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel44" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtId" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cmbYear" pref="124" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cmbSemester" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jButton1" min="-2" pref="140" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
                                   <Component id="jLabel51" min="-2" pref="113" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Component id="txtName" min="-2" pref="267" max="-2" attributes="0"/>
+                                  <Component id="txtName" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabel53" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtTotalCredit" min="-2" pref="86" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel52" min="-2" pref="113" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="txtgpa" min="-2" pref="148" max="-2" attributes="0"/>
                               </Group>
                               <Component id="lbl1" alignment="0" min="-2" pref="189" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -124,7 +137,7 @@
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel42" min="-2" pref="77" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -156,15 +169,35 @@
                                               <Component id="cmbGrade3" min="-2" pref="140" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                          <Component id="addHall" min="-2" pref="140" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="jLabel55" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Component id="lbl2" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtCom1" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="txtCom2" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="txtSub1" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="txtSub2" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="txtSub3" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="txtSub4" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="txtSemCredit" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jLabel54" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="addMarks" min="-2" pref="140" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -176,58 +209,81 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel44" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="txtId" max="32767" attributes="0"/>
-                      <Component id="cmbYear" alignment="1" max="32767" attributes="0"/>
-                      <Component id="cmbSemester" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtId" pref="40" max="32767" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbSemester" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbYear" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel51" min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="txtName" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtName" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="jLabel53" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="txtTotalCredit" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel52" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="txtgpa" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel54" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel36" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="cmbGrade" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cmbSub" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCom1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cmbSub1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel37" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="cmbGrade1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCom2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lbl1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="jLabel39" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="cmbGrade2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSub1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lbl2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="jLabel40" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="cmbGrade3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSub2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lbl3" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="cmbGrade4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel41" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="txtSub3" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lbl4" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="jLabel42" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="cmbGrade5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSub4" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="addHall" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel55" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="txtSemCredit" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="addMarks" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -267,7 +323,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="addHall">
+        <Component class="javax.swing.JButton" name="addMarks">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="b9" red="6b" type="rgb"/>
@@ -281,7 +337,7 @@
             <Property name="text" type="java.lang.String" value="Insert"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addHallActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMarksActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel44">
@@ -311,7 +367,7 @@
         <Component class="javax.swing.JComboBox" name="cmbGrade">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="16">
+              <StringArray count="15">
                 <StringItem index="0" value="A+"/>
                 <StringItem index="1" value="A"/>
                 <StringItem index="2" value="A-"/>
@@ -325,9 +381,8 @@
                 <StringItem index="10" value="D"/>
                 <StringItem index="11" value="D-"/>
                 <StringItem index="12" value="E"/>
-                <StringItem index="13" value="F"/>
+                <StringItem index="13" value=" "/>
                 <StringItem index="14" value=" "/>
-                <StringItem index="15" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -447,7 +502,7 @@
         <Component class="javax.swing.JComboBox" name="cmbGrade1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="16">
+              <StringArray count="14">
                 <StringItem index="0" value="A+"/>
                 <StringItem index="1" value="A"/>
                 <StringItem index="2" value="A-"/>
@@ -461,9 +516,7 @@
                 <StringItem index="10" value="D"/>
                 <StringItem index="11" value="D-"/>
                 <StringItem index="12" value="E"/>
-                <StringItem index="13" value="F"/>
-                <StringItem index="14" value=" "/>
-                <StringItem index="15" value=" "/>
+                <StringItem index="13" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -474,7 +527,7 @@
         <Component class="javax.swing.JComboBox" name="cmbGrade2">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="16">
+              <StringArray count="15">
                 <StringItem index="0" value="A+"/>
                 <StringItem index="1" value="A"/>
                 <StringItem index="2" value="A-"/>
@@ -488,9 +541,8 @@
                 <StringItem index="10" value="D"/>
                 <StringItem index="11" value="D-"/>
                 <StringItem index="12" value="E"/>
-                <StringItem index="13" value="F"/>
+                <StringItem index="13" value=" "/>
                 <StringItem index="14" value=" "/>
-                <StringItem index="15" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -501,7 +553,7 @@
         <Component class="javax.swing.JComboBox" name="cmbGrade3">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="16">
+              <StringArray count="15">
                 <StringItem index="0" value="A+"/>
                 <StringItem index="1" value="A"/>
                 <StringItem index="2" value="A-"/>
@@ -515,9 +567,8 @@
                 <StringItem index="10" value="D"/>
                 <StringItem index="11" value="D-"/>
                 <StringItem index="12" value="E"/>
-                <StringItem index="13" value="F"/>
+                <StringItem index="13" value=" "/>
                 <StringItem index="14" value=" "/>
-                <StringItem index="15" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -528,7 +579,7 @@
         <Component class="javax.swing.JComboBox" name="cmbGrade4">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="16">
+              <StringArray count="14">
                 <StringItem index="0" value="A+"/>
                 <StringItem index="1" value="A"/>
                 <StringItem index="2" value="A-"/>
@@ -542,9 +593,7 @@
                 <StringItem index="10" value="D"/>
                 <StringItem index="11" value="D-"/>
                 <StringItem index="12" value="E"/>
-                <StringItem index="13" value="F"/>
-                <StringItem index="14" value=" "/>
-                <StringItem index="15" value=" "/>
+                <StringItem index="13" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -555,7 +604,7 @@
         <Component class="javax.swing.JComboBox" name="cmbGrade5">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="16">
+              <StringArray count="14">
                 <StringItem index="0" value="A+"/>
                 <StringItem index="1" value="A"/>
                 <StringItem index="2" value="A-"/>
@@ -569,9 +618,7 @@
                 <StringItem index="10" value="D"/>
                 <StringItem index="11" value="D-"/>
                 <StringItem index="12" value="E"/>
-                <StringItem index="13" value="F"/>
-                <StringItem index="14" value=" "/>
-                <StringItem index="15" value=" "/>
+                <StringItem index="13" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -609,6 +656,98 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel52">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cantarell" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Current GPA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtgpa">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtgpaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel53">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cantarell" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Credits Completed"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtTotalCredit">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCom1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCom2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSub1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSub2">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSub3">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSub4">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel54">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cantarell" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Credits"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel55">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cantarell" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Semester Total Credits"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSemCredit">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

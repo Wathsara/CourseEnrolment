@@ -36,6 +36,8 @@ public class Student {
     private String graYear;
     private String gender;
     private double gp;
+    private int credits;
+    
     
     
 
@@ -401,6 +403,20 @@ public class Student {
      */
     public void setGp(double gp) {
         this.gp = gp;
+    }
+
+    /**
+     * @return the credits
+     */
+    public int getCredits() {
+        return credits;
+    }
+
+    /**
+     * @param credits the credits to set
+     */
+    public void setCredits(int credits) {
+        this.credits = credits;
     }
     
     

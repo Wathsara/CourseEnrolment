@@ -188,7 +188,7 @@ public class Db {
     boolean sobStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO sobIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -205,6 +205,7 @@ public class Db {
             pst.setBytes(13, a.getPic());
             pst.setString(14, a.getGender());
             pst.setDouble(15, a.getGp());
+            pst.setInt(16, a.getCredits());
 
             pst.executeUpdate();
 
@@ -829,5 +830,55 @@ public class Db {
 
         }
     }
+    
+    boolean sobMarks(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobMarks values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSub1());
+            pst.setString(5, a.getGrade1());
+            pst.setString(6, a.getSub2());
+            pst.setString(7, a.getGrade2());
+            pst.setString(8, a.getSub3());
+            pst.setString(9, a.getGrade3());
+            pst.setString(10, a.getSub4());
+            pst.setString(11, a.getGrade4());
+            pst.setString(12, a.getSub5());
+            pst.setString(13, a.getGrade5());
+            pst.setString(14, a.getSub6());
+            pst.setString(15, a.getGrade6());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+        
+    
+    }
+
+    boolean sobGpaUpdate(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE sobIntake SET gpa = ? , Credits= ? where StudentID = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setDouble(1,a.getGpa());
+            pst.setInt(2,a.getCredit());
+            pst.setInt(3, a.getId());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+        
+    }
+    
 
 }
