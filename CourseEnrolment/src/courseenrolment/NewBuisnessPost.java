@@ -579,6 +579,8 @@ public class NewBuisnessPost extends javax.swing.JFrame {
         a.setInstitution(txtInstitution.getText());
         a.setGraYear(txtGraYear.getText());
         a.setGender(cmbGender.getSelectedItem().toString());
+        a.setGp(0);
+        a.setCredits(0);
 
         boolean x = d.sobPostStudent(a);
         boolean y = d.sobPostSemOne(a);

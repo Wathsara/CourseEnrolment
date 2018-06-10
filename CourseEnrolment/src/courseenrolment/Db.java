@@ -260,7 +260,7 @@ public class Db {
     boolean socStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO socIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO socIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -276,6 +276,8 @@ public class Db {
             pst.setString(12, a.getRank());
             pst.setBytes(13, a.getPic());
             pst.setString(14, a.getGender());
+            pst.setDouble(15, a.getGp());
+            pst.setInt(16, a.getCredits());
 
             pst.executeUpdate();
 
@@ -330,7 +332,7 @@ public class Db {
     boolean soeStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO soeIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO soeIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -346,6 +348,8 @@ public class Db {
             pst.setString(12, a.getRank());
             pst.setBytes(13, a.getPic());
             pst.setString(14, a.getGender());
+            pst.setDouble(15, a.getGp());
+            pst.setInt(16, a.getCredits());
 
             pst.executeUpdate();
 
@@ -400,7 +404,7 @@ public class Db {
     boolean sobPostStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO sobPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -419,6 +423,9 @@ public class Db {
             pst.setString(15, a.getGraYear());
             pst.setBytes(16, a.getPic());
             pst.setString(17, a.getGender());
+            pst.setDouble(18, a.getGp());
+            pst.setInt(19, a.getCredits());
+            
 
             pst.executeUpdate();
 
@@ -473,7 +480,7 @@ public class Db {
     boolean socPostStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO socPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO socPostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -492,6 +499,8 @@ public class Db {
             pst.setString(15, a.getGraYear());
             pst.setBytes(16, a.getPic());
             pst.setString(17, a.getGender());
+            pst.setDouble(18, a.getGp());
+            pst.setInt(19, a.getCredits());
 
             pst.executeUpdate();
 
@@ -546,7 +555,7 @@ public class Db {
     boolean soePostStudent(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO soePostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO soePostIntake values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -565,6 +574,8 @@ public class Db {
             pst.setString(15, a.getGraYear());
             pst.setBytes(16, a.getPic());
             pst.setString(17, a.getGender());
+            pst.setDouble(18, a.getGp());
+            pst.setInt(19, a.getCredits());
 
             pst.executeUpdate();
 
@@ -880,5 +891,240 @@ public class Db {
         
     }
     
+    boolean socMarks(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socMarks values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSub1());
+            pst.setString(5, a.getGrade1());
+            pst.setString(6, a.getSub2());
+            pst.setString(7, a.getGrade2());
+            pst.setString(8, a.getSub3());
+            pst.setString(9, a.getGrade3());
+            pst.setString(10, a.getSub4());
+            pst.setString(11, a.getGrade4());
+            pst.setString(12, a.getSub5());
+            pst.setString(13, a.getGrade5());
+            pst.setString(14, a.getSub6());
+            pst.setString(15, a.getGrade6());
+            pst.executeUpdate();
 
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+        
+        boolean socGpaUpdate(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socIntake SET gpa = ? , Credits= ? where StudentID = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setDouble(1,a.getGpa());
+            pst.setInt(2,a.getCredit());
+            pst.setInt(3, a.getId());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+        
+    }
+        
+    boolean soeMarks(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soeMarks values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSub1());
+            pst.setString(5, a.getGrade1());
+            pst.setString(6, a.getSub2());
+            pst.setString(7, a.getGrade2());
+            pst.setString(8, a.getSub3());
+            pst.setString(9, a.getGrade3());
+            pst.setString(10, a.getSub4());
+            pst.setString(11, a.getGrade4());
+            pst.setString(12, a.getSub5());
+            pst.setString(13, a.getGrade5());
+            pst.setString(14, a.getSub6());
+            pst.setString(15, a.getGrade6());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+    
+     boolean soeGpaUpdate(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soeIntake SET gpa = ? , Credits= ? where StudentID = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setDouble(1,a.getGpa());
+            pst.setInt(2,a.getCredit());
+            pst.setInt(3, a.getId());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+        
+    }
+     
+    boolean sobPostMarks(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobPostMarks values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSub1());
+            pst.setString(5, a.getGrade1());
+            pst.setString(6, a.getSub2());
+            pst.setString(7, a.getGrade2());
+            pst.setString(8, a.getSub3());
+            pst.setString(9, a.getGrade3());
+            pst.setString(10, a.getSub4());
+            pst.setString(11, a.getGrade4());
+            pst.setString(12, a.getSub5());
+            pst.setString(13, a.getGrade5());
+            pst.setString(14, a.getSub6());
+            pst.setString(15, a.getGrade6());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+        
+    
+    }
+
+    boolean sobPostGpaUpdate(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE sobPostIntake SET gpa = ? , Credits= ? where StudentID = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setDouble(1,a.getGpa());
+            pst.setInt(2,a.getCredit());
+            pst.setInt(3, a.getId());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+        
+    }
+    
+    boolean socPostMarks(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socPostMarks values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSub1());
+            pst.setString(5, a.getGrade1());
+            pst.setString(6, a.getSub2());
+            pst.setString(7, a.getGrade2());
+            pst.setString(8, a.getSub3());
+            pst.setString(9, a.getGrade3());
+            pst.setString(10, a.getSub4());
+            pst.setString(11, a.getGrade4());
+            pst.setString(12, a.getSub5());
+            pst.setString(13, a.getGrade5());
+            pst.setString(14, a.getSub6());
+            pst.setString(15, a.getGrade6());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+        
+        boolean socPostGpaUpdate(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socPostIntake SET gpa = ? , Credits= ? where StudentID = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setDouble(1,a.getGpa());
+            pst.setInt(2,a.getCredit());
+            pst.setInt(3, a.getId());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+        
+    }
+    
+    boolean soePostMarks(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soePostMarks values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getAcademicYear());
+            pst.setString(3, a.getSemester());
+            pst.setString(4, a.getSub1());
+            pst.setString(5, a.getGrade1());
+            pst.setString(6, a.getSub2());
+            pst.setString(7, a.getGrade2());
+            pst.setString(8, a.getSub3());
+            pst.setString(9, a.getGrade3());
+            pst.setString(10, a.getSub4());
+            pst.setString(11, a.getGrade4());
+            pst.setString(12, a.getSub5());
+            pst.setString(13, a.getGrade5());
+            pst.setString(14, a.getSub6());
+            pst.setString(15, a.getGrade6());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+    
+     boolean soePostGpaUpdate(Marks a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soePostIntake SET gpa = ? , Credits= ? where StudentID = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setDouble(1,a.getGpa());
+            pst.setInt(2,a.getCredit());
+            pst.setInt(3, a.getId());
+            pst.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+        
+    }
 }

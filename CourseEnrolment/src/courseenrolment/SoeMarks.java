@@ -15,12 +15,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-
-public class sobMarks extends javax.swing.JFrame {
+public class SoeMarks extends javax.swing.JFrame {
 
     /**
-     * Creates new form sobMarks
+     * Creates new form SoeMarks
      */
     String url = "jdbc:mysql://localhost:3360/course?useSSL=false";
     String username = "root";
@@ -29,8 +27,7 @@ public class sobMarks extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst = null;
     Db d = new Db();
-
-    public sobMarks() {
+    public SoeMarks() {
         initComponents();
         setResizable(false);
     }
@@ -88,7 +85,7 @@ public class sobMarks extends javax.swing.JFrame {
         txtSemCredit = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("School of Buisness Marks");
+        setTitle("School of Engineering Marks");
 
         jPanel2.setBackground(new java.awt.Color(211, 84, 0));
 
@@ -103,7 +100,7 @@ public class sobMarks extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
                 .addGap(80, 80, 80))
         );
         jPanel2Layout.setVerticalGroup(
@@ -258,7 +255,7 @@ public class sobMarks extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbYear, 0, 124, Short.MAX_VALUE)
+                                .addComponent(cmbYear, 0, 167, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -423,281 +420,280 @@ public class sobMarks extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-   
     private void addMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMarksActionPerformed
         // TODO add your handling code here:
         double x= Double.parseDouble(txtgpa.getText())*Integer.parseInt(txtTotalCredit.getText());
         switch(cmbGrade.getSelectedItem().toString()){
             case "A+":
-                x=x+Integer.parseInt(txtCom1.getText())*4.25;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*4.25;
+            break;
             case "A":
-                x=x+Integer.parseInt(txtCom1.getText())*4.00;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*4.00;
+            break;
             case "A-":
-                x=x+Integer.parseInt(txtCom1.getText())*3.75;
-                break;  
+            x=x+Integer.parseInt(txtCom1.getText())*3.75;
+            break;
             case "B+":
-                x=x+Integer.parseInt(txtCom1.getText())*3.25;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*3.25;
+            break;
             case "B":
-                x=x+Integer.parseInt(txtCom1.getText())*3.00;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*3.00;
+            break;
             case "B-":
-                x=x+Integer.parseInt(txtCom1.getText())*2.75;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*2.75;
+            break;
             case "C+":
-                x=x+Integer.parseInt(txtCom1.getText())*2.25;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*2.25;
+            break;
             case "C":
-                x=x+Integer.parseInt(txtCom1.getText())*2.00;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*2.00;
+            break;
             case "C-":
-                x=x+Integer.parseInt(txtCom1.getText())*1.75;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*1.75;
+            break;
             case "D+":
-                x=x+Integer.parseInt(txtCom1.getText())*1.25;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*1.25;
+            break;
             case "D":
-                x=x+Integer.parseInt(txtCom1.getText())*1.00;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*1.00;
+            break;
             case "D-":
-                x=x+Integer.parseInt(txtCom1.getText())*0.75;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*0.75;
+            break;
             case "E":
-                x=x+Integer.parseInt(txtCom1.getText())*0.00;
-                break;
+            x=x+Integer.parseInt(txtCom1.getText())*0.00;
+            break;
             default :
-                System.out.println("Invalid grade");
-            }
-        
+            System.out.println("Invalid grade");
+        }
+
         switch(cmbGrade1.getSelectedItem().toString()){
             case "A+":
-                x=x+Integer.parseInt(txtCom2.getText())*4.25;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*4.25;
+            break;
             case "A":
-                x=x+Integer.parseInt(txtCom2.getText())*4.00;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*4.00;
+            break;
             case "A-":
-                x=x+Integer.parseInt(txtCom2.getText())*3.75;
-                break;  
+            x=x+Integer.parseInt(txtCom2.getText())*3.75;
+            break;
             case "B+":
-                x=x+Integer.parseInt(txtCom2.getText())*3.25;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*3.25;
+            break;
             case "B":
-                x=x+Integer.parseInt(txtCom2.getText())*3.00;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*3.00;
+            break;
             case "B-":
-                x=x+Integer.parseInt(txtCom2.getText())*2.75;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*2.75;
+            break;
             case "C+":
-                x=x+Integer.parseInt(txtCom2.getText())*2.25;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*2.25;
+            break;
             case "C":
-                x=x+Integer.parseInt(txtCom2.getText())*2.00;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*2.00;
+            break;
             case "C-":
-                x=x+Integer.parseInt(txtCom2.getText())*1.75;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*1.75;
+            break;
             case "D+":
-                x=x+Integer.parseInt(txtCom2.getText())*1.25;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*1.25;
+            break;
             case "D":
-                x=x+Integer.parseInt(txtCom2.getText())*1.00;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*1.00;
+            break;
             case "D-":
-                x=x+Integer.parseInt(txtCom2.getText())*0.75;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*0.75;
+            break;
             case "E":
-                x=x+Integer.parseInt(txtCom2.getText())*0.00;
-                break;
+            x=x+Integer.parseInt(txtCom2.getText())*0.00;
+            break;
             default :
-                System.out.println("Invalid grade");
-            }
+            System.out.println("Invalid grade");
+        }
         switch(cmbGrade2.getSelectedItem().toString()){
             case "A+":
-                x=x+Integer.parseInt(txtSub1.getText())*4.25;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*4.25;
+            break;
             case "A":
-                x=x+Integer.parseInt(txtSub1.getText())*4.00;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*4.00;
+            break;
             case "A-":
-                x=x+Integer.parseInt(txtSub1.getText())*3.75;
-                break;  
+            x=x+Integer.parseInt(txtSub1.getText())*3.75;
+            break;
             case "B+":
-                x=x+Integer.parseInt(txtSub1.getText())*3.25;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*3.25;
+            break;
             case "B":
-                x=x+Integer.parseInt(txtSub1.getText())*3.00;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*3.00;
+            break;
             case "B-":
-                x=x+Integer.parseInt(txtSub1.getText())*2.75;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*2.75;
+            break;
             case "C+":
-                x=x+Integer.parseInt(txtSub1.getText())*2.25;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*2.25;
+            break;
             case "C":
-                x=x+Integer.parseInt(txtSub1.getText())*2.00;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*2.00;
+            break;
             case "C-":
-                x=x+Integer.parseInt(txtSub1.getText())*1.75;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*1.75;
+            break;
             case "D+":
-                x=x+Integer.parseInt(txtSub1.getText())*1.25;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*1.25;
+            break;
             case "D":
-                x=x+Integer.parseInt(txtSub1.getText())*1.00;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*1.00;
+            break;
             case "D-":
-                x=x+Integer.parseInt(txtSub1.getText())*0.75;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*0.75;
+            break;
             case "E":
-                x=x+Integer.parseInt(txtSub1.getText())*0.00;
-                break;
+            x=x+Integer.parseInt(txtSub1.getText())*0.00;
+            break;
             default :
-                System.out.println("Invalid grade");
-            }
-        
+            System.out.println("Invalid grade");
+        }
+
         switch(cmbGrade3.getSelectedItem().toString()){
             case "A+":
-                x=x+Integer.parseInt(txtSub2.getText())*4.25;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*4.25;
+            break;
             case "A":
-                x=x+Integer.parseInt(txtSub2.getText())*4.00;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*4.00;
+            break;
             case "A-":
-                x=x+Integer.parseInt(txtSub2.getText())*3.75;
-                break;  
+            x=x+Integer.parseInt(txtSub2.getText())*3.75;
+            break;
             case "B+":
-                x=x+Integer.parseInt(txtSub2.getText())*3.25;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*3.25;
+            break;
             case "B":
-                x=x+Integer.parseInt(txtSub2.getText())*3.00;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*3.00;
+            break;
             case "B-":
-                x=x+Integer.parseInt(txtSub2.getText())*2.75;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*2.75;
+            break;
             case "C+":
-                x=x+Integer.parseInt(txtSub2.getText())*2.25;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*2.25;
+            break;
             case "C":
-                x=x+Integer.parseInt(txtSub2.getText())*2.00;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*2.00;
+            break;
             case "C-":
-                x=x+Integer.parseInt(txtSub2.getText())*1.75;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*1.75;
+            break;
             case "D+":
-                x=x+Integer.parseInt(txtSub2.getText())*1.25;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*1.25;
+            break;
             case "D":
-                x=x+Integer.parseInt(txtSub2.getText())*1.00;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*1.00;
+            break;
             case "D-":
-                x=x+Integer.parseInt(txtSub2.getText())*0.75;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*0.75;
+            break;
             case "E":
-                x=x+Integer.parseInt(txtSub2.getText())*0.00;
-                break;
+            x=x+Integer.parseInt(txtSub2.getText())*0.00;
+            break;
             default :
-                System.out.println("Invalid grade");
-            }
-        
+            System.out.println("Invalid grade");
+        }
+
         switch(cmbGrade4.getSelectedItem().toString()){
             case "A+":
-                x=x+Integer.parseInt(txtSub3.getText())*4.25;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*4.25;
+            break;
             case "A":
-                x=x+Integer.parseInt(txtSub3.getText())*4.00;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*4.00;
+            break;
             case "A-":
-                x=x+Integer.parseInt(txtSub3.getText())*3.75;
-                break;  
+            x=x+Integer.parseInt(txtSub3.getText())*3.75;
+            break;
             case "B+":
-                x=x+Integer.parseInt(txtSub3.getText())*3.25;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*3.25;
+            break;
             case "B":
-                x=x+Integer.parseInt(txtSub3.getText())*3.00;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*3.00;
+            break;
             case "B-":
-                x=x+Integer.parseInt(txtSub3.getText())*2.75;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*2.75;
+            break;
             case "C+":
-                x=x+Integer.parseInt(txtSub3.getText())*2.25;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*2.25;
+            break;
             case "C":
-                x=x+Integer.parseInt(txtSub3.getText())*2.00;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*2.00;
+            break;
             case "C-":
-                x=x+Integer.parseInt(txtSub3.getText())*1.75;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*1.75;
+            break;
             case "D+":
-                x=x+Integer.parseInt(txtSub3.getText())*1.25;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*1.25;
+            break;
             case "D":
-                x=x+Integer.parseInt(txtSub3.getText())*1.00;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*1.00;
+            break;
             case "D-":
-                x=x+Integer.parseInt(txtSub3.getText())*0.75;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*0.75;
+            break;
             case "E":
-                x=x+Integer.parseInt(txtSub3.getText())*0.00;
-                break;
+            x=x+Integer.parseInt(txtSub3.getText())*0.00;
+            break;
             default :
-                System.out.println("Invalid grade");
-            }
+            System.out.println("Invalid grade");
+        }
         switch(cmbGrade5.getSelectedItem().toString()){
             case "A+":
-                x=x+Integer.parseInt(txtSub4.getText())*4.25;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*4.25;
+            break;
             case "A":
-                x=x+Integer.parseInt(txtSub4.getText())*4.00;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*4.00;
+            break;
             case "A-":
-                x=x+Integer.parseInt(txtSub4.getText())*3.75;
-                break;  
+            x=x+Integer.parseInt(txtSub4.getText())*3.75;
+            break;
             case "B+":
-                x=x+Integer.parseInt(txtSub4.getText())*3.25;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*3.25;
+            break;
             case "B":
-                x=x+Integer.parseInt(txtSub4.getText())*3.00;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*3.00;
+            break;
             case "B-":
-                x=x+Integer.parseInt(txtSub4.getText())*2.75;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*2.75;
+            break;
             case "C+":
-                x=x+Integer.parseInt(txtSub4.getText())*2.25;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*2.25;
+            break;
             case "C":
-                x=x+Integer.parseInt(txtSub4.getText())*2.00;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*2.00;
+            break;
             case "C-":
-                x=x+Integer.parseInt(txtSub4.getText())*1.75;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*1.75;
+            break;
             case "D+":
-                x=x+Integer.parseInt(txtSub4.getText())*1.25;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*1.25;
+            break;
             case "D":
-                x=x+Integer.parseInt(txtSub4.getText())*1.00;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*1.00;
+            break;
             case "D-":
-                x=x+Integer.parseInt(txtSub4.getText())*0.75;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*0.75;
+            break;
             case "E":
-                x=x+Integer.parseInt(txtSub4.getText())*0.00;
-                break;
+            x=x+Integer.parseInt(txtSub4.getText())*0.00;
+            break;
             default :
-                System.out.println("Invalid grade");
-            }
+            System.out.println("Invalid grade");
+        }
         int totalCredit = Integer.parseInt(txtSemCredit.getText())+Integer.parseInt(txtTotalCredit.getText());
         Double finalGPA = x/totalCredit;
-        
+
         Marks a = new Marks();
         a.setGpa(finalGPA);
         a.setCredit(totalCredit);
         a.setId(Integer.parseInt(txtId.getText()));
         a.setAcademicYear(cmbYear.getSelectedItem().toString());
         a.setSemester(cmbSemester.getSelectedItem().toString());
-        
+
         a.setSub1(cmbSub.getSelectedItem().toString());
         a.setGrade1(cmbGrade.getSelectedItem().toString());
         a.setSub2(cmbSub1.getSelectedItem().toString());
@@ -710,17 +706,16 @@ public class sobMarks extends javax.swing.JFrame {
         a.setGrade5(cmbGrade4.getSelectedItem().toString());
         a.setSub6(lbl4.getText());
         a.setGrade6(cmbGrade5.getSelectedItem().toString());
-        
-        boolean z = d.sobMarks(a);
-        boolean y = d.sobGpaUpdate(a);
-        
+
+        boolean z = d.soeMarks(a);
+        boolean y = d.soeGpaUpdate(a);
+
         if(z && y){
             JOptionPane.showMessageDialog(this, "Marks Entered Sucessfully");
         }else{
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
         }
-        
-        
+
     }//GEN-LAST:event_addMarksActionPerformed
 
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
@@ -733,7 +728,7 @@ public class sobMarks extends javax.swing.JFrame {
             try {
                 int id = Integer.parseInt(txtId.getText());
                 con = (Connection) DriverManager.getConnection(url, username, password);
-                String query = "SELECT * FROM sobSemOne WHERE StudentID = ?";
+                String query = "SELECT * FROM soeSemOne WHERE StudentID = ?";
                 pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
                 pst.setInt(1, id);
                 rs = pst.executeQuery();
@@ -746,7 +741,6 @@ public class sobMarks extends javax.swing.JFrame {
                     lbl2.setText(rs.getString("Sub2"));
                     lbl3.setText(rs.getString("Sub3"));
                     lbl4.setText(rs.getString("Sub4"));
-                   
 
                 }
             } catch (Exception e) {
@@ -756,7 +750,7 @@ public class sobMarks extends javax.swing.JFrame {
             try {
                 int id = Integer.parseInt(txtId.getText());
                 con = (Connection) DriverManager.getConnection(url, username, password);
-                String query = "SELECT * FROM sobSemTwo WHERE StudentID = ?";
+                String query = "SELECT * FROM soeSemTwo WHERE StudentID = ?";
                 pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
                 pst.setInt(1, id);
                 rs = pst.executeQuery();
@@ -783,7 +777,7 @@ public class sobMarks extends javax.swing.JFrame {
             String subtype = "Compulsory";
             String stdtype = "Undergraduate";
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobSubject WHERE Semester = ? AND AcadamicYear = ? AND SubjectType = ? AND Type = ?";
+            String query = "SELECT * FROM soeSubject WHERE Semester = ? AND AcadamicYear = ? AND SubjectType = ? AND Type = ?";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.setString(1, sem);
             pst.setString(2, ay);
@@ -799,14 +793,13 @@ public class sobMarks extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println(e);
         }
-        
+
         try {
             int id=Integer.parseInt(txtId.getText());
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobIntake WHERE StudentID = ? ";
+            String query = "SELECT * FROM soeIntake WHERE StudentID = ? ";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, id);
-           
 
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -823,10 +816,9 @@ public class sobMarks extends javax.swing.JFrame {
             String sub = lbl1.getText();
             String ay = cmbYear.getSelectedItem().toString();
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobSubject WHERE SubjectName = ?";
+            String query = "SELECT * FROM soeSubject WHERE SubjectName = ?";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.setString(1, sub);
-            
 
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -840,10 +832,9 @@ public class sobMarks extends javax.swing.JFrame {
             String sub = lbl2.getText();
             String ay = cmbYear.getSelectedItem().toString();
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobSubject WHERE SubjectName = ?";
+            String query = "SELECT * FROM soeSubject WHERE SubjectName = ?";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.setString(1, sub);
-            
 
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -857,10 +848,9 @@ public class sobMarks extends javax.swing.JFrame {
             String sub = lbl3.getText();
             String ay = cmbYear.getSelectedItem().toString();
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobSubject WHERE SubjectName = ?";
+            String query = "SELECT * FROM soeSubject WHERE SubjectName = ?";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.setString(1, sub);
-            
 
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -874,10 +864,9 @@ public class sobMarks extends javax.swing.JFrame {
             String sub = lbl4.getText();
             String ay = cmbYear.getSelectedItem().toString();
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobSubject WHERE SubjectName = ?";
+            String query = "SELECT * FROM soeSubject WHERE SubjectName = ?";
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.setString(1, sub);
-            
 
             rs = pst.executeQuery();
             while (rs.next()) {
@@ -887,10 +876,8 @@ public class sobMarks extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println(e);
         }
-        
+
         txtSemCredit.setText(Integer.toString(6+Integer.parseInt(txtSub1.getText())+Integer.parseInt(txtSub2.getText())+Integer.parseInt(txtSub3.getText())+Integer.parseInt(txtSub4.getText())));
-
-
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -915,20 +902,20 @@ public class sobMarks extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(sobMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SoeMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(sobMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SoeMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(sobMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SoeMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(sobMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SoeMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new sobMarks().setVisible(true);
+                new SoeMarks().setVisible(true);
             }
         });
     }

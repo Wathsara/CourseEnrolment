@@ -219,13 +219,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="btnNewStdBuisness" min="-2" pref="240" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnNewPostBuisness" min="-2" pref="240" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnNewRoomAllocation" min="-2" pref="254" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnMarks" min="-2" pref="254" max="-2" attributes="0"/>
-                          <EmptySpace pref="408" max="32767" attributes="0"/>
+                          <Component id="btnMarks" min="-2" pref="271" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnSobPostMarks" min="-2" pref="274" max="-2" attributes="0"/>
+                          <EmptySpace pref="135" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -238,6 +240,7 @@
                               <Component id="btnNewPostBuisness" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnNewRoomAllocation" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSobPostMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="665" max="32767" attributes="0"/>
                       </Group>
@@ -283,10 +286,21 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Enter Marks"/>
+                    <Property name="text" type="java.lang.String" value="Enter Undergraduate Marks"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMarksActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSobPostMarks">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter Postgraduate Marks"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobPostMarksActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -315,7 +329,11 @@
                           <Component id="btnNewPostComputing" min="-2" pref="240" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnNewRoomAllocationSoc" min="-2" pref="254" max="-2" attributes="0"/>
-                          <EmptySpace pref="691" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnSocMarks" min="-2" pref="270" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnSocPostMarks" min="-2" pref="270" max="-2" attributes="0"/>
+                          <EmptySpace pref="139" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -327,6 +345,8 @@
                               <Component id="btnNewStdComputing" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnNewPostComputing" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnNewRoomAllocationSoc" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSocMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSocPostMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="665" max="32767" attributes="0"/>
                       </Group>
@@ -367,6 +387,28 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewRoomAllocationSocActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="btnSocMarks">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter Undergraduate Marks"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSocMarksActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSocPostMarks">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter Postgraduate Marks"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSocPostMarksActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel6">
@@ -393,7 +435,11 @@
                           <Component id="btnNewPostEngineering" min="-2" pref="240" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnNewRoomAllocationSoe" min="-2" pref="254" max="-2" attributes="0"/>
-                          <EmptySpace pref="692" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnSoeMarks" min="-2" pref="273" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnSoePostMarks" min="-2" pref="272" max="-2" attributes="0"/>
+                          <EmptySpace pref="129" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -405,6 +451,8 @@
                               <Component id="btnNewStdEng" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnNewPostEngineering" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnNewRoomAllocationSoe" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSoeMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSoePostMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="665" max="32767" attributes="0"/>
                       </Group>
@@ -443,6 +491,28 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewRoomAllocationSoeActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSoeMarks">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter Undergraduate Marks"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSoeMarksActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSoePostMarks">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Enter Postgraduate Marks"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSoePostMarksActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

@@ -67,14 +67,19 @@ public class Home extends javax.swing.JFrame {
         btnNewPostBuisness = new javax.swing.JButton();
         btnNewRoomAllocation = new javax.swing.JButton();
         btnMarks = new javax.swing.JButton();
+        btnSobPostMarks = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnNewStdComputing = new javax.swing.JButton();
         btnNewPostComputing = new javax.swing.JButton();
         btnNewRoomAllocationSoc = new javax.swing.JButton();
+        btnSocMarks = new javax.swing.JButton();
+        btnSocPostMarks = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         btnNewStdEng = new javax.swing.JButton();
         btnNewPostEngineering = new javax.swing.JButton();
         btnNewRoomAllocationSoe = new javax.swing.JButton();
+        btnSoeMarks = new javax.swing.JButton();
+        btnSoePostMarks = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         btnNewLec = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
@@ -186,10 +191,18 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnMarks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
-        btnMarks.setText("Enter Marks");
+        btnMarks.setText("Enter Undergraduate Marks");
         btnMarks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMarksActionPerformed(evt);
+            }
+        });
+
+        btnSobPostMarks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnSobPostMarks.setText("Enter Postgraduate Marks");
+        btnSobPostMarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSobPostMarksActionPerformed(evt);
             }
         });
 
@@ -200,13 +213,15 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSobPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,7 +231,8 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSobPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(665, Short.MAX_VALUE))
         );
 
@@ -248,6 +264,22 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnSocMarks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnSocMarks.setText("Enter Undergraduate Marks");
+        btnSocMarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSocMarksActionPerformed(evt);
+            }
+        });
+
+        btnSocPostMarks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnSocPostMarks.setText("Enter Postgraduate Marks");
+        btnSocPostMarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSocPostMarksActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -259,7 +291,11 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(691, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSocMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSocPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(139, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,7 +304,9 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSocMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSocPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(665, Short.MAX_VALUE))
         );
 
@@ -300,6 +338,22 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnSoeMarks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnSoeMarks.setText("Enter Undergraduate Marks");
+        btnSoeMarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSoeMarksActionPerformed(evt);
+            }
+        });
+
+        btnSoePostMarks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnSoePostMarks.setText("Enter Postgraduate Marks");
+        btnSoePostMarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSoePostMarksActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -311,7 +365,11 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(692, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSoeMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSoePostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +378,9 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSoeMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSoePostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(665, Short.MAX_VALUE))
         );
 
@@ -705,6 +765,36 @@ public class Home extends javax.swing.JFrame {
         sm.setVisible(true);
     }//GEN-LAST:event_btnMarksActionPerformed
 
+    private void btnSocMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSocMarksActionPerformed
+        // TODO add your handling code here:
+        SocMarks socm = new SocMarks();
+        socm.setVisible(true);
+    }//GEN-LAST:event_btnSocMarksActionPerformed
+
+    private void btnSoeMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSoeMarksActionPerformed
+        // TODO add your handling code here:
+        SoeMarks soem = new SoeMarks();
+        soem.setVisible(true);
+    }//GEN-LAST:event_btnSoeMarksActionPerformed
+
+    private void btnSobPostMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobPostMarksActionPerformed
+        // TODO add your handling code here:
+        SobPostMarks sobpm = new SobPostMarks();
+        sobpm.setVisible(true);
+    }//GEN-LAST:event_btnSobPostMarksActionPerformed
+
+    private void btnSocPostMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSocPostMarksActionPerformed
+        // TODO add your handling code here:
+        SocPostMarks socpm = new SocPostMarks();
+        socpm.setVisible(true);
+    }//GEN-LAST:event_btnSocPostMarksActionPerformed
+
+    private void btnSoePostMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSoePostMarksActionPerformed
+        // TODO add your handling code here:setVisible(rootPaneCheckingEnabled);
+        SoePostMarks soepm = new SoePostMarks();
+        soepm.setVisible(true);
+    }//GEN-LAST:event_btnSoePostMarksActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -755,6 +845,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnNewStdComputing;
     private javax.swing.JButton btnNewStdEng;
     private javax.swing.JButton btnNewSub;
+    private javax.swing.JButton btnSobPostMarks;
+    private javax.swing.JButton btnSocMarks;
+    private javax.swing.JButton btnSocPostMarks;
+    private javax.swing.JButton btnSoeMarks;
+    private javax.swing.JButton btnSoePostMarks;
     private javax.swing.JLabel cnolbl;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private javax.swing.JLabel emaillbl;
