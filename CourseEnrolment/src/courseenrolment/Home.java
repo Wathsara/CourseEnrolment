@@ -68,6 +68,7 @@ public class Home extends javax.swing.JFrame {
         btnNewRoomAllocation = new javax.swing.JButton();
         btnMarks = new javax.swing.JButton();
         btnSobPostMarks = new javax.swing.JButton();
+        btnViewUnder = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnNewStdComputing = new javax.swing.JButton();
         btnNewPostComputing = new javax.swing.JButton();
@@ -206,6 +207,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnViewUnder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnViewUnder.setText("Mange Undergraduates");
+        btnViewUnder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewUnderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -218,9 +227,12 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSobPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnViewUnder, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSobPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(135, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -233,7 +245,9 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSobPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(665, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(btnViewUnder, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(542, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Buisness", jPanel4);
@@ -539,6 +553,9 @@ public class Home extends javax.swing.JFrame {
         tblAdmin.setRowHeight(35);
         tblAdmin.setRowMargin(3);
         jScrollPane1.setViewportView(tblAdmin);
+        if (tblAdmin.getColumnModel().getColumnCount() > 0) {
+            tblAdmin.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         imagelabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/default.jpeg"))); // NOI18N
         imagelabel.setText("jLabel4");
@@ -795,6 +812,12 @@ public class Home extends javax.swing.JFrame {
         soepm.setVisible(true);
     }//GEN-LAST:event_btnSoePostMarksActionPerformed
 
+    private void btnViewUnderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewUnderActionPerformed
+        // TODO add your handling code here:
+        ManageSobUndergraduates msobu = new ManageSobUndergraduates();
+        msobu.setVisible(true);
+    }//GEN-LAST:event_btnViewUnderActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -850,6 +873,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnSocPostMarks;
     private javax.swing.JButton btnSoeMarks;
     private javax.swing.JButton btnSoePostMarks;
+    private javax.swing.JButton btnViewUnder;
     private javax.swing.JLabel cnolbl;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private javax.swing.JLabel emaillbl;

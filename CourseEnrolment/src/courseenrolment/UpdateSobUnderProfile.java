@@ -10,21 +10,24 @@ package courseenrolment;
  * @author wathsara
  */
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-
-public class NewBuisnessStd extends javax.swing.JFrame {
+public class UpdateSobUnderProfile extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewBuisnessStd
+     * Creates new form UpdateSobUnderProfile
      */
     String url = "jdbc:mysql://localhost:3360/course?useSSL=false";
     String username = "root";
@@ -36,14 +39,39 @@ public class NewBuisnessStd extends javax.swing.JFrame {
     String filename = null;
     byte[] pic = null;
     Student a = new Student();
-
-    public NewBuisnessStd() {
+    public UpdateSobUnderProfile() {
         initComponents();
-        setResizable(false);
-        subupdate();
-        subupdatesemtwo();
     }
-    
+    void setfields(Student ai) {
+        txtID.setText(Integer.toString(ai.getId()));
+        txtFullname.setText(ai.getName());
+        txtEmail.setText(ai.getEmail());
+        addressTxt.setText(ai.getAddress());
+        txtCno.setText(ai.getCno());
+        txtDob.setText(ai.getDob());
+        txtRank.setText(ai.getRank());
+        txtZscore.setText(ai.getzScore());
+        cmbGender.addItem(ai.getGender());
+        cmbGender.addItem("Female");
+        cmbGender.addItem("Male");
+        txtIntake.setText(ai.getIntake());
+        txtYear.setText(Integer.toString(ai.getYear()));
+        alStreame.addItem(ai.getStream());
+        alStreame.addItem("Bio Stream");
+        alStreame.addItem("Art Stream");
+        alStreame.addItem("Maths Stream");
+        alStreame.addItem("Commerce Stream");
+        try {
+            InputStream in = new ByteArrayInputStream(ai.getPic());
+            BufferedImage r = ImageIO.read(in);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(r).getImage().getScaledInstance(photoLabel.getWidth(), photoLabel.getHeight(), Image.SCALE_DEFAULT));
+            photoLabel.setIcon(imageIcon);
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,8 +81,6 @@ public class NewBuisnessStd extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        dateChooserDialog1 = new datechooser.beans.DateChooserDialog();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -68,20 +94,8 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         txtFullname = new javax.swing.JTextField();
         photoLabel = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        firstsemfirst = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        firstsemSecond = new javax.swing.JComboBox<>();
-        firstsemThird = new javax.swing.JComboBox<>();
-        secondsemThird = new javax.swing.JComboBox<>();
-        secondsemFourth = new javax.swing.JComboBox<>();
-        firstsemFourth = new javax.swing.JComboBox<>();
-        secondsemFirst = new javax.swing.JComboBox<>();
-        secondsemSecond = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        intakeMonth = new javax.swing.JComboBox<>();
-        intakeYear = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         alStreame = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
@@ -91,12 +105,12 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         txtDob = new javax.swing.JTextField();
         cmbGender = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
-
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+        txtIntake = new javax.swing.JTextField();
+        txtYear = new javax.swing.JTextField();
+        txtID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("School of Buisness");
+        setTitle("Update Undergraduate Profile");
 
         jPanel2.setBackground(new java.awt.Color(211, 84, 0));
 
@@ -111,7 +125,7 @@ public class NewBuisnessStd extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 913, Short.MAX_VALUE)
                 .addGap(61, 61, 61))
         );
         jPanel2Layout.setVerticalGroup(
@@ -142,7 +156,7 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         inserbtn.setBackground(new java.awt.Color(107, 185, 240));
         inserbtn.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         inserbtn.setForeground(new java.awt.Color(255, 255, 255));
-        inserbtn.setText("Insert");
+        inserbtn.setText("Update");
         inserbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inserbtnActionPerformed(evt);
@@ -187,32 +201,6 @@ public class NewBuisnessStd extends javax.swing.JFrame {
             }
         });
 
-        firstsemfirst.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
-        firstsemfirst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstsemfirstActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("1st Semester");
-
-        firstsemSecond.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
-
-        firstsemThird.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
-
-        firstsemFourth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None" }));
-        firstsemFourth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstsemFourthActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("2nd Semester");
-
         jLabel8.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Full Name");
@@ -221,15 +209,9 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(245, 251, 253));
         jLabel2.setText("Intake");
 
-        intakeMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "February", "July" }));
-
-        intakeYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031" }));
-
         jLabel9.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(237, 243, 245));
         jLabel9.setText("A/l Stream");
-
-        alStreame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maths Stream", "Bio Stream", "Art Stream", "Commerce Streme", "Common Stream" }));
 
         jLabel10.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(237, 243, 245));
@@ -246,11 +228,16 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         });
 
         cmbGender.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
-        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
         jLabel15.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(246, 250, 252));
         jLabel15.setText("Gender");
+
+        txtIntake.setEditable(false);
+
+        txtYear.setEditable(false);
+
+        txtID.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -259,28 +246,17 @@ public class NewBuisnessStd extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(341, 341, 341)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(firstsemfirst, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(firstsemSecond, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(firstsemThird, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(firstsemFourth, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(297, 297, 297)
-                                        .addComponent(txtZscore, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtRank, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtZscore, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtRank, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -311,46 +287,33 @@ public class NewBuisnessStd extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(217, 217, 217)
+                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(98, 98, 98)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(intakeMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(intakeYear, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(secondsemFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(secondsemSecond, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(secondsemThird, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(secondsemFourth, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(72, 72, 72)
-                                        .addComponent(inserbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtIntake, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(56, 56, 56)
-                                .addComponent(alStreame, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(alStreame, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(363, 363, 363)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(701, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(359, 359, 359)
+                .addComponent(inserbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(intakeMonth)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(intakeYear))
+                    .addComponent(txtIntake, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -384,39 +347,19 @@ public class NewBuisnessStd extends javax.swing.JFrame {
                     .addComponent(alStreame, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtZscore, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRank, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstsemSecond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(firstsemThird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(firstsemFourth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(firstsemfirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(secondsemFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(secondsemSecond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(secondsemThird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(secondsemFourth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtRank, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addComponent(inserbtn)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(291, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(189, 189, 189)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1004, Short.MAX_VALUE)
-                .addGap(2, 2, 2))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1028, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,104 +373,27 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    void subupdate() {
-//        int i = cmbSub.getSelectedIndex();
-
-        try {
-            String sem="1st Semester";
-            con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobSubject WHERE Semester = ? AND AcadamicYear = ? AND SubjectType = ? AND Type = ?";
-            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-            pst.setString(1, sem);
-            pst.setString(2, "1st Year");
-            pst.setString(3, "Optional");
-            pst.setString(4, "Undergraduate");
-            rs = pst.executeQuery();
-           
-            
-            
-            while (rs.next()) {
-                firstsemfirst.addItem(rs.getString("SubjectName"));
-                firstsemSecond.addItem(rs.getString("SubjectName"));
-                firstsemThird.addItem(rs.getString("SubjectName"));
-                firstsemFourth.addItem(rs.getString("SubjectName"));
-                secondsemFirst.addItem(rs.getString("SubjectName"));
-                secondsemSecond.addItem(rs.getString("SubjectName"));
-                secondsemThird.addItem(rs.getString("SubjectName"));
-                secondsemFourth.addItem(rs.getString("SubjectName"));
-            }
-        } catch (Exception e) {
-            System.err.println(e);
-        }
-
-    }
-    
-     void subupdatesemtwo() {
-//        int i = cmbSub.getSelectedIndex();
-
-        try {
-            String sem="2nd Semester";
-            con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "SELECT * FROM sobSubject WHERE Semester = ? AND AcadamicYear = ? AND SubjectType = ? AND Type = ?";
-            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
-            pst.setString(1, sem);
-            pst.setString(2, "1st Year");
-            pst.setString(3, "Optional");
-            pst.setString(4, "Undergraduate");
-            rs = pst.executeQuery();
-           
-            
-            
-            while (rs.next()) {
-                secondsemFirst.addItem(rs.getString("SubjectName"));
-                secondsemSecond.addItem(rs.getString("SubjectName"));
-                secondsemThird.addItem(rs.getString("SubjectName"));
-                secondsemFourth.addItem(rs.getString("SubjectName"));
-            }
-        } catch (Exception e) {
-            System.err.println(e);
-        }
-
-    }
     private void addressTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTxtActionPerformed
 
     }//GEN-LAST:event_addressTxtActionPerformed
 
     private void inserbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserbtnActionPerformed
-
+        a.setId(Integer.parseInt(txtID.getText()));
         a.setName(txtFullname.getText());
         a.setEmail(txtEmail.getText());
         a.setAddress(addressTxt.getText());
         a.setCno(txtCno.getText());
         a.setDob(txtDob.getText());
-        a.setFirstSemFirst(firstsemfirst.getSelectedItem().toString());
-        a.setFirstSemSecond(firstsemSecond.getSelectedItem().toString());
-        a.setFirstSemThird(firstsemThird.getSelectedItem().toString());
-        a.setFirstSemFourth(firstsemFourth.getSelectedItem().toString());
-        a.setSecondSemFirst(secondsemFirst.getSelectedItem().toString());
-        a.setSecondSemSecond(secondsemSecond.getSelectedItem().toString());
-        a.setSecondSemThird(secondsemThird.getSelectedItem().toString());
-        a.setSecondSemFourth(secondsemFourth.getSelectedItem().toString());
-        a.setYear(Integer.parseInt(intakeYear.getSelectedItem().toString()));
-        a.setIntake(intakeMonth.getSelectedItem().toString());
         a.setAcademicYear(1);
         a.setStream(alStreame.getSelectedItem().toString());
         a.setzScore(txtZscore.getText());
         a.setRank(txtRank.getText());
         a.setGender(cmbGender.getSelectedItem().toString());
-        a.setGp(0);
-        a.setCredits(0);
         
+        boolean x = d.updateSobUnderProfile(a);
 
-        boolean x = d.sobStudent(a);
-        boolean y = d.sobSemOne(a);
-        boolean z = d.sobSemtwo(a);
-        
-       
-        
-
-        if (x && y && z) {
-            JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
+        if (x) {
+            JOptionPane.showMessageDialog(this, "Successfully Updated!!");
             txtFullname.setText("");
             txtEmail.setText("");
             addressTxt.setText("");
@@ -541,13 +407,12 @@ public class NewBuisnessStd extends javax.swing.JFrame {
             photoLabel.setText("Photo");
             photoLabel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(251, 246, 246)));
             photoLabel.setDisplayedMnemonicIndex(0);
-//            home.loadAdmin();
+            //            home.loadAdmin();
 
         } else {
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
 
         }
-
     }//GEN-LAST:event_inserbtnActionPerformed
 
     private void txtCnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCnoActionPerformed
@@ -582,20 +447,11 @@ public class NewBuisnessStd extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println(e);
         }
-
     }//GEN-LAST:event_photoLabelMouseClicked
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
-
-    private void firstsemfirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstsemfirstActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstsemfirstActionPerformed
-
-    private void firstsemFourthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstsemFourthActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstsemFourthActionPerformed
 
     private void txtDobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDobActionPerformed
         // TODO add your handling code here:
@@ -618,20 +474,20 @@ public class NewBuisnessStd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewBuisnessStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewBuisnessStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewBuisnessStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewBuisnessStd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewBuisnessStd().setVisible(true);
+                new UpdateSobUnderProfile().setVisible(true);
             }
         });
     }
@@ -640,15 +496,7 @@ public class NewBuisnessStd extends javax.swing.JFrame {
     private javax.swing.JTextField addressTxt;
     private javax.swing.JComboBox<String> alStreame;
     private javax.swing.JComboBox<String> cmbGender;
-    private datechooser.beans.DateChooserDialog dateChooserDialog1;
-    private javax.swing.JComboBox<String> firstsemFourth;
-    private javax.swing.JComboBox<String> firstsemSecond;
-    private javax.swing.JComboBox<String> firstsemThird;
-    private javax.swing.JComboBox<String> firstsemfirst;
     private javax.swing.JButton inserbtn;
-    private javax.swing.JComboBox<String> intakeMonth;
-    private javax.swing.JComboBox<String> intakeYear;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -657,23 +505,20 @@ public class NewBuisnessStd extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel photoLabel;
-    private javax.swing.JComboBox<String> secondsemFirst;
-    private javax.swing.JComboBox<String> secondsemFourth;
-    private javax.swing.JComboBox<String> secondsemSecond;
-    private javax.swing.JComboBox<String> secondsemThird;
     private javax.swing.JLabel txtAddress;
     private javax.swing.JTextField txtCno;
     private javax.swing.JTextField txtDob;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFullname;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtIntake;
     private javax.swing.JTextField txtRank;
+    private javax.swing.JTextField txtYear;
     private javax.swing.JTextField txtZscore;
     // End of variables declaration//GEN-END:variables
 }
