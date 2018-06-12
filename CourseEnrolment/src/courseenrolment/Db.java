@@ -29,7 +29,7 @@ public class Db {
     Users u = new Users();
 
     int total = 0;
-    double gp=0.0000;
+    double gp = 0.0000;
     int insertadmin = 0;
     byte[] im = null;
     String logname;
@@ -157,7 +157,7 @@ public class Db {
     public boolean updateAdmin(AdminInsert ai) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "UPDATE users SET FirstName='" + ai.getFullName() + "',Email='" + ai.getEmail() + "',Address='" + ai.getAddress() + "',ContactNo='" + ai.getContact() + "' WHERE PersonID=" + ai.getId();
+            String query = "UPDATE users SET FullName='" + ai.getFullName() + "',Email='" + ai.getEmail() + "',Address='" + ai.getAddress() + "',ContactNo='" + ai.getContact() + "' WHERE PersonID=" + ai.getId();
             pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
             pst.executeUpdate();
             return true;
@@ -425,7 +425,6 @@ public class Db {
             pst.setString(17, a.getGender());
             pst.setDouble(18, a.getGp());
             pst.setInt(19, a.getCredits());
-            
 
             pst.executeUpdate();
 
@@ -734,7 +733,7 @@ public class Db {
 
         }
     }
-    
+
     boolean newInstructor(Lecturer a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -764,6 +763,7 @@ public class Db {
         }
 
     }
+
     boolean sobHall(RoomAllocation a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -789,7 +789,7 @@ public class Db {
 
         }
     }
-    
+
     boolean socHall(RoomAllocation a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -815,7 +815,7 @@ public class Db {
 
         }
     }
-    
+
     boolean soeHall(RoomAllocation a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -841,7 +841,7 @@ public class Db {
 
         }
     }
-    
+
     boolean sobMarks(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -870,8 +870,7 @@ public class Db {
             return false;
 
         }
-        
-    
+
     }
 
     boolean sobGpaUpdate(Marks a) {
@@ -879,8 +878,8 @@ public class Db {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "UPDATE sobIntake SET gpa = ? , Credits= ? where StudentID = ?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setDouble(1,a.getGpa());
-            pst.setInt(2,a.getCredit());
+            pst.setDouble(1, a.getGpa());
+            pst.setInt(2, a.getCredit());
             pst.setInt(3, a.getId());
             pst.executeUpdate();
             return true;
@@ -888,9 +887,9 @@ public class Db {
             System.err.println(e);
             return false;
         }
-        
+
     }
-    
+
     boolean socMarks(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -920,14 +919,14 @@ public class Db {
 
         }
     }
-        
-        boolean socGpaUpdate(Marks a) {
+
+    boolean socGpaUpdate(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "UPDATE socIntake SET gpa = ? , Credits= ? where StudentID = ?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setDouble(1,a.getGpa());
-            pst.setInt(2,a.getCredit());
+            pst.setDouble(1, a.getGpa());
+            pst.setInt(2, a.getCredit());
             pst.setInt(3, a.getId());
             pst.executeUpdate();
             return true;
@@ -935,9 +934,9 @@ public class Db {
             System.err.println(e);
             return false;
         }
-        
+
     }
-        
+
     boolean soeMarks(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -967,14 +966,14 @@ public class Db {
 
         }
     }
-    
-     boolean soeGpaUpdate(Marks a) {
+
+    boolean soeGpaUpdate(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "UPDATE soeIntake SET gpa = ? , Credits= ? where StudentID = ?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setDouble(1,a.getGpa());
-            pst.setInt(2,a.getCredit());
+            pst.setDouble(1, a.getGpa());
+            pst.setInt(2, a.getCredit());
             pst.setInt(3, a.getId());
             pst.executeUpdate();
             return true;
@@ -982,9 +981,9 @@ public class Db {
             System.err.println(e);
             return false;
         }
-        
+
     }
-     
+
     boolean sobPostMarks(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -1013,8 +1012,7 @@ public class Db {
             return false;
 
         }
-        
-    
+
     }
 
     boolean sobPostGpaUpdate(Marks a) {
@@ -1022,8 +1020,8 @@ public class Db {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "UPDATE sobPostIntake SET gpa = ? , Credits= ? where StudentID = ?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setDouble(1,a.getGpa());
-            pst.setInt(2,a.getCredit());
+            pst.setDouble(1, a.getGpa());
+            pst.setInt(2, a.getCredit());
             pst.setInt(3, a.getId());
             pst.executeUpdate();
             return true;
@@ -1031,9 +1029,9 @@ public class Db {
             System.err.println(e);
             return false;
         }
-        
+
     }
-    
+
     boolean socPostMarks(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -1063,14 +1061,14 @@ public class Db {
 
         }
     }
-        
-        boolean socPostGpaUpdate(Marks a) {
+
+    boolean socPostGpaUpdate(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "UPDATE socPostIntake SET gpa = ? , Credits= ? where StudentID = ?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setDouble(1,a.getGpa());
-            pst.setInt(2,a.getCredit());
+            pst.setDouble(1, a.getGpa());
+            pst.setInt(2, a.getCredit());
             pst.setInt(3, a.getId());
             pst.executeUpdate();
             return true;
@@ -1078,9 +1076,9 @@ public class Db {
             System.err.println(e);
             return false;
         }
-        
+
     }
-    
+
     boolean soePostMarks(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -1110,14 +1108,14 @@ public class Db {
 
         }
     }
-    
-     boolean soePostGpaUpdate(Marks a) {
+
+    boolean soePostGpaUpdate(Marks a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
             String query = "UPDATE soePostIntake SET gpa = ? , Credits= ? where StudentID = ?";
             pst = (PreparedStatement) con.prepareStatement(query);
-            pst.setDouble(1,a.getGpa());
-            pst.setInt(2,a.getCredit());
+            pst.setDouble(1, a.getGpa());
+            pst.setInt(2, a.getCredit());
             pst.setInt(3, a.getId());
             pst.executeUpdate();
             return true;
@@ -1125,9 +1123,9 @@ public class Db {
             System.err.println(e);
             return false;
         }
-        
+
     }
-     
+
     ArrayList<Student> viewSobUnder() {
         try {
             ArrayList<Student> list = new ArrayList<Student>();
@@ -1166,6 +1164,7 @@ public class Db {
         }
 
     }
+
     public boolean updateSobUnderProfile(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
@@ -1180,8 +1179,8 @@ public class Db {
             pst.setString(7, a.getzScore());
             pst.setString(8, a.getRank());
             pst.setString(9, a.getGender());
-            pst.setInt(10,a.getId());
-                    
+            pst.setInt(10, a.getId());
+
             pst.executeUpdate();
             return true;
 
@@ -1191,7 +1190,43 @@ public class Db {
 
         }
     }
-    
+
+    public boolean updateSobUnderSemOneName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE sobSemOne SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSobUnderSemTwoName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE sobSemTwo SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
     ArrayList<Student> viewSobUnderAsc(int a) {
         try {
             ArrayList<Student> list = new ArrayList<Student>();
@@ -1231,7 +1266,7 @@ public class Db {
         }
 
     }
-    
+
     ArrayList<Student> viewSobUnderDsc(int a) {
         try {
             ArrayList<Student> list = new ArrayList<Student>();
@@ -1271,4 +1306,951 @@ public class Db {
         }
 
     }
+
+    ArrayList<Student> viewSocUnder() {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socIntake";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setPic(rs.getBytes(13));
+                ad.setGender(rs.getString(14));
+                ad.setGp(rs.getDouble(15));
+                ad.setCredits(rs.getInt(16));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSocUnderAsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socIntake WHERE AcademicYear = ? ORDER BY gpa ASC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setPic(rs.getBytes(13));
+                ad.setGender(rs.getString(14));
+                ad.setGp(rs.getDouble(15));
+                ad.setCredits(rs.getInt(16));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSocUnderDsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socIntake WHERE AcademicYear = ? ORDER BY gpa DESC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setPic(rs.getBytes(13));
+                ad.setGender(rs.getString(14));
+                ad.setGp(rs.getDouble(15));
+                ad.setCredits(rs.getInt(16));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    public boolean updateSocUnderProfile(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socIntake SET FullName = ?, Email = ?, Dob = ?, Address = ? , ContactNo = ?, Stream = ? , Zscore= ? , Rank= ?, Gender = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setString(2, a.getEmail());
+            pst.setString(3, a.getDob());
+            pst.setString(4, a.getAddress());
+            pst.setString(5, a.getCno());
+            pst.setString(6, a.getStream());
+            pst.setString(7, a.getzScore());
+            pst.setString(8, a.getRank());
+            pst.setString(9, a.getGender());
+            pst.setInt(10, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSocUnderSemOneName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socSemOne SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSocUnderSemTwoName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socSemTwo SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    ArrayList<Student> viewSoeUnder() {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soeIntake";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setPic(rs.getBytes(13));
+                ad.setGender(rs.getString(14));
+                ad.setGp(rs.getDouble(15));
+                ad.setCredits(rs.getInt(16));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSoeUnderAsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soeIntake WHERE AcademicYear = ? ORDER BY gpa ASC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setPic(rs.getBytes(13));
+                ad.setGender(rs.getString(14));
+                ad.setGp(rs.getDouble(15));
+                ad.setCredits(rs.getInt(16));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSoeUnderDsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM so3Intake WHERE AcademicYear = ? ORDER BY gpa DESC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setPic(rs.getBytes(13));
+                ad.setGender(rs.getString(14));
+                ad.setGp(rs.getDouble(15));
+                ad.setCredits(rs.getInt(16));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    public boolean updateSoeUnderProfile(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soeIntake SET FullName = ?, Email = ?, Dob = ?, Address = ? , ContactNo = ?, Stream = ? , Zscore= ? , Rank= ?, Gender = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setString(2, a.getEmail());
+            pst.setString(3, a.getDob());
+            pst.setString(4, a.getAddress());
+            pst.setString(5, a.getCno());
+            pst.setString(6, a.getStream());
+            pst.setString(7, a.getzScore());
+            pst.setString(8, a.getRank());
+            pst.setString(9, a.getGender());
+            pst.setInt(10, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSoeUnderSemOneName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soeSemOne SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSoeUnderSemTwoName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soeSemTwo SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    ArrayList<Student> viewSobPost() {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobPostIntake";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSobPostAsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobPostIntake WHERE AcademicYear = ? ORDER BY gpa ASC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSobPostDsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobPostIntake WHERE AcademicYear = ? ORDER BY gpa DESC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    
+    public boolean updateSobPostProfile(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE sobPostIntake SET FullName = ?, Email = ?, Dob = ?, Address = ? , ContactNo = ?, Stream = ? , Zscore= ? , Rank= ?, Gender = ?, Qualification=? , Institution=? , GraYear=? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setString(2, a.getEmail());
+            pst.setString(3, a.getDob());
+            pst.setString(4, a.getAddress());
+            pst.setString(5, a.getCno());
+            pst.setString(6, a.getStream());
+            pst.setString(7, a.getzScore());
+            pst.setString(8, a.getRank());
+            pst.setString(9, a.getGender());
+            pst.setString(10, a.getQualification());
+            pst.setString(11, a.getInstitution());
+            pst.setString(12, a.getGraYear());
+            pst.setInt(13, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSobPostSemOneName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE sobPostSemOne SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSobPostSemTwoName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE sobPostSemTwo SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    ArrayList<Student> viewSocPost() {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socPostIntake";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSocPostAsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socPostIntake WHERE AcademicYear = ? ORDER BY gpa ASC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSocPostDsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socPostIntake WHERE AcademicYear = ? ORDER BY gpa DESC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    
+    public boolean updateSocPostProfile(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socPostIntake SET FullName = ?, Email = ?, Dob = ?, Address = ? , ContactNo = ?, Stream = ? , Zscore= ? , Rank= ?, Gender = ?, Qualification=? , Institution=? , GraYear=? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setString(2, a.getEmail());
+            pst.setString(3, a.getDob());
+            pst.setString(4, a.getAddress());
+            pst.setString(5, a.getCno());
+            pst.setString(6, a.getStream());
+            pst.setString(7, a.getzScore());
+            pst.setString(8, a.getRank());
+            pst.setString(9, a.getGender());
+            pst.setString(10, a.getQualification());
+            pst.setString(11, a.getInstitution());
+            pst.setString(12, a.getGraYear());
+            pst.setInt(13, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSocPostSemOneName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socPostSemOne SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSocPostSemTwoName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socPostSemTwo SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+    
+    ArrayList<Student> viewSoePost() {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soePostIntake";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSoePostAsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soePostIntake WHERE AcademicYear = ? ORDER BY gpa ASC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    ArrayList<Student> viewSoePostDsc(int a) {
+        try {
+            ArrayList<Student> list = new ArrayList<Student>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soePostIntake WHERE AcademicYear = ? ORDER BY gpa DESC";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1, a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Student ad = new Student();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setDob(rs.getString(4));
+                ad.setAddress(rs.getString(5));
+                ad.setCno(rs.getString(6));
+                ad.setIntake(rs.getString(7));
+                ad.setYear(rs.getInt(8));
+                ad.setAcademicYear(rs.getInt(9));
+                ad.setStream(rs.getString(10));
+                ad.setzScore(rs.getString(11));
+                ad.setRank(rs.getString(12));
+                ad.setQualification(rs.getString(13));
+                ad.setInstitution(rs.getString(14));
+                ad.setGraYear(rs.getString(15));
+                ad.setPic(rs.getBytes(16));
+                ad.setGender(rs.getString(17));
+                ad.setGp(rs.getDouble(18));
+                ad.setCredits(rs.getInt(19));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    
+    public boolean updateSoePostProfile(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soePostIntake SET FullName = ?, Email = ?, Dob = ?, Address = ? , ContactNo = ?, Stream = ? , Zscore= ? , Rank= ?, Gender = ?, Qualification=? , Institution=? , GraYear=? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setString(2, a.getEmail());
+            pst.setString(3, a.getDob());
+            pst.setString(4, a.getAddress());
+            pst.setString(5, a.getCno());
+            pst.setString(6, a.getStream());
+            pst.setString(7, a.getzScore());
+            pst.setString(8, a.getRank());
+            pst.setString(9, a.getGender());
+            pst.setString(10, a.getQualification());
+            pst.setString(11, a.getInstitution());
+            pst.setString(12, a.getGraYear());
+            pst.setInt(13, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSoePostSemOneName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soePostSemOne SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    public boolean updateSoePostSemTwoName(Student a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soePostSemTwo SET FullName = ? WHERE StudentID= ?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, a.getName());
+            pst.setInt(2, a.getId());
+
+            pst.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+
+
 }

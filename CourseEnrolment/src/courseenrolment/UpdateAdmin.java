@@ -236,13 +236,10 @@ public class UpdateAdmin extends javax.swing.JFrame {
         boolean x=d.updateAdmin(a);
 
         if(x){
-            JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
-            fullNameTxt2.setText("");
-            emailTxt.setText("");
-            addressTxt.setText("");
-            contactTxt.setText("");
+            JOptionPane.showMessageDialog(this, "Successfully Updated!!");
        
             h.loadAdmin();
+            this.dispose();
 
         }else{
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");

@@ -86,6 +86,8 @@ public class sobMarks extends javax.swing.JFrame {
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         txtSemCredit = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("School of Buisness Marks");
@@ -244,6 +246,12 @@ public class sobMarks extends javax.swing.JFrame {
 
         txtSemCredit.setEditable(false);
 
+        jLabel56.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel56.setText("Student Email");
+
+        txtEmail.setEditable(false);
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -263,10 +271,16 @@ public class sobMarks extends javax.swing.JFrame {
                                 .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(txtName)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(txtEmail))
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(txtName)))
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -331,6 +345,7 @@ public class sobMarks extends javax.swing.JFrame {
                                 .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(96, 96, 96))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(addMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(87, 87, 87))))
         );
@@ -353,7 +368,11 @@ public class sobMarks extends javax.swing.JFrame {
                             .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTotalCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -720,6 +739,11 @@ public class sobMarks extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
         }
         
+        SendEmail se = new SendEmail();
+        se.send(txtEmail.getText(), cmbSub.getSelectedItem().toString(), cmbSub1.getSelectedItem().toString(), lbl1.getText(), lbl2.getText(), lbl3.getText(), lbl4.getText(), cmbGrade.getSelectedItem().toString(), cmbGrade1.getSelectedItem().toString(), cmbGrade2.getSelectedItem().toString(), cmbGrade3.getSelectedItem().toString(), cmbGrade4.getSelectedItem().toString(), cmbGrade5.getSelectedItem().toString());
+        
+        
+        
         
     }//GEN-LAST:event_addMarksActionPerformed
 
@@ -814,6 +838,8 @@ public class sobMarks extends javax.swing.JFrame {
                 txtTotalCredit.setText(Integer.toString(rs.getInt("Credits")));
                 txtCom1.setText("3");
                 txtCom2.setText("3");
+                txtEmail.setText(rs.getString("Email"));
+                
 
             }
         } catch (Exception e) {
@@ -959,6 +985,7 @@ public class sobMarks extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel lbl1;
@@ -967,6 +994,7 @@ public class sobMarks extends javax.swing.JFrame {
     private javax.swing.JLabel lbl4;
     private javax.swing.JTextField txtCom1;
     private javax.swing.JTextField txtCom2;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSemCredit;

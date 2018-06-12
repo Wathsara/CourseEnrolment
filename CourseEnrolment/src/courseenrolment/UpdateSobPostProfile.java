@@ -25,10 +25,10 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-public class UpdateSobUnderProfile extends javax.swing.JFrame {
+public class UpdateSobPostProfile extends javax.swing.JFrame {
 
     /**
-     * Creates new form UpdateSobUnderProfile
+     * Creates new form UpdateSobPostProfile
      */
     String url = "jdbc:mysql://localhost:3360/course?useSSL=false";
     String username = "root";
@@ -40,12 +40,12 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
     String filename = null;
     byte[] pic = null;
     Student a = new Student();
-    ManageSobUndergraduates msu = new ManageSobUndergraduates();
+    ManageSobPost msu = new ManageSobPost();
     ArrayList<Student> aList;
-    public UpdateSobUnderProfile() {
+    public UpdateSobPostProfile() {
         initComponents();
-        
     }
+
     void setfields(Student ai) {
         txtID.setText(Integer.toString(ai.getId()));
         txtFullname.setText(ai.getName());
@@ -65,6 +65,10 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
         alStreame.addItem("Art Stream");
         alStreame.addItem("Maths Stream");
         alStreame.addItem("Commerce Stream");
+        txtQualification.setText(ai.getQualification());
+        txtInstitution.setText(ai.getInstitution());
+        txtGraYear.setText(ai.getGraYear());
+        
         try {
             InputStream in = new ByteArrayInputStream(ai.getPic());
             BufferedImage r = ImageIO.read(in);
@@ -75,7 +79,6 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
         }
         
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -112,9 +115,15 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
         txtIntake = new javax.swing.JTextField();
         txtYear = new javax.swing.JTextField();
         txtID = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txtQualification = new javax.swing.JTextField();
+        txtInstitution = new javax.swing.JTextField();
+        txtGraYear = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Update Undergraduate Profile");
+        setTitle("Update Postgraduate School of Buisness");
 
         jPanel2.setBackground(new java.awt.Color(211, 84, 0));
 
@@ -129,7 +138,7 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 913, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)
                 .addGap(61, 61, 61))
         );
         jPanel2Layout.setVerticalGroup(
@@ -243,6 +252,18 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
 
         txtID.setEditable(false);
 
+        jLabel12.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(237, 243, 245));
+        jLabel12.setText("Qualification");
+
+        jLabel13.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(237, 243, 245));
+        jLabel13.setText("Institution");
+
+        jLabel14.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(237, 243, 245));
+        jLabel14.setText("Year");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -252,15 +273,6 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGap(341, 341, 341)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtZscore, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtRank, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -283,7 +295,29 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtCno, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(341, 341, 341)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtZscore, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtInstitution)))
+                                .addGap(33, 33, 33)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(42, 42, 42)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtRank, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                                    .addComponent(txtGraYear))))
                         .addGap(173, 173, 173))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -298,11 +332,15 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
                                 .addComponent(txtIntake, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56)
-                                .addComponent(alStreame, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtQualification, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(56, 56, 56)
+                                    .addComponent(alStreame, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(359, 359, 359)
@@ -353,7 +391,15 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
                     .addComponent(txtZscore, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtRank, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtQualification, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtInstitution, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtGraYear, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
                 .addComponent(inserbtn)
                 .addContainerGap())
         );
@@ -363,7 +409,7 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1028, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1052, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,29 +439,28 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
         a.setzScore(txtZscore.getText());
         a.setRank(txtRank.getText());
         a.setGender(cmbGender.getSelectedItem().toString());
+        a.setQualification(txtQualification.getText());
+        a.setInstitution(txtInstitution.getText());
+        a.setGraYear(txtGraYear.getText());
         
-        boolean x = d.updateSobUnderProfile(a);
-        boolean y = d.updateSobUnderSemOneName(a);
-        boolean z = d.updateSobUnderSemTwoName(a);
+        boolean x = d.updateSobPostProfile(a);
+        boolean y = d.updateSobPostSemOneName(a);
+        boolean z = d.updateSobPostSemTwoName(a);
 
         if (x && y && z) {
             JOptionPane.showMessageDialog(this, "Successfully Updated!!");
             this.dispose();
-            
-            msu.loadSobUndergraduates();
+
+            msu.loadSobPostgraduates();
             msu.setVisible(true);
-            
-            
-            
-            
 
         } else {
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
-//             msu.loadSobUndergraduates();
+            //             msu.loadSobUndergraduates();
 
         }
-//        msu.loadSobUndergraduates();
-        
+        //        msu.loadSobUndergraduates();
+
     }//GEN-LAST:event_inserbtnActionPerformed
 
     private void txtCnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCnoActionPerformed
@@ -477,20 +522,20 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSobPostProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSobPostProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSobPostProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSobPostProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UpdateSobUnderProfile().setVisible(true);
+                new UpdateSobPostProfile().setVisible(true);
             }
         });
     }
@@ -503,6 +548,9 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -518,8 +566,11 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
     private javax.swing.JTextField txtDob;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFullname;
+    private javax.swing.JTextField txtGraYear;
     private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtInstitution;
     private javax.swing.JTextField txtIntake;
+    private javax.swing.JTextField txtQualification;
     private javax.swing.JTextField txtRank;
     private javax.swing.JTextField txtYear;
     private javax.swing.JTextField txtZscore;

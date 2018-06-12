@@ -25,10 +25,10 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-public class UpdateSobUnderProfile extends javax.swing.JFrame {
+public class UpdateSoeUnderProfile extends javax.swing.JFrame {
 
     /**
-     * Creates new form UpdateSobUnderProfile
+     * Creates new form UpdateSoeUnderProfile
      */
     String url = "jdbc:mysql://localhost:3360/course?useSSL=false";
     String username = "root";
@@ -40,40 +40,10 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
     String filename = null;
     byte[] pic = null;
     Student a = new Student();
-    ManageSobUndergraduates msu = new ManageSobUndergraduates();
+    ManageSoeUndergraduates msu = new ManageSoeUndergraduates();
     ArrayList<Student> aList;
-    public UpdateSobUnderProfile() {
+    public UpdateSoeUnderProfile() {
         initComponents();
-        
-    }
-    void setfields(Student ai) {
-        txtID.setText(Integer.toString(ai.getId()));
-        txtFullname.setText(ai.getName());
-        txtEmail.setText(ai.getEmail());
-        addressTxt.setText(ai.getAddress());
-        txtCno.setText(ai.getCno());
-        txtDob.setText(ai.getDob());
-        txtRank.setText(ai.getRank());
-        txtZscore.setText(ai.getzScore());
-        cmbGender.addItem(ai.getGender());
-        cmbGender.addItem("Female");
-        cmbGender.addItem("Male");
-        txtIntake.setText(ai.getIntake());
-        txtYear.setText(Integer.toString(ai.getYear()));
-        alStreame.addItem(ai.getStream());
-        alStreame.addItem("Bio Stream");
-        alStreame.addItem("Art Stream");
-        alStreame.addItem("Maths Stream");
-        alStreame.addItem("Commerce Stream");
-        try {
-            InputStream in = new ByteArrayInputStream(ai.getPic());
-            BufferedImage r = ImageIO.read(in);
-            ImageIcon imageIcon = new ImageIcon(new ImageIcon(r).getImage().getScaledInstance(photoLabel.getWidth(), photoLabel.getHeight(), Image.SCALE_DEFAULT));
-            photoLabel.setIcon(imageIcon);
-        } catch (Exception e) {
-            System.err.println(e);
-        }
-        
     }
 
     /**
@@ -114,14 +84,14 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
         txtID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Update Undergraduate Profile");
+        setTitle("Update School of Engineering Undergraduate");
 
         jPanel2.setBackground(new java.awt.Color(211, 84, 0));
 
         jLabel1.setFont(new java.awt.Font("Cantarell", 2, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(236, 240, 241));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Update School of Buisness Undergraduates");
+        jLabel1.setText("Update School of Engineering Undergraduates");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -129,7 +99,7 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 913, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 921, Short.MAX_VALUE)
                 .addGap(61, 61, 61))
         );
         jPanel2Layout.setVerticalGroup(
@@ -363,7 +333,7 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1028, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,6 +351,35 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
 
     }//GEN-LAST:event_addressTxtActionPerformed
 
+    void setfields(Student ai) {
+        txtID.setText(Integer.toString(ai.getId()));
+        txtFullname.setText(ai.getName());
+        txtEmail.setText(ai.getEmail());
+        addressTxt.setText(ai.getAddress());
+        txtCno.setText(ai.getCno());
+        txtDob.setText(ai.getDob());
+        txtRank.setText(ai.getRank());
+        txtZscore.setText(ai.getzScore());
+        cmbGender.addItem(ai.getGender());
+        cmbGender.addItem("Female");
+        cmbGender.addItem("Male");
+        txtIntake.setText(ai.getIntake());
+        txtYear.setText(Integer.toString(ai.getYear()));
+        alStreame.addItem(ai.getStream());
+        alStreame.addItem("Bio Stream");
+        alStreame.addItem("Art Stream");
+        alStreame.addItem("Maths Stream");
+        alStreame.addItem("Commerce Stream");
+        try {
+            InputStream in = new ByteArrayInputStream(ai.getPic());
+            BufferedImage r = ImageIO.read(in);
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(r).getImage().getScaledInstance(photoLabel.getWidth(), photoLabel.getHeight(), Image.SCALE_DEFAULT));
+            photoLabel.setIcon(imageIcon);
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        
+    }
     private void inserbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserbtnActionPerformed
         a.setId(Integer.parseInt(txtID.getText()));
         a.setName(txtFullname.getText());
@@ -393,29 +392,24 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
         a.setzScore(txtZscore.getText());
         a.setRank(txtRank.getText());
         a.setGender(cmbGender.getSelectedItem().toString());
-        
-        boolean x = d.updateSobUnderProfile(a);
-        boolean y = d.updateSobUnderSemOneName(a);
-        boolean z = d.updateSobUnderSemTwoName(a);
+
+        boolean x = d.updateSoeUnderProfile(a);
+        boolean y = d.updateSoeUnderSemOneName(a);
+        boolean z = d.updateSoeUnderSemTwoName(a);
 
         if (x && y && z) {
             JOptionPane.showMessageDialog(this, "Successfully Updated!!");
             this.dispose();
-            
-            msu.loadSobUndergraduates();
+
+            msu.loadSoeUndergraduates();
             msu.setVisible(true);
-            
-            
-            
-            
 
         } else {
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
-//             msu.loadSobUndergraduates();
+            //             msu.loadSobUndergraduates();
 
         }
-//        msu.loadSobUndergraduates();
-        
+        //        msu.loadSobUndergraduates();
     }//GEN-LAST:event_inserbtnActionPerformed
 
     private void txtCnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCnoActionPerformed
@@ -477,20 +471,20 @@ public class UpdateSobUnderProfile extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSoeUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSoeUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSoeUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UpdateSobUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateSoeUnderProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UpdateSobUnderProfile().setVisible(true);
+                new UpdateSoeUnderProfile().setVisible(true);
             }
         });
     }

@@ -69,18 +69,24 @@ public class Home extends javax.swing.JFrame {
         btnMarks = new javax.swing.JButton();
         btnSobPostMarks = new javax.swing.JButton();
         btnViewUnder = new javax.swing.JButton();
+        btnViewSobPost = new javax.swing.JButton();
+        btnPayment = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnNewStdComputing = new javax.swing.JButton();
         btnNewPostComputing = new javax.swing.JButton();
         btnNewRoomAllocationSoc = new javax.swing.JButton();
         btnSocMarks = new javax.swing.JButton();
         btnSocPostMarks = new javax.swing.JButton();
+        btnMangeSoc = new javax.swing.JButton();
+        btnViewSocPost = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         btnNewStdEng = new javax.swing.JButton();
         btnNewPostEngineering = new javax.swing.JButton();
         btnNewRoomAllocationSoe = new javax.swing.JButton();
         btnSoeMarks = new javax.swing.JButton();
         btnSoePostMarks = new javax.swing.JButton();
+        btnMangeSoe = new javax.swing.JButton();
+        btnViewSoePost = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         btnNewLec = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
@@ -215,25 +221,45 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnViewSobPost.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnViewSobPost.setText("Mange Postgraduates");
+        btnViewSobPost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewSobPostActionPerformed(evt);
+            }
+        });
+
+        btnPayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnPayment.setText("Payments");
+        btnPayment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPaymentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnViewUnder, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSobPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(135, Short.MAX_VALUE))
+                        .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnViewUnder, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnViewSobPost, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnMarks, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                    .addComponent(btnSobPostMarks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(569, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,13 +267,18 @@ public class Home extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewStdBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewUnder, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewPostBuisness, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewSobPost, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSobPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
-                .addComponent(btnViewUnder, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(542, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(447, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Buisness", jPanel4);
@@ -294,21 +325,44 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnMangeSoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnMangeSoc.setText("Mange Undergraduates");
+        btnMangeSoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMangeSocActionPerformed(evt);
+            }
+        });
+
+        btnViewSocPost.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnViewSocPost.setText("Mange Postgraduates");
+        btnViewSocPost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewSocPostActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSocMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSocPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(btnNewStdComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(btnNewPostComputing, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSocMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSocPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(btnMangeSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(btnViewSocPost, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(139, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -321,7 +375,11 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSocMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSocPostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(665, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMangeSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewSocPost, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(548, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Computing", jPanel5);
@@ -368,21 +426,44 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        btnMangeSoe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnMangeSoe.setText("Mange Undergraduates");
+        btnMangeSoe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMangeSoeActionPerformed(evt);
+            }
+        });
+
+        btnViewSoePost.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnViewSoePost.setText("Mange Postgraduates");
+        btnViewSoePost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewSoePostActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSoeMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSoePostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(btnNewStdEng, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNewPostEngineering, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSoeMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSoePostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(366, 366, 366)
+                        .addComponent(btnMangeSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(btnViewSoePost, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -395,7 +476,11 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSoeMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSoePostMarks, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(665, Short.MAX_VALUE))
+                .addGap(77, 77, 77)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMangeSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewSoePost, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(520, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("School Of Engineering", jPanel6);
@@ -669,6 +754,8 @@ public class Home extends javax.swing.JFrame {
         UpdateAdmin upd = new UpdateAdmin();
         upd.setVisible(true);
         upd.setfields(aList.get(tblAdmin.getSelectedRow()));
+        
+        loadAdmin();
 
     }//GEN-LAST:event_updateActionPerformed
 
@@ -816,7 +903,44 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         ManageSobUndergraduates msobu = new ManageSobUndergraduates();
         msobu.setVisible(true);
+        
     }//GEN-LAST:event_btnViewUnderActionPerformed
+
+    private void btnMangeSocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMangeSocActionPerformed
+        // TODO add your handling code here:
+        ManageSocUndergraduate msocu = new ManageSocUndergraduate();
+        msocu.setVisible(true);
+        
+    }//GEN-LAST:event_btnMangeSocActionPerformed
+
+    private void btnMangeSoeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMangeSoeActionPerformed
+        // TODO add your handling code here:
+        ManageSoeUndergraduates msoeu = new ManageSoeUndergraduates();
+        msoeu.setVisible(true);
+    }//GEN-LAST:event_btnMangeSoeActionPerformed
+
+    private void btnViewSobPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewSobPostActionPerformed
+        // TODO add your handling code here:
+        ManageSobPost msobp = new ManageSobPost();
+        msobp.setVisible(true);
+        
+    }//GEN-LAST:event_btnViewSobPostActionPerformed
+
+    private void btnViewSocPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewSocPostActionPerformed
+        // TODO add your handling code here:
+        ManageSocPost msocp = new ManageSocPost();
+        msocp.setVisible(true);
+    }//GEN-LAST:event_btnViewSocPostActionPerformed
+
+    private void btnViewSoePostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewSoePostActionPerformed
+        // TODO add your handling code here:
+        ManageSoePost msoep = new ManageSoePost();
+        msoep.setVisible(true);
+    }//GEN-LAST:event_btnViewSoePostActionPerformed
+
+    private void btnPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaymentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPaymentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -855,6 +979,8 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addresslbl;
+    private javax.swing.JButton btnMangeSoc;
+    private javax.swing.JButton btnMangeSoe;
     private javax.swing.JButton btnMarks;
     private javax.swing.JButton btnNewInstructor;
     private javax.swing.JButton btnNewLec;
@@ -868,11 +994,15 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnNewStdComputing;
     private javax.swing.JButton btnNewStdEng;
     private javax.swing.JButton btnNewSub;
+    private javax.swing.JButton btnPayment;
     private javax.swing.JButton btnSobPostMarks;
     private javax.swing.JButton btnSocMarks;
     private javax.swing.JButton btnSocPostMarks;
     private javax.swing.JButton btnSoeMarks;
     private javax.swing.JButton btnSoePostMarks;
+    private javax.swing.JButton btnViewSobPost;
+    private javax.swing.JButton btnViewSocPost;
+    private javax.swing.JButton btnViewSoePost;
     private javax.swing.JButton btnViewUnder;
     private javax.swing.JLabel cnolbl;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;

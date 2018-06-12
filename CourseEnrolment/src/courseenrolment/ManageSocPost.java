@@ -4,12 +4,7 @@
  * and open the template in the editor.
  */
 package courseenrolment;
-
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -18,10 +13,10 @@ import java.util.ArrayList;
  *
  * @author wathsara
  */
-public class ManageSobUndergraduates extends javax.swing.JFrame {
+public class ManageSocPost extends javax.swing.JFrame {
 
     /**
-     * Creates new form ManageSobUndergraduates
+     * Creates new form ManageSocPost
      */
     String url = "jdbc:mysql://localhost:3360/course?useSSL=false";
     String username = "root";
@@ -33,32 +28,29 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
     ArrayList<Student> aList;
     ArrayList<Student> ascList;
     ArrayList<Student> descList;
-
-    public ManageSobUndergraduates() {
+    public ManageSocPost() {
         initComponents();
-        loadSobUndergraduates();
-        
+        loadSocPostgraduates();
     }
 
-    void loadSobUndergraduates() {
+    void loadSocPostgraduates() {
 
-        aList = d.viewSobUnder();
+        aList = d.viewSocPost();
         SobUnderTable s = new SobUnderTable(aList);
         tblSobUnder.setModel(s);
 
     }
-    void loadSobUnderAsc(int a){
-        ascList = d.viewSobUnderAsc(a);
+    void loadSocPostAsc(int a){
+        ascList = d.viewSocPostAsc(a);
         SobUnderTable s = new SobUnderTable(ascList);
         tblSobUnder.setModel(s);
     }
     
-    void loadSobUnderDesc(int a){
-        descList = d.viewSobUnderDsc(a);
+    void loadSocPostDesc(int a){
+        descList = d.viewSocPostDsc(a);
         SobUnderTable s = new SobUnderTable(descList);
         tblSobUnder.setModel(s);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,14 +74,14 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
         btnFilter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Manage Undergraduates School of Buisness");
+        setTitle("Mange School of Computing Postgraduates");
 
         jPanel2.setBackground(new java.awt.Color(211, 84, 0));
 
         jLabel1.setFont(new java.awt.Font("Cantarell", 2, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(236, 240, 241));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("School Of Buisness Manage Undergraduates");
+        jLabel1.setText("School Of Computing Manage Postgraduates");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -134,9 +126,6 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tblSobUnder);
-        if (tblSobUnder.getColumnModel().getColumnCount() > 0) {
-            tblSobUnder.getColumnModel().getColumn(0).setPreferredWidth(8);
-        }
 
         btnViewProfile.setText("View Profiles");
         btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +190,7 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(btnViewProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,13 +214,13 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -239,12 +228,19 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
+        // TODO add your handling code here:
+        ViewPost vp = new ViewPost();
+        vp.setVisible(true);
+        vp.setfields(aList.get(tblSobUnder.getSelectedRow()));
+    }//GEN-LAST:event_btnViewProfileActionPerformed
+
     private void btnUpdateProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateProfileActionPerformed
         // TODO add your handling code here:
-       
-        UpdateSobUnderProfile upd = new UpdateSobUnderProfile();
-        upd.setVisible(true);
-        upd.setfields(aList.get(tblSobUnder.getSelectedRow()));
+
+        UpdateSocPostProfile updsocpost = new UpdateSocPostProfile();
+        updsocpost.setVisible(true);
+        updsocpost.setfields(aList.get(tblSobUnder.getSelectedRow()));
         this.dispose();
     }//GEN-LAST:event_btnUpdateProfileActionPerformed
 
@@ -254,25 +250,14 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
         String a = cmbOrder.getSelectedItem().toString();
         if (a == "ASC") {
             d.viewSobUnderAsc(ay);
-            loadSobUnderAsc(ay);
-            
-            
+            loadSocPostAsc(ay);
+
         }else{
             d.viewSobUnderDsc(ay);
-            loadSobUnderDesc(ay);
-            
+            loadSocPostDesc(ay);
+
         }
-
-
     }//GEN-LAST:event_btnFilterActionPerformed
-
-    private void btnViewProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProfileActionPerformed
-        // TODO add your handling code here:
-        ViewSobUnder vsob = new ViewSobUnder();
-        vsob.setVisible(true);
-        vsob.setfields(aList.get(tblSobUnder.getSelectedRow()));
-        
-    }//GEN-LAST:event_btnViewProfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,20 +276,20 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManageSobUndergraduates.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManageSocPost.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManageSobUndergraduates.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManageSocPost.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManageSobUndergraduates.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManageSocPost.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManageSobUndergraduates.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManageSocPost.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ManageSobUndergraduates().setVisible(true);
+                new ManageSocPost().setVisible(true);
             }
         });
     }
