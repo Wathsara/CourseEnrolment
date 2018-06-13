@@ -220,7 +220,7 @@ public class Db {
     boolean sobSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobSemOne values (?,?,?,?,?,?)";
+            String query = "INSERT INTO sobSemOne values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -228,6 +228,7 @@ public class Db {
             pst.setString(4, a.getFirstSemSecond());
             pst.setString(5, a.getFirstSemThird());
             pst.setString(6, a.getFirstSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -240,7 +241,7 @@ public class Db {
     boolean sobSemtwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobSemTwo values (?,?,?,?,?,?)";
+            String query = "INSERT INTO sobSemTwo values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -248,6 +249,7 @@ public class Db {
             pst.setString(4, a.getSecondSemSecond());
             pst.setString(5, a.getSecondSemThird());
             pst.setString(6, a.getSecondSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -292,7 +294,7 @@ public class Db {
     boolean socSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO socSemOne values (?,?,?,?,?,?)";
+            String query = "INSERT INTO socSemOne values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -300,6 +302,7 @@ public class Db {
             pst.setString(4, a.getFirstSemSecond());
             pst.setString(5, a.getFirstSemThird());
             pst.setString(6, a.getFirstSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -312,7 +315,7 @@ public class Db {
     boolean socSemtwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO socSemTwo values (?,?,?,?,?,?)";
+            String query = "INSERT INTO socSemTwo values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -320,6 +323,7 @@ public class Db {
             pst.setString(4, a.getSecondSemSecond());
             pst.setString(5, a.getSecondSemThird());
             pst.setString(6, a.getSecondSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -364,7 +368,7 @@ public class Db {
     boolean soeSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO soeSemOne values (?,?,?,?,?,?)";
+            String query = "INSERT INTO soeSemOne values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -372,6 +376,7 @@ public class Db {
             pst.setString(4, a.getFirstSemSecond());
             pst.setString(5, a.getFirstSemThird());
             pst.setString(6, a.getFirstSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -384,7 +389,7 @@ public class Db {
     boolean soeSemtwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO soeSemTwo values (?,?,?,?,?,?)";
+            String query = "INSERT INTO soeSemTwo values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -392,6 +397,7 @@ public class Db {
             pst.setString(4, a.getSecondSemSecond());
             pst.setString(5, a.getSecondSemThird());
             pst.setString(6, a.getSecondSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -439,7 +445,7 @@ public class Db {
     boolean sobPostSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobPostSemOne values (?,?,?,?,?,?)";
+            String query = "INSERT INTO sobPostSemOne values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -447,6 +453,7 @@ public class Db {
             pst.setString(4, a.getFirstSemSecond());
             pst.setString(5, a.getFirstSemThird());
             pst.setString(6, a.getFirstSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -459,7 +466,7 @@ public class Db {
     boolean sobPostSemTwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO sobPostSemTwo values (?,?,?,?,?,?)";
+            String query = "INSERT INTO sobPostSemTwo values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -467,6 +474,7 @@ public class Db {
             pst.setString(4, a.getSecondSemSecond());
             pst.setString(5, a.getSecondSemThird());
             pst.setString(6, a.getSecondSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -514,7 +522,7 @@ public class Db {
     boolean socPostSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO socPostSemOne values (?,?,?,?,?,?)";
+            String query = "INSERT INTO socPostSemOne values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -522,6 +530,7 @@ public class Db {
             pst.setString(4, a.getFirstSemSecond());
             pst.setString(5, a.getFirstSemThird());
             pst.setString(6, a.getFirstSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -534,7 +543,7 @@ public class Db {
     boolean socPostSemTwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO socPostSemTwo values (?,?,?,?,?,?)";
+            String query = "INSERT INTO socPostSemTwo values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -542,6 +551,7 @@ public class Db {
             pst.setString(4, a.getSecondSemSecond());
             pst.setString(5, a.getSecondSemThird());
             pst.setString(6, a.getSecondSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -589,7 +599,7 @@ public class Db {
     boolean soePostSemOne(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO soePostSemOne values (?,?,?,?,?,?)";
+            String query = "INSERT INTO soePostSemOne values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -597,6 +607,7 @@ public class Db {
             pst.setString(4, a.getFirstSemSecond());
             pst.setString(5, a.getFirstSemThird());
             pst.setString(6, a.getFirstSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -608,7 +619,7 @@ public class Db {
     boolean soePostSemTwo(Student a) {
         try {
             con = (Connection) DriverManager.getConnection(url, username, password);
-            String query = "INSERT INTO soePostSemTwo values (?,?,?,?,?,?)";
+            String query = "INSERT INTO soePostSemTwo values (?,?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(query);
             pst.setInt(1, a.getId());
             pst.setString(2, a.getName());
@@ -616,6 +627,7 @@ public class Db {
             pst.setString(4, a.getSecondSemSecond());
             pst.setString(5, a.getSecondSemThird());
             pst.setString(6, a.getSecondSemFourth());
+            pst.setInt(7, a.getAcademicYear());
             pst.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -2244,6 +2256,83 @@ public class Db {
             pst.executeUpdate();
             return true;
 
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    ArrayList<Payment> viewSobPayment() {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobPayment";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Payment> viewSobPaymentFilter(int a) {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobPayment WHERE StudentID=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1,a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    boolean sobPayments(Payment a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobPayment values (?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setInt(3, a.getAcademicYear());
+            pst.setString(4, a.getSemester());
+            pst.setDouble(5, a.getPay());
+            
+            pst.executeUpdate();
+
+            return true;
         } catch (Exception e) {
             System.err.println(e);
             return false;

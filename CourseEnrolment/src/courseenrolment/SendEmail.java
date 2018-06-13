@@ -55,4 +55,45 @@ public class SendEmail {
         }
 
     }
+    
+    boolean paymentmail(String name, String ayear, String semester,String email,String s,String s1,String s2,String s3,String s4,String sf,String sf1,String sf2,String sf3,String sf4,String t){
+        String host = "smtp.gmail.com";
+        final String user = "nsbmgreenuniversity692@gmail.com";//change accordingly  
+        final String password = "nsbm@123";//change accordingly  
+
+        String to = email;//change accordingly  
+        String emailbody= "Hello "+name+" This Email Attaches Your Payment Details For the "+ayear+"st Year "+semester+".\n\n"+s+"\t"+sf+"/=\n"+s1+"\t"+sf1+"/=\n"+s2+"\t"+sf2+"/=\n"+s3+"\t"+sf3+"/=\n"+s4+"\t"+sf4+"/=\nTotal Charge \t"+t+"/=\n\n\nThank you.\n NSBM Green Univesity.";
+        //Get the session object  
+        Properties props = new Properties();
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getDefaultInstance(props,
+                new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(user, password);
+            }
+        });
+
+        //Compose the message  
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(user));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            message.setSubject("Payment Details");
+            message.setText(emailbody);
+
+            //send the message  
+            Transport.send(message);
+
+            System.out.println("message sent successfully...");
+            return true;
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            return false;
+
+        }
+        
+    }
 }

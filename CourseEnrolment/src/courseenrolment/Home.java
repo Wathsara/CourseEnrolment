@@ -940,6 +940,8 @@ public class Home extends javax.swing.JFrame {
 
     private void btnPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaymentActionPerformed
         // TODO add your handling code here:
+        PaymentSobUnder psob = new PaymentSobUnder();
+        psob.setVisible(true);
     }//GEN-LAST:event_btnPaymentActionPerformed
 
     /**
