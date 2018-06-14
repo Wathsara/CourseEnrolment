@@ -2340,6 +2340,463 @@ public class Db {
         }
     }
 
+    ArrayList<Payment> viewSocPayment() {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socPayment";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Payment> viewSocPaymentFilter(int a) {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socPayment WHERE StudentID=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1,a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    boolean socPayments(Payment a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socPayment values (?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setInt(3, a.getAcademicYear());
+            pst.setString(4, a.getSemester());
+            pst.setDouble(5, a.getPay());
+            
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+    ArrayList<Payment> viewSoePayment() {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soePayment";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Payment> viewSoePaymentFilter(int a) {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soePayment WHERE StudentID=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1,a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    boolean soePayments(Payment a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soePayment values (?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setInt(3, a.getAcademicYear());
+            pst.setString(4, a.getSemester());
+            pst.setDouble(5, a.getPay());
+            
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+    
+    ArrayList<Payment> viewSobPostPayment() {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobPostPayment";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Payment> viewSobPostPaymentFilter(int a) {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobPostPayment WHERE StudentID=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1,a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    boolean sobPostPayments(Payment a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO sobPostPayment values (?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setInt(3, a.getAcademicYear());
+            pst.setString(4, a.getSemester());
+            pst.setDouble(5, a.getPay());
+            
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+
+    ArrayList<Payment> viewSocPostPayment() {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socPostPayment";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Payment> viewSocPostPaymentFilter(int a) {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socPostPayment WHERE StudentID=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1,a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    boolean socPostPayments(Payment a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO socPostPayment values (?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setInt(3, a.getAcademicYear());
+            pst.setString(4, a.getSemester());
+            pst.setDouble(5, a.getPay());
+            
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+
+    ArrayList<Payment> viewSoePostPayment() {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soePostPayment";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Payment> viewSoePostPaymentFilter(int a) {
+        try {
+            ArrayList<Payment> list = new ArrayList<Payment>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soePostPayment WHERE StudentID=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setInt(1,a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Payment ad = new Payment();
+                ad.setId(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setAcademicYear(rs.getInt(3));
+                ad.setSemester(rs.getString(4));
+                ad.setPay(rs.getDouble(5));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    boolean soePostPayments(Payment a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "INSERT INTO soePostPayment values (?,?,?,?,?)";
+            pst = (PreparedStatement) con.prepareStatement(query);
+
+            pst.setInt(1, a.getId());
+            pst.setString(2, a.getName());
+            pst.setInt(3, a.getAcademicYear());
+            pst.setString(4, a.getSemester());
+            pst.setDouble(5, a.getPay());
+            
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+    }
+
+    ArrayList<Lecturer> viewLec() {
+        try {
+            ArrayList<Lecturer> list = new ArrayList<Lecturer>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM lecturer";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Lecturer ad = new Lecturer();
+                ad.setLecID(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setGender(rs.getString(4));
+                ad.setDob(rs.getString(5));
+                ad.setAddress(rs.getString(6));
+                ad.setCno(rs.getString(7));
+                ad.setQualification(rs.getString(8));
+                ad.setInstitution(rs.getString(9));
+                ad.setGraYear(rs.getString(10));
+                ad.setFaculty(rs.getString(11));
+                ad.setType(rs.getString(12));
+                ad.setPic(rs.getBytes(13));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Lecturer> viewLecFilter(String a) {
+        try {
+            ArrayList<Lecturer> list = new ArrayList<Lecturer>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM lecturer WHERE Faculty=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1,a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Lecturer ad = new Lecturer();
+                ad.setLecID(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setGender(rs.getString(4));
+                ad.setDob(rs.getString(5));
+                ad.setAddress(rs.getString(6));
+                ad.setCno(rs.getString(7));
+                ad.setQualification(rs.getString(8));
+                ad.setInstitution(rs.getString(9));
+                ad.setGraYear(rs.getString(10));
+                ad.setFaculty(rs.getString(11));
+                ad.setType(rs.getString(12));
+                ad.setPic(rs.getBytes(13));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
 
 
 }
