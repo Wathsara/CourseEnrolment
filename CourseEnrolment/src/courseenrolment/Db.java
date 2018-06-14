@@ -2798,5 +2798,296 @@ public class Db {
 
     }
 
+    boolean UpdateLec(Lecturer a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE lecturer SET FullName = ? , Emai= ?,Gender=?,Dob=?,Address=?,Cno=?,Qualification=?,Institute=?,Year=?,Faculty=?,Type=? where LecID = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            
+            pst.setString(1, a.getName());
+            pst.setString(2, a.getEmail());
+            pst.setString(3, a.getGender());
+            pst.setString(4, a.getDob());
+            pst.setString(5, a.getAddress());
+            pst.setString(6, a.getCno());
+            pst.setString(7, a.getQualification());
+            pst.setString(8, a.getInstitution());
+            pst.setString(9, a.getGraYear());
+            pst.setString(10, a.getFaculty());
+            pst.setString(11, a.getType());
+            pst.setInt(12, a.getLecID());
+            pst.executeUpdate();
 
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+
+    }
+    
+    ArrayList<Lecturer> viewInstructor() {
+        try {
+            ArrayList<Lecturer> list = new ArrayList<Lecturer>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM instructor";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Lecturer ad = new Lecturer();
+                ad.setLecID(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setGender(rs.getString(4));
+                ad.setDob(rs.getString(5));
+                ad.setAddress(rs.getString(6));
+                ad.setCno(rs.getString(7));
+                ad.setSubject(rs.getString(8));
+                ad.setQualification(rs.getString(9));
+                ad.setInstitution(rs.getString(10));
+                ad.setGraYear(rs.getString(11));
+                ad.setFaculty(rs.getString(12));
+                ad.setType(rs.getString(13));
+                ad.setPic(rs.getBytes(14));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Lecturer> viewInstructorFilter(String a) {
+        try {
+            ArrayList<Lecturer> list = new ArrayList<Lecturer>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM instructor WHERE Faculty=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1,a);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Lecturer ad = new Lecturer();
+               ad.setLecID(rs.getInt(1));
+                ad.setName(rs.getString(2));
+                ad.setEmail(rs.getString(3));
+                ad.setGender(rs.getString(4));
+                ad.setDob(rs.getString(5));
+                ad.setAddress(rs.getString(6));
+                ad.setCno(rs.getString(7));
+                ad.setSubject(rs.getString(8));
+                ad.setQualification(rs.getString(9));
+                ad.setInstitution(rs.getString(10));
+                ad.setGraYear(rs.getString(11));
+                ad.setFaculty(rs.getString(12));
+                ad.setType(rs.getString(13));
+                ad.setPic(rs.getBytes(14));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+
+    boolean UpdateIns(Lecturer a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE instructor SET FullName = ? , Emai= ?,Gender=?,Dob=?,Address=?,Cno=?,Qualification=?,Institute=?,Year=?,Faculty=?,Type=?, Subject=? where InstructorID = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            
+            pst.setString(1, a.getName());
+            pst.setString(2, a.getEmail());
+            pst.setString(3, a.getGender());
+            pst.setString(4, a.getDob());
+            pst.setString(5, a.getAddress());
+            pst.setString(6, a.getCno());
+            pst.setString(7, a.getQualification());
+            pst.setString(8, a.getInstitution());
+            pst.setString(9, a.getGraYear());
+            pst.setString(10, a.getFaculty());
+            pst.setString(11, a.getType());
+            pst.setString(12, a.getSubject());
+            pst.setInt(13, a.getLecID());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+
+    }
+    
+    ArrayList<Subject> viewSobSubject() {
+        try {
+            ArrayList<Subject> list = new ArrayList<Subject>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobSubject";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Subject ad = new Subject();
+                ad.setSubCode(rs.getString(1));
+                ad.setSubName(rs.getString(2));
+                ad.setFaculty(rs.getString(3));
+                ad.setType(rs.getString(4));
+                ad.setAcademicYear(rs.getString(5));
+                ad.setSemester(rs.getString(6));
+                ad.setSubType(rs.getString(7));
+                ad.setCredit(rs.getInt(8));
+                ad.setSubFee(rs.getInt(9));
+                ad.setLecturerIncharge(rs.getString(10));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Subject> viewSocSubject() {
+        try {
+            ArrayList<Subject> list = new ArrayList<Subject>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socSubject";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Subject ad = new Subject();
+                ad.setSubCode(rs.getString(1));
+                ad.setSubName(rs.getString(2));
+                ad.setFaculty(rs.getString(3));
+                ad.setType(rs.getString(4));
+                ad.setAcademicYear(rs.getString(5));
+                ad.setSemester(rs.getString(6));
+                ad.setSubType(rs.getString(7));
+                ad.setCredit(rs.getInt(8));
+                ad.setSubFee(rs.getInt(9));
+                ad.setLecturerIncharge(rs.getString(10));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    ArrayList<Subject> viewSoeSubject() {
+        try {
+            ArrayList<Subject> list = new ArrayList<Subject>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soeSubject";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                Subject ad = new Subject();
+                ad.setSubCode(rs.getString(1));
+                ad.setSubName(rs.getString(2));
+                ad.setFaculty(rs.getString(3));
+                ad.setType(rs.getString(4));
+                ad.setAcademicYear(rs.getString(5));
+                ad.setSemester(rs.getString(6));
+                ad.setSubType(rs.getString(7));
+                ad.setCredit(rs.getInt(8));
+                ad.setSubFee(rs.getInt(9));
+                ad.setLecturerIncharge(rs.getString(10));
+                list.add(ad);
+
+            }
+            return list;
+
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    
+    boolean UpdateSobSubject(Subject a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE sobSubject SET SubjectFee=?,Credit=?,LecturerIncharge=? WHERE SubjectCode = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            
+            pst.setInt(1, a.getSubFee());
+            pst.setInt(2, a.getCredit());
+            pst.setString(3, a.getLecturerIncharge());
+            pst.setString(4, a.getSubCode());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+
+    }
+    
+    boolean UpdateSocSubject(Subject a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE socSubject SET SubjectFee=?,Credit=?,LecturerIncharge=? WHERE SubjectCode = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            
+            pst.setInt(1, a.getSubFee());
+            pst.setInt(2, a.getCredit());
+            pst.setString(3, a.getLecturerIncharge());
+            pst.setString(4, a.getSubCode());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+
+    }
+    boolean UpdateSoeSubject(Subject a) {
+        try {
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "UPDATE soeSubject SET SubjectFee=?,Credit=?,LecturerIncharge=? WHERE SubjectCode = ?";
+            pst = (PreparedStatement) con.prepareStatement(query);
+            
+            pst.setInt(1, a.getSubFee());
+            pst.setInt(2, a.getCredit());
+            pst.setString(3, a.getLecturerIncharge());
+            pst.setString(4, a.getSubCode());
+            pst.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+
+        }
+
+    }
+    
 }

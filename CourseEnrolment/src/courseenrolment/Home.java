@@ -6,6 +6,8 @@
 package courseenrolment;
 
 import java.awt.Image;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -24,6 +26,9 @@ public class Home extends javax.swing.JFrame {
      */
     ArrayList<AdminInsert> aList;
     ArrayList<Lecturer> lecList;
+    ArrayList<Lecturer> insList;
+    ArrayList<Subject> subList;
+   
     Db d = new Db();
     int q;
     String name;
@@ -35,6 +40,10 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         loadAdmin();
         loadLec();
+        loadIns();
+//        loadSob();
+//        loadSoe();
+//        loadSoc();
     }
 
     void loadAdmin() {
@@ -56,6 +65,41 @@ public class Home extends javax.swing.JFrame {
         lecList = d.viewLecFilter(faculty);
         LecturerTable ad = new LecturerTable(lecList);
         tblLecturer.setModel(ad);
+
+    }
+    void loadIns() {
+
+        insList = d.viewInstructor();
+        InstructorTable ad = new InstructorTable(insList);
+        tblInstructor.setModel(ad);
+
+    }
+    void loadInsFilter(String faculty) {
+
+        insList = d.viewInstructorFilter(faculty);
+        InstructorTable ad = new InstructorTable(insList);
+        tblInstructor.setModel(ad);
+
+    }
+    void loadSob() {
+
+        subList = d.viewSobSubject();
+        SubjectTable ad = new SubjectTable(subList);
+        tblSubjects.setModel(ad);
+
+    }
+    void loadSoe() {
+
+        subList = d.viewSoeSubject();
+        SubjectTable ad = new SubjectTable(subList);
+        tblSubjects.setModel(ad);
+
+    }
+    void loadSoc() {
+
+        subList = d.viewSocSubject();
+        SubjectTable ad = new SubjectTable(subList);
+        tblSubjects.setModel(ad);
 
     }
 
@@ -118,8 +162,19 @@ public class Home extends javax.swing.JFrame {
         btnUpdateLec = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         btnNewInstructor = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblInstructor = new javax.swing.JTable();
+        btnViewInstructor = new javax.swing.JButton();
+        cmbFacultyIns = new javax.swing.JComboBox<>();
+        btnFilterIns = new javax.swing.JButton();
+        btnUpdateIns = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         btnNewSub = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblSubjects = new javax.swing.JTable();
+        cmbFacultySub = new javax.swing.JComboBox<>();
+        btnFilterIns1 = new javax.swing.JButton();
+        btnUpdateSub = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -189,7 +244,7 @@ public class Home extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1480, Short.MAX_VALUE)
+            .addGap(0, 1573, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,7 +355,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(445, 445, 445)
                         .addComponent(btnNewRoomAllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(322, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -426,7 +481,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(421, 421, 421)
                         .addComponent(btnNewRoomAllocationSoc, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addContainerGap(419, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -552,7 +607,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(457, 457, 457)
                         .addComponent(btnNewRoomAllocationSoe, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(384, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -610,6 +665,7 @@ public class Home extends javax.swing.JFrame {
             tblLecturer.getColumnModel().getColumn(0).setMaxWidth(50);
             tblLecturer.getColumnModel().getColumn(1).setMinWidth(150);
             tblLecturer.getColumnModel().getColumn(1).setMaxWidth(150);
+            tblLecturer.getColumnModel().getColumn(3).setHeaderValue("Title 4");
         }
 
         cmbFaculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "School of Computing", "School of Buisness", "School of Engineering" }));
@@ -657,11 +713,11 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(btnFilterlec, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(btnNewLec, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(46, 46, 46)
                         .addComponent(btnNewLec1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(50, 50, 50)
                         .addComponent(btnUpdateLec, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,21 +752,102 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        tblInstructor.setBackground(new java.awt.Color(1, 50, 60));
+        tblInstructor.setForeground(new java.awt.Color(242, 246, 247));
+        tblInstructor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tblInstructor);
+        if (tblInstructor.getColumnModel().getColumnCount() > 0) {
+            tblInstructor.getColumnModel().getColumn(0).setMinWidth(50);
+            tblInstructor.getColumnModel().getColumn(0).setMaxWidth(50);
+            tblInstructor.getColumnModel().getColumn(1).setMinWidth(150);
+            tblInstructor.getColumnModel().getColumn(1).setMaxWidth(150);
+            tblInstructor.getColumnModel().getColumn(3).setHeaderValue("Title 4");
+        }
+
+        btnViewInstructor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnViewInstructor.setText("View Instructor");
+        btnViewInstructor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewInstructorActionPerformed(evt);
+            }
+        });
+
+        cmbFacultyIns.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "School of Computing", "School of Buisness", "School of Engineering" }));
+
+        btnFilterIns.setBackground(new java.awt.Color(7, 77, 218));
+        btnFilterIns.setForeground(new java.awt.Color(241, 247, 248));
+        btnFilterIns.setText("Select");
+        btnFilterIns.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFilterInsActionPerformed(evt);
+            }
+        });
+
+        btnUpdateIns.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnUpdateIns.setText("Update Instructor");
+        btnUpdateIns.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateInsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(btnNewInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1206, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 935, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(cmbFacultyIns, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(111, 111, 111)
+                                .addComponent(btnFilterIns, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(btnNewInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnViewInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(btnUpdateIns, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(btnNewInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(654, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnNewInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnViewInstructor, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUpdateIns, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(48, 48, 48)
+                        .addComponent(cmbFacultyIns, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(btnFilterIns, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Instructors", jPanel8);
@@ -725,21 +862,86 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        tblSubjects.setBackground(new java.awt.Color(1, 50, 60));
+        tblSubjects.setForeground(new java.awt.Color(242, 246, 247));
+        tblSubjects.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "null", "null", "null", "null", "null", "null"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(tblSubjects);
+        if (tblSubjects.getColumnModel().getColumnCount() > 0) {
+            tblSubjects.getColumnModel().getColumn(0).setMinWidth(50);
+            tblSubjects.getColumnModel().getColumn(0).setMaxWidth(50);
+            tblSubjects.getColumnModel().getColumn(1).setMinWidth(150);
+            tblSubjects.getColumnModel().getColumn(1).setMaxWidth(150);
+        }
+
+        cmbFacultySub.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "School of Computing", "School of Buisness", "School of Engineering" }));
+
+        btnFilterIns1.setBackground(new java.awt.Color(7, 77, 218));
+        btnFilterIns1.setForeground(new java.awt.Color(241, 247, 248));
+        btnFilterIns1.setText("View");
+        btnFilterIns1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFilterIns1ActionPerformed(evt);
+            }
+        });
+
+        btnUpdateSub.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-administrator-male-48.png"))); // NOI18N
+        btnUpdateSub.setText("Update Subject");
+        btnUpdateSub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateSubActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(btnNewSub, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1206, Short.MAX_VALUE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(494, 494, 494)
+                        .addComponent(cmbFacultySub, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnFilterIns1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(btnNewSub, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(btnUpdateSub, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1289, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(btnNewSub, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(654, Short.MAX_VALUE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNewSub, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdateSub, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbFacultySub, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFilterIns1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Subjects", jPanel9);
@@ -751,7 +953,7 @@ public class Home extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1480, Short.MAX_VALUE)
+            .addGap(0, 1573, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -852,7 +1054,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addresslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cnolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1000,6 +1202,42 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         NewLecturer nl = new NewLecturer();
         nl.setVisible(true);
+        nl.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                 loadLec();//To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+          //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+             //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+        });
     }//GEN-LAST:event_btnNewLecActionPerformed
 
     private void btnNewSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewSubActionPerformed
@@ -1012,6 +1250,42 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         NewInstructor ni = new NewInstructor();
         ni.setVisible(true);
+        ni.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                 loadIns();//To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+          //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+             //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+        });
     }//GEN-LAST:event_btnNewInstructorActionPerformed
 
     private void btnNewRoomAllocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewRoomAllocationActionPerformed
@@ -1162,7 +1436,154 @@ public class Home extends javax.swing.JFrame {
         UpdateLecturer vsob = new UpdateLecturer();
         vsob.setVisible(true);
         vsob.setfields(lecList.get(tblLecturer.getSelectedRow()));
+        vsob.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                 loadLec();//To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+          //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+             //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+        });
     }//GEN-LAST:event_btnUpdateLecActionPerformed
+
+    private void btnViewInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewInstructorActionPerformed
+        // TODO add your handling code here:
+        ViewInstructor vins = new ViewInstructor();
+        vins.setVisible(true);
+        vins.setfields(insList.get(tblInstructor.getSelectedRow()));
+    }//GEN-LAST:event_btnViewInstructorActionPerformed
+
+    private void btnFilterInsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterInsActionPerformed
+        // TODO add your handling code here:
+        String fac = cmbFacultyIns.getSelectedItem().toString();
+        loadInsFilter(fac);
+    }//GEN-LAST:event_btnFilterInsActionPerformed
+
+    private void btnUpdateInsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateInsActionPerformed
+        // TODO add your handling code here:
+        UpdateInstructor vsob = new UpdateInstructor();
+        vsob.setVisible(true);
+        vsob.setfields(insList.get(tblInstructor.getSelectedRow()));
+        vsob.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                 loadIns();//To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+          //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+             //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+    }//GEN-LAST:event_btnUpdateInsActionPerformed
+
+    private void btnFilterIns1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterIns1ActionPerformed
+        // TODO add your handling code here:
+        if(cmbFacultySub.getSelectedIndex()==0){
+             loadSoc();
+        }else if(cmbFacultySub.getSelectedIndex()==1){
+             loadSob();
+        }else{
+             loadSoe();
+        }
+    }//GEN-LAST:event_btnFilterIns1ActionPerformed
+
+    private void btnUpdateSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateSubActionPerformed
+        UpdateSubject vsob = new UpdateSubject();
+        vsob.setVisible(true);
+        vsob.setfields(subList.get(tblSubjects.getSelectedRow()));
+        vsob.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                 loadSob();
+                 loadSoc();
+                 loadSoe();
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+          //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowActivated(WindowEvent e) {
+             //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+                 //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+    }//GEN-LAST:event_btnUpdateSubActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1201,6 +1622,8 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addresslbl;
+    private javax.swing.JButton btnFilterIns;
+    private javax.swing.JButton btnFilterIns1;
     private javax.swing.JButton btnFilterlec;
     private javax.swing.JButton btnMangeSoc;
     private javax.swing.JButton btnMangeSoe;
@@ -1229,12 +1652,17 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnSocPostMarks;
     private javax.swing.JButton btnSoeMarks;
     private javax.swing.JButton btnSoePostMarks;
+    private javax.swing.JButton btnUpdateIns;
     private javax.swing.JButton btnUpdateLec;
+    private javax.swing.JButton btnUpdateSub;
+    private javax.swing.JButton btnViewInstructor;
     private javax.swing.JButton btnViewSobPost;
     private javax.swing.JButton btnViewSocPost;
     private javax.swing.JButton btnViewSoePost;
     private javax.swing.JButton btnViewUnder;
     private javax.swing.JComboBox<String> cmbFaculty;
+    private javax.swing.JComboBox<String> cmbFacultyIns;
+    private javax.swing.JComboBox<String> cmbFacultySub;
     private javax.swing.JLabel cnolbl;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private javax.swing.JLabel emaillbl;
@@ -1258,10 +1686,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel namelbl;
     private javax.swing.JTable tblAdmin;
+    private javax.swing.JTable tblInstructor;
     private javax.swing.JTable tblLecturer;
+    private javax.swing.JTable tblSubjects;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

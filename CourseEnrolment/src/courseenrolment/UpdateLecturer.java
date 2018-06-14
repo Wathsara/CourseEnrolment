@@ -10,23 +10,41 @@ package courseenrolment;
  * @author wathsara
  */
 import java.awt.Image;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 public class UpdateLecturer extends javax.swing.JFrame {
 
     /**
      * Creates new form UpdateLecturer
      */
+    Db d = new Db();
+    String filename = null;
+    byte[] pic = null;
+    Lecturer a = new Lecturer();
+
     public UpdateLecturer() {
         initComponents();
+        setResizable(false);
     }
 
     void setfields(Lecturer ai) {
-        txtID
+        txtID.setText(Integer.toString(ai.getLecID()));
         txtFullname.setText(ai.getName());
         txtEmail.setText(ai.getEmail());
         addressTxt.setText(ai.getAddress());
@@ -34,12 +52,31 @@ public class UpdateLecturer extends javax.swing.JFrame {
         txtDob.setText(ai.getDob());
         txtQualification.setText(ai.getQualification());
         txtGraYear.setText(ai.getGraYear());
-        txtGender.setText(ai.getGender());
-        txtType.setText(ai.getType());
-        txtFaculty.setText(ai.getFaculty());
+        faculty.removeAllItems();
+        faculty.addItem(ai.getFaculty());
+        if (ai.getFaculty() == "School of Computing") {
+            faculty.addItem("School of Buisness");
+            faculty.addItem("School of Engineering");
+        } else if (ai.getFaculty() == "School of Buisness") {
+            faculty.addItem("School of Computing");
+            faculty.addItem("School of Engineering");
+        } else {
+            faculty.addItem("School of Computing");
+            faculty.addItem("School of Buisness");
+        }
+
+        lecType.removeAllItems();
+
+        if (ai.getType() == "Undegraduate") {
+            lecType.addItem("Undegraduate");
+            lecType.addItem("Postgraduate");
+        } else {
+            lecType.addItem("Postgraduate");
+            lecType.addItem("Undegraduate");
+        }
+
         txtInstitution.setText(ai.getInstitution());
-       
-        
+
         try {
             InputStream in = new ByteArrayInputStream(ai.getPic());
             BufferedImage r = ImageIO.read(in);
@@ -48,8 +85,9 @@ public class UpdateLecturer extends javax.swing.JFrame {
         } catch (Exception e) {
             System.err.println(e);
         }
-        
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,7 +173,7 @@ public class UpdateLecturer extends javax.swing.JFrame {
         inserbtn.setBackground(new java.awt.Color(107, 185, 240));
         inserbtn.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         inserbtn.setForeground(new java.awt.Color(255, 255, 255));
-        inserbtn.setText("Insert");
+        inserbtn.setText("Update");
         inserbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inserbtnActionPerformed(evt);
@@ -229,6 +267,8 @@ public class UpdateLecturer extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(245, 251, 253));
         jLabel6.setText("Lecturer ID");
 
+        txtID.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -307,12 +347,13 @@ public class UpdateLecturer extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(faculty)
-                    .addComponent(lecType)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtID, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(faculty)
+                        .addComponent(lecType)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -376,7 +417,8 @@ public class UpdateLecturer extends javax.swing.JFrame {
     }//GEN-LAST:event_addressTxtActionPerformed
 
     private void inserbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserbtnActionPerformed
-
+        
+        a.setLecID(Integer.parseInt(txtID.getText()));
         a.setName(txtFullname.getText());
         a.setEmail(txtEmail.getText());
         a.setAddress(addressTxt.getText());
@@ -389,26 +431,13 @@ public class UpdateLecturer extends javax.swing.JFrame {
         a.setGraYear(txtGraYear.getText());
         a.setGender(cmbGender.getSelectedItem().toString());
 
-        boolean x = d.newLec(a);
+        boolean x = d.UpdateLec(a);
         if (x) {
-            JOptionPane.showMessageDialog(this, "Successfully Inserted!!");
-            txtFullname.setText("");
-            txtEmail.setText("");
-            addressTxt.setText("");
-            txtCno.setText("");
-            txtDob.setText("");
-            txtQualification.setText("");
-            txtQualification.setText("");
-            txtInstitution.setText("");
-            txtGraYear.setText("");
-
-            photoLabel.setForeground(new java.awt.Color(248, 250, 251));
-            photoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            photoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/courseenrolment/icons8-compact-camera-64.png"))); // NOI18N
-            photoLabel.setText("Photo");
-            photoLabel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(251, 246, 246)));
-            photoLabel.setDisplayedMnemonicIndex(0);
-            //            home.loadAdmin();
+            JOptionPane.showMessageDialog(this, "Successfully Updated!!");
+            Home h = new Home();
+            h.loadLec();
+            this.dispose();
+            
 
         } else {
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");
