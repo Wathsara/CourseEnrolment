@@ -57,9 +57,9 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <Component id="jPanel1" min="-2" pref="735" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,8 +78,7 @@
               <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTabbedPane1" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTabbedPane1" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -109,7 +108,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel1" max="32767" attributes="0"/>
+                      <Component id="jLabel1" pref="1272" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -189,7 +188,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1573" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1278" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -218,37 +217,49 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="btnNewStdBuisness" min="-2" pref="240" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnViewUnder" min="-2" pref="271" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="btnNewPostBuisness" min="-2" pref="240" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnViewSobPost" min="-2" pref="271" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="btnMarks" pref="322" max="32767" attributes="0"/>
-                                      <Component id="btnSobPostMarks" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="btnNewStdBuisness" min="-2" pref="240" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnViewUnder" min="-2" pref="271" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                          <Component id="btnMarks" min="-2" pref="322" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Component id="btnNewPostBuisness" min="-2" pref="240" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnViewSobPost" min="-2" pref="271" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btnSobPostMarks" min="-2" pref="310" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="btnPayment" pref="322" max="32767" attributes="0"/>
                                       <Component id="btnPaymentSobPost" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="445" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="btnSobUnderAcademicYear" min="-2" pref="398" max="-2" attributes="0"/>
+                                      <Component id="btnSobPostAcademicYear1" min="-2" pref="397" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnSobSubject" min="-2" pref="434" max="-2" attributes="0"/>
+                                      <Component id="btnSobSubjectPost" min="-2" pref="442" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="461" max="-2" attributes="0"/>
                                   <Component id="btnNewRoomAllocation" min="-2" pref="271" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="322" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -262,16 +273,26 @@
                               <Component id="btnMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnPayment" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnNewPostBuisness" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSobUnderAcademicYear" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSobSubject" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnViewSobPost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnNewPostBuisness" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnSobPostMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnPaymentSobPost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSobSubjectPost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSobPostAcademicYear1" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="btnNewRoomAllocation" min="-2" pref="68" max="-2" attributes="0"/>
-                          <EmptySpace pref="445" max="32767" attributes="0"/>
+                          <EmptySpace pref="220" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -280,7 +301,7 @@
                 <Component class="javax.swing.JButton" name="btnNewStdBuisness">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-student-male-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="New Undergraduate"/>
                   </Properties>
@@ -302,7 +323,7 @@
                 <Component class="javax.swing.JButton" name="btnNewRoomAllocation">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-class-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Allocate Lecture Rooms"/>
                   </Properties>
@@ -313,7 +334,7 @@
                 <Component class="javax.swing.JButton" name="btnMarks">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-report-card-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Enter Undergraduate Marks"/>
                   </Properties>
@@ -324,7 +345,7 @@
                 <Component class="javax.swing.JButton" name="btnSobPostMarks">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-report-card-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Enter Postgraduate Marks"/>
                   </Properties>
@@ -335,7 +356,7 @@
                 <Component class="javax.swing.JButton" name="btnViewUnder">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-conference-40.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mange Undergraduates"/>
                   </Properties>
@@ -346,7 +367,7 @@
                 <Component class="javax.swing.JButton" name="btnViewSobPost">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-conference-40.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mange Postgraduates"/>
                   </Properties>
@@ -357,7 +378,7 @@
                 <Component class="javax.swing.JButton" name="btnPayment">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-paper-money-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Payments Undergraduates"/>
                   </Properties>
@@ -368,12 +389,56 @@
                 <Component class="javax.swing.JButton" name="btnPaymentSobPost">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-paper-money-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Payments Postgraduate"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPaymentSobPostActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSobUnderAcademicYear">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-plus-1-year-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Academic Year Management UnderGraduates"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobUnderAcademicYearActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSobPostAcademicYear1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-plus-1-year-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Academic Year Management Postgraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobPostAcademicYear1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSobSubject">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-books-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Subject Mangement Undergraduates"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobSubjectActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSobSubjectPost">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-books-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Subject Mangement Postgraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSobSubjectPostActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -396,36 +461,50 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnNewPostComputing" min="-2" pref="240" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnViewSocPost" min="-2" pref="271" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnSocPostMarks" min="-2" pref="270" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="btnPaymentSocPost" min="-2" pref="283" max="-2" attributes="0"/>
+                                  <Component id="btnNewPostComputing" min="-2" pref="240" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnViewSocPost" min="-2" pref="271" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnSocPostMarks" min="-2" pref="317" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnPaymentSocPost" min="-2" pref="283" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnNewStdComputing" min="-2" pref="240" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnMangeSoc" min="-2" pref="271" max="-2" attributes="0"/>
+                                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                                  <Component id="btnSocMarks" min="-2" pref="317" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnPaymentSoc" min="-2" pref="289" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                                          <Component id="btnSocUnderAcademicYear" min="-2" pref="448" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnSocSubject" min="-2" pref="448" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnNewStdComputing" min="-2" pref="240" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="btnMangeSoc" min="-2" pref="271" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="btnSocMarks" min="-2" pref="270" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="btnPaymentSoc" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="btnSocPostAcademicYear" min="-2" pref="443" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnSocSubjectPost" min="-2" pref="432" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="421" max="-2" attributes="0"/>
-                                  <Component id="btnNewRoomAllocationSoc" min="-2" pref="254" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="419" max="32767" attributes="0"/>
+                          <EmptySpace pref="58" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="491" max="-2" attributes="0"/>
+                          <Component id="btnNewRoomAllocationSoc" min="-2" pref="254" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -439,16 +518,26 @@
                               <Component id="btnMangeSoc" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnPaymentSoc" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSocUnderAcademicYear" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSocSubject" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnNewPostComputing" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnViewSocPost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnSocPostMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnPaymentSocPost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSocPostAcademicYear" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSocSubjectPost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="btnNewRoomAllocationSoc" min="-2" pref="68" max="-2" attributes="0"/>
-                          <EmptySpace pref="405" max="32767" attributes="0"/>
+                          <EmptySpace pref="194" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -457,7 +546,7 @@
                 <Component class="javax.swing.JButton" name="btnNewStdComputing">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-student-male-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="New Undergraduate"/>
                   </Properties>
@@ -479,7 +568,7 @@
                 <Component class="javax.swing.JButton" name="btnNewRoomAllocationSoc">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-class-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Allocate Lecture Rooms"/>
                   </Properties>
@@ -490,7 +579,7 @@
                 <Component class="javax.swing.JButton" name="btnSocMarks">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-report-card-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Enter Undergraduate Marks"/>
                   </Properties>
@@ -501,7 +590,7 @@
                 <Component class="javax.swing.JButton" name="btnSocPostMarks">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-report-card-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Enter Postgraduate Marks"/>
                   </Properties>
@@ -512,7 +601,7 @@
                 <Component class="javax.swing.JButton" name="btnMangeSoc">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-conference-40.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mange Undergraduates"/>
                   </Properties>
@@ -523,7 +612,7 @@
                 <Component class="javax.swing.JButton" name="btnViewSocPost">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-conference-40.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mange Postgraduates"/>
                   </Properties>
@@ -534,7 +623,7 @@
                 <Component class="javax.swing.JButton" name="btnPaymentSoc">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-paper-money-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Payments Undergraduates"/>
                   </Properties>
@@ -545,12 +634,56 @@
                 <Component class="javax.swing.JButton" name="btnPaymentSocPost">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-paper-money-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Payments Postgraduates"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPaymentSocPostActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSocUnderAcademicYear">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-plus-1-year-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Academic Year Management undergraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSocUnderAcademicYearActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSocPostAcademicYear">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-plus-1-year-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Academic Year Management Postgraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSocPostAcademicYearActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSocSubject">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-books-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Subject Mangement Undergraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSocSubjectActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSocSubjectPost">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-books-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Subject Mangement Postgraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSocSubjectPostActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -574,36 +707,61 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnNewPostEngineering" min="-2" pref="240" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Component id="btnViewSoePost" min="-2" pref="271" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="btnSoePostMarks" min="-2" pref="272" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnNewStdEng" min="-2" pref="240" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Component id="btnMangeSoe" min="-2" pref="271" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                          <Component id="btnSoeMarks" min="-2" pref="273" max="-2" attributes="0"/>
-                                      </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="btnSoePostAcademicYear" min="-2" pref="379" max="-2" attributes="0"/>
+                                      <Component id="btnSoeUnderAcademicYear" min="-2" pref="357" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="btnPaymentSoePost" pref="312" max="32767" attributes="0"/>
-                                      <Component id="btnPaymentSoe" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnSoeSubject" min="-2" pref="403" max="-2" attributes="0"/>
+                                      <Component id="btnSoeSubjectPost" min="-2" pref="413" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnSoeMarks" min="-2" pref="273" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnPaymentSoe" min="-2" pref="312" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="btnNewStdEng" min="-2" pref="240" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btnMangeSoe" min="-2" pref="271" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="btnNewPostEngineering" min="-2" pref="240" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btnViewSoePost" min="-2" pref="271" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                              <Component id="btnNewRoomAllocationSoe" min="-2" pref="254" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="btnSoePostMarks" min="-2" pref="272" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="btnPaymentSoePost" min="-2" pref="312" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="457" max="-2" attributes="0"/>
-                                  <Component id="btnNewRoomAllocationSoe" min="-2" pref="254" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="486" max="-2" attributes="0"/>
+                                  <Component id="btnNewRoomAllocationSoc1" min="-2" pref="254" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="384" max="32767" attributes="0"/>
+                          <EmptySpace pref="35" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -617,16 +775,27 @@
                               <Component id="btnMangeSoe" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnPaymentSoe" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSoeUnderAcademicYear" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSoeSubject" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnNewPostEngineering" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnViewSoePost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnSoePostMarks" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="btnPaymentSoePost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSoePostAcademicYear" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="btnSoeSubjectPost" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="btnNewRoomAllocationSoc1" min="-2" pref="68" max="-2" attributes="0"/>
+                          <EmptySpace pref="123" max="32767" attributes="0"/>
                           <Component id="btnNewRoomAllocationSoe" min="-2" pref="68" max="-2" attributes="0"/>
-                          <EmptySpace pref="423" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -635,7 +804,7 @@
                 <Component class="javax.swing.JButton" name="btnNewStdEng">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-student-male-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="New Undergraduate"/>
                   </Properties>
@@ -668,7 +837,7 @@
                 <Component class="javax.swing.JButton" name="btnSoeMarks">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-report-card-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Enter Undergraduate Marks"/>
                   </Properties>
@@ -679,7 +848,7 @@
                 <Component class="javax.swing.JButton" name="btnSoePostMarks">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-report-card-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Enter Postgraduate Marks"/>
                   </Properties>
@@ -690,7 +859,7 @@
                 <Component class="javax.swing.JButton" name="btnMangeSoe">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-conference-40.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mange Undergraduates"/>
                   </Properties>
@@ -701,7 +870,7 @@
                 <Component class="javax.swing.JButton" name="btnViewSoePost">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-conference-40.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mange Postgraduates"/>
                   </Properties>
@@ -712,7 +881,7 @@
                 <Component class="javax.swing.JButton" name="btnPaymentSoe">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-paper-money-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Payments Undergraduates"/>
                   </Properties>
@@ -723,12 +892,67 @@
                 <Component class="javax.swing.JButton" name="btnPaymentSoePost">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-paper-money-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Payments Postgraduates"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPaymentSoePostActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSoeUnderAcademicYear">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-plus-1-year-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Academic Year Management Undergraduates"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSoeUnderAcademicYearActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSoePostAcademicYear">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-plus-1-year-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Academic Year Management Postgraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSoePostAcademicYearActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSoeSubject">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-books-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Subject Mangement Undergraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSoeSubjectActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSoeSubjectPost">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-books-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Subject Mangement Postgraduate"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSoeSubjectPostActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnNewRoomAllocationSoc1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="1" name="file:/home/wathsara/Downloads/icons8-class-48.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Allocate Lecture Rooms"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewRoomAllocationSoc1ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -756,12 +980,12 @@
                               <Group type="102" attributes="0">
                                   <Component id="jScrollPane2" min="-2" pref="942" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="cmbFaculty" min="-2" pref="204" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                           <Component id="btnFilterlec" min="-2" pref="105" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -771,10 +995,10 @@
                                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="btnNewLec1" min="-2" pref="240" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                  <Component id="btnUpdateLec" min="-2" pref="240" max="-2" attributes="0"/>
+                                  <Component id="btnUpdateLec" min="-2" pref="234" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="294" max="32767" attributes="0"/>
+                          <EmptySpace pref="80" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -791,9 +1015,9 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jScrollPane2" min="-2" pref="418" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                   <Component id="cmbFaculty" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnFilterlec" min="-2" pref="47" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -899,7 +1123,7 @@
                 <Component class="javax.swing.JButton" name="btnNewLec1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-eye-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="View Lecturer"/>
                   </Properties>
@@ -910,7 +1134,7 @@
                 <Component class="javax.swing.JButton" name="btnUpdateLec">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-pencil-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Update Lecturer"/>
                   </Properties>
@@ -948,11 +1172,11 @@
                                   <Component id="jScrollPane3" min="-2" pref="935" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="cmbFacultyIns" min="-2" pref="204" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                           <Component id="btnFilterIns" min="-2" pref="105" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -965,7 +1189,7 @@
                                   <Component id="btnUpdateIns" min="-2" pref="240" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="340" max="32767" attributes="0"/>
+                          <EmptySpace pref="93" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -980,9 +1204,9 @@
                                       <Component id="btnViewInstructor" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                                       <Component id="btnUpdateIns" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                   <Component id="cmbFacultyIns" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="btnFilterIns" min="-2" pref="47" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -1064,7 +1288,7 @@
                 <Component class="javax.swing.JButton" name="btnViewInstructor">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-eye-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="View Instructor"/>
                   </Properties>
@@ -1103,7 +1327,7 @@
                 <Component class="javax.swing.JButton" name="btnUpdateIns">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-pencil-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Update Instructor"/>
                   </Properties>
@@ -1140,17 +1364,16 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnNewSub" min="-2" pref="240" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                          <Component id="btnUpdateSub" min="-2" pref="240" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="jScrollPane4" min="-2" pref="1289" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="btnNewSub" min="-2" pref="240" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="btnUpdateSub" min="-2" pref="240" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane4" min="-2" pref="1289" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="236" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1178,7 +1401,7 @@
                 <Component class="javax.swing.JButton" name="btnNewSub">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-course-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="New Subject"/>
                   </Properties>
@@ -1301,7 +1524,7 @@
                 <Component class="javax.swing.JButton" name="btnUpdateSub">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-pencil-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Update Subject"/>
                   </Properties>
@@ -1329,7 +1552,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1573" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1278" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -1364,34 +1587,34 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jButton1" min="-2" pref="203" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="update" min="-2" pref="203" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="634" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jButton1" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="update" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="imagelabel" min="-2" pref="186" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="imagelabel" min="-2" pref="186" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="emaillbl" min="-2" pref="396" max="-2" attributes="0"/>
                               <Component id="namelbl" min="-2" pref="396" max="-2" attributes="0"/>
                               <Component id="addresslbl" alignment="0" min="-2" pref="396" max="-2" attributes="0"/>
                               <Component id="cnolbl" min="-2" pref="396" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="289" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="imagelabel" min="-2" pref="218" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
@@ -1414,6 +1637,10 @@
                                       <Component id="cnolbl" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="imagelabel" min="-2" pref="218" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace pref="270" max="32767" attributes="0"/>
                       </Group>
@@ -1435,7 +1662,7 @@
                 <Component class="javax.swing.JButton" name="update">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/courseenrolment/icons8-administrator-male-48.png"/>
+                      <Image iconType="2" name="/home/wathsara/Downloads/icons8-pencil-48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Update Admin"/>
                   </Properties>

@@ -48,14 +48,14 @@ public class ManageSobUndergraduates extends javax.swing.JFrame {
 
     }
     void loadSobUnderAsc(int a){
-        ascList = d.viewSobUnderAsc(a);
-        SobUnderTable s = new SobUnderTable(ascList);
+        aList = d.viewSobUnderAsc(a);
+        SobUnderTable s = new SobUnderTable(aList);
         tblSobUnder.setModel(s);
     }
     
     void loadSobUnderDesc(int a){
-        descList = d.viewSobUnderDsc(a);
-        SobUnderTable s = new SobUnderTable(descList);
+        aList = d.viewSobUnderDsc(a);
+        SobUnderTable s = new SobUnderTable(aList);
         tblSobUnder.setModel(s);
     }
 
