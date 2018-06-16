@@ -6,14 +6,21 @@
 package courseenrolment;
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.Timer;
 
 /**
  *
@@ -28,7 +35,7 @@ public class Home extends javax.swing.JFrame {
     ArrayList<Lecturer> lecList;
     ArrayList<Lecturer> insList;
     ArrayList<Subject> subList;
-   
+
     Db d = new Db();
     int q;
     String name;
@@ -42,9 +49,24 @@ public class Home extends javax.swing.JFrame {
         loadLec();
         loadIns();
         setResizable(false);
+        
 //        loadSob();
 //        loadSoe();
 //        loadSoc();
+    }
+
+    
+
+    void showTime() {
+//        new Timer(0, new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                Date x = new Date();
+//                SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
+//                timelbl.setText(s.format(x));
+//            }
+//        }).start();
+        
     }
 
     void loadAdmin() {
@@ -54,6 +76,7 @@ public class Home extends javax.swing.JFrame {
         tblAdmin.setModel(ad);
 
     }
+
     void loadLec() {
 
         lecList = d.viewLec();
@@ -61,6 +84,7 @@ public class Home extends javax.swing.JFrame {
         tblLecturer.setModel(ad);
 
     }
+
     void loadLecFilter(String faculty) {
 
         lecList = d.viewLecFilter(faculty);
@@ -68,6 +92,7 @@ public class Home extends javax.swing.JFrame {
         tblLecturer.setModel(ad);
 
     }
+
     void loadIns() {
 
         insList = d.viewInstructor();
@@ -75,6 +100,7 @@ public class Home extends javax.swing.JFrame {
         tblInstructor.setModel(ad);
 
     }
+
     void loadInsFilter(String faculty) {
 
         insList = d.viewInstructorFilter(faculty);
@@ -82,6 +108,7 @@ public class Home extends javax.swing.JFrame {
         tblInstructor.setModel(ad);
 
     }
+
     void loadSob() {
 
         subList = d.viewSobSubject();
@@ -89,6 +116,7 @@ public class Home extends javax.swing.JFrame {
         tblSubjects.setModel(ad);
 
     }
+
     void loadSoe() {
 
         subList = d.viewSoeSubject();
@@ -96,6 +124,7 @@ public class Home extends javax.swing.JFrame {
         tblSubjects.setModel(ad);
 
     }
+
     void loadSoc() {
 
         subList = d.viewSocSubject();
@@ -122,7 +151,6 @@ public class Home extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         btnNewStdBuisness = new javax.swing.JButton();
         btnNewPostBuisness = new javax.swing.JButton();
@@ -189,7 +217,6 @@ public class Home extends javax.swing.JFrame {
         cmbFacultySub = new javax.swing.JComboBox<>();
         btnFilterIns1 = new javax.swing.JButton();
         btnUpdateSub = new javax.swing.JButton();
-        jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         update = new javax.swing.JButton();
@@ -200,6 +227,7 @@ public class Home extends javax.swing.JFrame {
         addresslbl = new javax.swing.JLabel();
         cnolbl = new javax.swing.JLabel();
         namelbl = new javax.swing.JLabel();
+        namelbl1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NSBM Green University");
@@ -252,21 +280,6 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jPanel3.setBackground(new java.awt.Color(1, 50, 67));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1278, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Home", jPanel3);
-
         jPanel4.setBackground(new java.awt.Color(1, 50, 67));
 
         btnNewStdBuisness.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-student-male-48.png")); // NOI18N
@@ -309,17 +322,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnViewUnder.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-conference-40.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnViewUnder.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-conference-40.png")); // NOI18N
         btnViewUnder.setText("Mange Undergraduates");
         btnViewUnder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,17 +330,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnViewSobPost.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-conference-40.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnViewSobPost.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-conference-40.png")); // NOI18N
         btnViewSobPost.setText("Mange Postgraduates");
         btnViewSobPost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -361,17 +354,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSobUnderAcademicYear.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-plus-1-year-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSobUnderAcademicYear.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-plus-1-year-48.png")); // NOI18N
         btnSobUnderAcademicYear.setText("Academic Year Management UnderGraduates");
         btnSobUnderAcademicYear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -379,17 +362,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSobPostAcademicYear1.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-plus-1-year-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSobPostAcademicYear1.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-plus-1-year-48.png")); // NOI18N
         btnSobPostAcademicYear1.setText("Academic Year Management Postgraduate");
         btnSobPostAcademicYear1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -397,17 +370,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSobSubject.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-books-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSobSubject.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-books-48.png")); // NOI18N
         btnSobSubject.setText("Subject Mangement Undergraduates");
         btnSobSubject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -415,17 +378,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSobSubjectPost.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-books-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSobSubjectPost.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-books-48.png")); // NOI18N
         btnSobSubjectPost.setText("Subject Mangement Postgraduate");
         btnSobSubjectPost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -505,17 +458,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(1, 50, 67));
 
-        btnNewStdComputing.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-student-male-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnNewStdComputing.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-student-male-48.png")); // NOI18N
         btnNewStdComputing.setText("New Undergraduate");
         btnNewStdComputing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -531,17 +474,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnNewRoomAllocationSoc.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-class-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnNewRoomAllocationSoc.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-class-48.png")); // NOI18N
         btnNewRoomAllocationSoc.setText("Allocate Lecture Rooms");
         btnNewRoomAllocationSoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -565,17 +498,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnMangeSoc.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-conference-40.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnMangeSoc.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-conference-40.png")); // NOI18N
         btnMangeSoc.setText("Mange Undergraduates");
         btnMangeSoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -583,17 +506,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnViewSocPost.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-conference-40.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnViewSocPost.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-conference-40.png")); // NOI18N
         btnViewSocPost.setText("Mange Postgraduates");
         btnViewSocPost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -617,17 +530,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSocUnderAcademicYear.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-plus-1-year-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSocUnderAcademicYear.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-plus-1-year-48.png")); // NOI18N
         btnSocUnderAcademicYear.setText("Academic Year Management undergraduate");
         btnSocUnderAcademicYear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -635,17 +538,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSocPostAcademicYear.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-plus-1-year-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSocPostAcademicYear.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-plus-1-year-48.png")); // NOI18N
         btnSocPostAcademicYear.setText("Academic Year Management Postgraduate");
         btnSocPostAcademicYear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -653,17 +546,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSocSubject.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-books-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSocSubject.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-books-48.png")); // NOI18N
         btnSocSubject.setText("Subject Mangement Undergraduate");
         btnSocSubject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -671,17 +554,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSocSubjectPost.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-books-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSocSubjectPost.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-books-48.png")); // NOI18N
         btnSocSubjectPost.setText("Subject Mangement Postgraduate");
         btnSocSubjectPost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -763,17 +636,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(1, 50, 67));
 
-        btnNewStdEng.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-student-male-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnNewStdEng.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-student-male-48.png")); // NOI18N
         btnNewStdEng.setText("New Undergraduate");
         btnNewStdEng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -813,17 +676,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnMangeSoe.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-conference-40.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnMangeSoe.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-conference-40.png")); // NOI18N
         btnMangeSoe.setText("Mange Undergraduates");
         btnMangeSoe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -863,17 +716,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnSoePostAcademicYear.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-plus-1-year-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnSoePostAcademicYear.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-plus-1-year-48.png")); // NOI18N
         btnSoePostAcademicYear.setText("Academic Year Management Postgraduate");
         btnSoePostAcademicYear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -897,17 +740,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        btnNewRoomAllocationSoc1.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/home/wathsara/Downloads/icons8-class-48.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        btnNewRoomAllocationSoc1.setIcon(new javax.swing.ImageIcon("/home/wathsara/Downloads/icons8-class-48.png")); // NOI18N
         btnNewRoomAllocationSoc1.setText("Allocate Lecture Rooms");
         btnNewRoomAllocationSoc1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1288,8 +1121,8 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(btnUpdateSub, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1289, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1253, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1308,22 +1141,6 @@ public class Home extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Subjects", jPanel9);
-
-        jPanel10.setBackground(new java.awt.Color(1, 50, 67));
-        jPanel10.setToolTipText("");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1278, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Profile", jPanel10);
 
         jPanel11.setBackground(new java.awt.Color(1, 50, 67));
         jPanel11.setForeground(new java.awt.Color(211, 84, 0));
@@ -1397,55 +1214,70 @@ public class Home extends javax.swing.JFrame {
         namelbl.setForeground(new java.awt.Color(238, 246, 248));
         namelbl.setBorder(null);
 
+        namelbl1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        namelbl1.setForeground(new java.awt.Color(238, 246, 248));
+        namelbl1.setText("Current User Details");
+        namelbl1.setBorder(null);
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(106, 106, 106)))
+                        .addGap(82, 82, 82)
+                        .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(imagelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(emaillbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addresslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(namelbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addresslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emaillbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(cnolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(namelbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(122, 122, 122))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
+                                .addGap(87, 87, 87)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(emaillbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(addresslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(21, 21, 21)
+                                .addComponent(namelbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(emaillbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cnolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addresslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cnolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
+                        .addGap(105, 105, 105)
                         .addComponent(imagelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Users", jPanel11);
@@ -1491,7 +1323,7 @@ public class Home extends javax.swing.JFrame {
         UpdateAdmin upd = new UpdateAdmin();
         upd.setVisible(true);
         upd.setfields(aList.get(tblAdmin.getSelectedRow()));
-        
+
         loadAdmin();
 
     }//GEN-LAST:event_updateActionPerformed
@@ -1570,37 +1402,37 @@ public class Home extends javax.swing.JFrame {
         nl.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosing(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosed(WindowEvent e) {
-                 loadLec();//To change body of generated methods, choose Tools | Templates.
+                loadLec();//To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowIconified(WindowEvent e) {
-          //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeiconified(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowActivated(WindowEvent e) {
-             //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeactivated(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
         });
     }//GEN-LAST:event_btnNewLecActionPerformed
@@ -1618,37 +1450,37 @@ public class Home extends javax.swing.JFrame {
         ni.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosing(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosed(WindowEvent e) {
-                 loadIns();//To change body of generated methods, choose Tools | Templates.
+                loadIns();//To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowIconified(WindowEvent e) {
-          //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeiconified(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowActivated(WindowEvent e) {
-             //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeactivated(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
         });
     }//GEN-LAST:event_btnNewInstructorActionPerformed
@@ -1668,8 +1500,8 @@ public class Home extends javax.swing.JFrame {
     private void btnNewRoomAllocationSoeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewRoomAllocationSoeActionPerformed
         // TODO add your handling code here:
         Slot_soe ss = new Slot_soe();
-        ss.setVisible(true); 
-        
+        ss.setVisible(true);
+
     }//GEN-LAST:event_btnNewRoomAllocationSoeActionPerformed
 
     private void btnMarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarksActionPerformed
@@ -1712,14 +1544,14 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         ManageSobUndergraduates msobu = new ManageSobUndergraduates();
         msobu.setVisible(true);
-        
+
     }//GEN-LAST:event_btnViewUnderActionPerformed
 
     private void btnMangeSocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMangeSocActionPerformed
         // TODO add your handling code here:
         ManageSocUndergraduate msocu = new ManageSocUndergraduate();
         msocu.setVisible(true);
-        
+
     }//GEN-LAST:event_btnMangeSocActionPerformed
 
     private void btnMangeSoeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMangeSoeActionPerformed
@@ -1732,7 +1564,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         ManageSobPost msobp = new ManageSobPost();
         msobp.setVisible(true);
-        
+
     }//GEN-LAST:event_btnViewSobPostActionPerformed
 
     private void btnViewSocPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewSocPostActionPerformed
@@ -1767,19 +1599,19 @@ public class Home extends javax.swing.JFrame {
 
     private void btnPaymentSobPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaymentSobPostActionPerformed
         // TODO add your handling code here:
-        PaymentSobPost psobp =  new PaymentSobPost();
+        PaymentSobPost psobp = new PaymentSobPost();
         psobp.setVisible(true);
     }//GEN-LAST:event_btnPaymentSobPostActionPerformed
 
     private void btnPaymentSocPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaymentSocPostActionPerformed
         // TODO add your handling code here:
-        PaymentSocPost psocp =  new PaymentSocPost();
+        PaymentSocPost psocp = new PaymentSocPost();
         psocp.setVisible(true);
     }//GEN-LAST:event_btnPaymentSocPostActionPerformed
 
     private void btnPaymentSoePostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaymentSoePostActionPerformed
         // TODO add your handling code here:
-        PaymentSoePost psoep =  new PaymentSoePost();
+        PaymentSoePost psoep = new PaymentSoePost();
         psoep.setVisible(true);
     }//GEN-LAST:event_btnPaymentSoePostActionPerformed
 
@@ -1804,37 +1636,37 @@ public class Home extends javax.swing.JFrame {
         vsob.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosing(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosed(WindowEvent e) {
-                 loadLec();//To change body of generated methods, choose Tools | Templates.
+                loadLec();//To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowIconified(WindowEvent e) {
-          //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeiconified(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowActivated(WindowEvent e) {
-             //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeactivated(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
         });
     }//GEN-LAST:event_btnUpdateLecActionPerformed
@@ -1860,49 +1692,49 @@ public class Home extends javax.swing.JFrame {
         vsob.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosing(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosed(WindowEvent e) {
-                 loadIns();//To change body of generated methods, choose Tools | Templates.
+                loadIns();//To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowIconified(WindowEvent e) {
-          //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeiconified(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowActivated(WindowEvent e) {
-             //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeactivated(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
         });
     }//GEN-LAST:event_btnUpdateInsActionPerformed
 
     private void btnFilterIns1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterIns1ActionPerformed
         // TODO add your handling code here:
-        if(cmbFacultySub.getSelectedIndex()==0){
-             loadSoc();
-        }else if(cmbFacultySub.getSelectedIndex()==1){
-             loadSob();
-        }else{
-             loadSoe();
+        if (cmbFacultySub.getSelectedIndex() == 0) {
+            loadSoc();
+        } else if (cmbFacultySub.getSelectedIndex() == 1) {
+            loadSob();
+        } else {
+            loadSoe();
         }
     }//GEN-LAST:event_btnFilterIns1ActionPerformed
 
@@ -1913,39 +1745,39 @@ public class Home extends javax.swing.JFrame {
         vsob.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosing(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowClosed(WindowEvent e) {
-                 loadSob();
-                 loadSoc();
-                 loadSoe();
+                loadSob();
+                loadSoc();
+                loadSoe();
             }
 
             @Override
             public void windowIconified(WindowEvent e) {
-          //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeiconified(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowActivated(WindowEvent e) {
-             //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void windowDeactivated(WindowEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+                //To change body of generated methods, choose Tools | Templates.
             }
         });
     }//GEN-LAST:event_btnUpdateSubActionPerformed
@@ -1970,20 +1802,20 @@ public class Home extends javax.swing.JFrame {
 
     private void btnSobPostAcademicYear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobPostAcademicYear1ActionPerformed
         // View Acadamic year management of School of Buisness Postgraduate
-        SobPostAcaYearManagment sobpam =  new SobPostAcaYearManagment();
+        SobPostAcaYearManagment sobpam = new SobPostAcaYearManagment();
         sobpam.setVisible(true);
     }//GEN-LAST:event_btnSobPostAcademicYear1ActionPerformed
 
     private void btnSoePostAcademicYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSoePostAcademicYearActionPerformed
         // View Acadamic year management of School of Engineering Postgraduates
-        
-        SoePostAcaYearManagment soepam =  new SoePostAcaYearManagment();
+
+        SoePostAcaYearManagment soepam = new SoePostAcaYearManagment();
         soepam.setVisible(true);
     }//GEN-LAST:event_btnSoePostAcademicYearActionPerformed
 
     private void btnSocPostAcademicYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSocPostAcademicYearActionPerformed
         // View Acadamic year management of School of Computing Postgraduates:
-        SocPostAcaYearManagment socpam =  new SocPostAcaYearManagment();
+        SocPostAcaYearManagment socpam = new SocPostAcaYearManagment();
         socpam.setVisible(true);
     }//GEN-LAST:event_btnSocPostAcademicYearActionPerformed
 
@@ -2013,21 +1845,21 @@ public class Home extends javax.swing.JFrame {
 
     private void btnSobSubjectPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobSubjectPostActionPerformed
         // TODO add your handling code here:
-        SobPostSubjectManagement sobpsobm =new SobPostSubjectManagement();
+        SobPostSubjectManagement sobpsobm = new SobPostSubjectManagement();
         sobpsobm.setVisible(true);
     }//GEN-LAST:event_btnSobSubjectPostActionPerformed
 
     private void btnSocSubjectPostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSocSubjectPostActionPerformed
         // TODO add your handling code here:
-        SocPostSubjectManagement socpsobm =new SocPostSubjectManagement();
+        SocPostSubjectManagement socpsobm = new SocPostSubjectManagement();
         socpsobm.setVisible(true);
     }//GEN-LAST:event_btnSocSubjectPostActionPerformed
 
     private void btnNewRoomAllocationSoc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewRoomAllocationSoc1ActionPerformed
         // TODO add your handling code here:
-         Slot_soe ss = new Slot_soe();
-         ss.setVisible(true); 
-        
+        Slot_soe ss = new Slot_soe();
+        ss.setVisible(true);
+
     }//GEN-LAST:event_btnNewRoomAllocationSoc1ActionPerformed
 
     /**
@@ -2129,10 +1961,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2148,6 +1978,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel namelbl;
+    private javax.swing.JLabel namelbl1;
     private javax.swing.JTable tblAdmin;
     private javax.swing.JTable tblInstructor;
     private javax.swing.JTable tblLecturer;

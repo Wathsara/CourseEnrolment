@@ -65,6 +65,7 @@ public class UpdateAdmin extends javax.swing.JFrame {
         emailTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Update Admin");
 
         jPanel2.setBackground(new java.awt.Color(211, 84, 0));
 
@@ -217,6 +218,7 @@ public class UpdateAdmin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addressTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTxtActionPerformed
