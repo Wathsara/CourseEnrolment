@@ -731,9 +731,10 @@ public class sobMarks extends javax.swing.JFrame {
         a.setGrade6(cmbGrade5.getSelectedItem().toString());
         
         boolean z = d.sobMarks(a);
-        boolean y = d.sobGpaUpdate(a);
         
-        if(z && y){
+        
+        if(z){
+            d.sobGpaUpdate(a);
             JOptionPane.showMessageDialog(this, "Marks Entered Sucessfully");
         }else{
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");

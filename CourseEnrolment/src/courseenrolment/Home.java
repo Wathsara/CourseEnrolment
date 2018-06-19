@@ -36,6 +36,11 @@ public class Home extends javax.swing.JFrame {
     ArrayList<Lecturer> insList;
     ArrayList<Subject> subList;
 
+    ArrayList<RoomAllocation> timeList;
+    ArrayList<RoomAllocation> timesoeList;
+    ArrayList<RoomAllocation> timesocList;
+    
+
     Db d = new Db();
     int q;
     String name;
@@ -49,13 +54,11 @@ public class Home extends javax.swing.JFrame {
         loadLec();
         loadIns();
         setResizable(false);
-        
+
 //        loadSob();
 //        loadSoe();
 //        loadSoc();
     }
-
-    
 
     void showTime() {
 //        new Timer(0, new ActionListener() {
@@ -66,7 +69,7 @@ public class Home extends javax.swing.JFrame {
 //                timelbl.setText(s.format(x));
 //            }
 //        }).start();
-        
+
     }
 
     void loadAdmin() {
@@ -130,6 +133,30 @@ public class Home extends javax.swing.JFrame {
         subList = d.viewSocSubject();
         SubjectTable ad = new SubjectTable(subList);
         tblSubjects.setModel(ad);
+
+    }
+
+    void loadSobTime(String sem, String type, String year) {
+
+        timeList = d.viewSobTimeTable(sem, type, year);
+        TimeTable ad = new TimeTable(timeList);
+        tblTime.setModel(ad);
+
+    }
+
+    void loadSocTime(String sem, String type, String year) {
+
+        timesocList = d.viewSocTimeTable(sem, type, year);
+        TimeTable ad = new TimeTable(timesocList);
+        tblTime.setModel(ad);
+
+    }
+
+    void loadSoeTime(String sem, String type, String year) {
+
+        timesoeList = d.viewSoeTimeTable(sem, type, year);
+        TimeTable ad = new TimeTable(timesoeList);
+        tblTime.setModel(ad);
 
     }
 
@@ -217,6 +244,14 @@ public class Home extends javax.swing.JFrame {
         cmbFacultySub = new javax.swing.JComboBox<>();
         btnFilterIns1 = new javax.swing.JButton();
         btnUpdateSub = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        cmbfaculty = new javax.swing.JComboBox<>();
+        cmbYear = new javax.swing.JComboBox<>();
+        cmbType = new javax.swing.JComboBox<>();
+        cmbSemester = new javax.swing.JComboBox<>();
+        btnTimeTableView = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblTime = new javax.swing.JTable();
         jPanel11 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         update = new javax.swing.JButton();
@@ -1142,6 +1177,84 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Subjects", jPanel9);
 
+        jPanel3.setBackground(new java.awt.Color(1, 50, 60));
+
+        cmbfaculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "School of Buisness", "School of Computing", "School of Engineering" }));
+
+        cmbYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year", "2nd Year", "3rd Year", "4th Year" }));
+
+        cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Undergraduate", "Postgraduate" }));
+
+        cmbSemester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Semester", "2nd Semester" }));
+
+        btnTimeTableView.setBackground(new java.awt.Color(0, 126, 255));
+        btnTimeTableView.setForeground(new java.awt.Color(245, 251, 253));
+        btnTimeTableView.setText("View");
+        btnTimeTableView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimeTableViewActionPerformed(evt);
+            }
+        });
+
+        tblTime.setBackground(new java.awt.Color(1, 50, 60));
+        tblTime.setForeground(new java.awt.Color(240, 244, 245));
+        tblTime.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Day", "Time from", "Time To", "Lecturer/Instructor", "Subject", "Hall/Lab"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(tblTime);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(cmbfaculty, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbYear, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbType, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbSemester, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnTimeTableView, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(117, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cmbfaculty, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(cmbYear, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cmbType)
+                    .addComponent(cmbSemester)
+                    .addComponent(btnTimeTableView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(205, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Time Table", jPanel3);
+
         jPanel11.setBackground(new java.awt.Color(1, 50, 67));
         jPanel11.setForeground(new java.awt.Color(211, 84, 0));
         jPanel11.setFont(new java.awt.Font("Cantarell", 0, 14)); // NOI18N
@@ -1862,6 +1975,22 @@ public class Home extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnNewRoomAllocationSoc1ActionPerformed
 
+    private void btnTimeTableViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimeTableViewActionPerformed
+        // TODO add your handling code here:
+        String sem = (cmbSemester.getSelectedItem().toString());
+        String year = (cmbYear.getSelectedItem().toString());
+        String type = (cmbType.getSelectedItem().toString());
+        if (cmbfaculty.getSelectedIndex()==0) {
+            loadSobTime(sem, type, year);
+        }
+        if (cmbfaculty.getSelectedIndex()==1) {
+            loadSocTime(sem, type, year);
+        }
+        if (cmbfaculty.getSelectedIndex()==2) {
+            loadSoeTime(sem, type, year);
+        }
+    }//GEN-LAST:event_btnTimeTableViewActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1942,6 +2071,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnSoeSubject;
     private javax.swing.JButton btnSoeSubjectPost;
     private javax.swing.JButton btnSoeUnderAcademicYear;
+    private javax.swing.JButton btnTimeTableView;
     private javax.swing.JButton btnUpdateIns;
     private javax.swing.JButton btnUpdateLec;
     private javax.swing.JButton btnUpdateSub;
@@ -1953,6 +2083,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbFaculty;
     private javax.swing.JComboBox<String> cmbFacultyIns;
     private javax.swing.JComboBox<String> cmbFacultySub;
+    private javax.swing.JComboBox<String> cmbSemester;
+    private javax.swing.JComboBox<String> cmbType;
+    private javax.swing.JComboBox<String> cmbYear;
+    private javax.swing.JComboBox<String> cmbfaculty;
     private javax.swing.JLabel cnolbl;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private javax.swing.JLabel emaillbl;
@@ -1963,6 +2097,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -1976,6 +2111,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel namelbl;
     private javax.swing.JLabel namelbl1;
@@ -1983,6 +2119,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable tblInstructor;
     private javax.swing.JTable tblLecturer;
     private javax.swing.JTable tblSubjects;
+    private javax.swing.JTable tblTime;
     private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

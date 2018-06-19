@@ -13,11 +13,12 @@ import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
 
+
 public class SendEmail {
 
     boolean send(String stdemail,String s1,String s2,String s3,String s4,String s5,String s6,String g1,String g2,String g3,String g4,String g5,String g6) {
         String host = "smtp.gmail.com";
-        final String user = "nsbmgreenuniversity692@gmail.com";//change accordingly  
+        final String user = "nsbmgreenuniversitymailcenter@gmail.com";//change accordingly  
         final String password = "nsbm@123";//change accordingly  
 
         String to = stdemail;//change accordingly  
@@ -27,6 +28,8 @@ public class SendEmail {
         props.put("mail.smtp.host", host);
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
 
         Session session = Session.getDefaultInstance(props,
                 new javax.mail.Authenticator() {

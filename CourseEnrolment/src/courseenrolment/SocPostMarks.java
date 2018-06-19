@@ -712,9 +712,10 @@ public class SocPostMarks extends javax.swing.JFrame {
         a.setGrade6(cmbGrade5.getSelectedItem().toString());
 
         boolean z = d.socPostMarks(a);
-        boolean y = d.socPostGpaUpdate(a);
+        
 
-        if(z && y){
+        if(z){
+            d.socPostGpaUpdate(a);
             JOptionPane.showMessageDialog(this, "Marks Entered Sucessfully");
         }else{
             JOptionPane.showMessageDialog(this, "OOps Error! Try Again");

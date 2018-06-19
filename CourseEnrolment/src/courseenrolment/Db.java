@@ -4130,5 +4130,111 @@ public class Db {
 
         }
     }
-      
+    ArrayList<RoomAllocation> viewSobTimeTable(String sem,String type,String year) {
+        try {
+            ArrayList<RoomAllocation> list = new ArrayList<RoomAllocation>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM sobHall WHERE Type=? AND AcademicYear=? AND Semester=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1,type);
+            pst.setString(2,year);
+            pst.setString(3,sem);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                RoomAllocation ad = new RoomAllocation();
+                ad.setType(rs.getString(1));
+                ad.setAcademicYear(rs.getString(2));
+                ad.setSemester(rs.getString(3));
+                ad.setSubject(rs.getString(4));
+                ad.setLecIns(rs.getString(5));
+                ad.setDay(rs.getString(6));
+                ad.setTimeFrom(rs.getString(7));
+                ad.setTimeTo(rs.getString(8));
+                ad.setRoom(rs.getString(9));
+                list.add(ad);
+                
+
+            }
+            return list;
+            
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+    
+    ArrayList<RoomAllocation> viewSocTimeTable(String sem,String type,String year) {
+        try {
+            ArrayList<RoomAllocation> list = new ArrayList<RoomAllocation>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM socHall WHERE Type=? AND AcademicYear=? AND Semester=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1,type);
+            pst.setString(2,year);
+            pst.setString(3,sem);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                RoomAllocation ad = new RoomAllocation();
+                ad.setType(rs.getString(1));
+                ad.setAcademicYear(rs.getString(2));
+                ad.setSemester(rs.getString(3));
+                ad.setSubject(rs.getString(4));
+                ad.setLecIns(rs.getString(5));
+                ad.setDay(rs.getString(6));
+                ad.setTimeFrom(rs.getString(7));
+                ad.setTimeTo(rs.getString(8));
+                ad.setRoom(rs.getString(9));
+                list.add(ad);
+                
+
+            }
+            return list;
+            
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
+     
+    ArrayList<RoomAllocation> viewSoeTimeTable(String sem,String type,String year) {
+        try {
+            ArrayList<RoomAllocation> list = new ArrayList<RoomAllocation>();
+            con = (Connection) DriverManager.getConnection(url, username, password);
+            String query = "SELECT * FROM soeHall WHERE Type=? AND AcademicYear=? AND Semester=?";
+            pst = (com.mysql.jdbc.PreparedStatement) con.prepareStatement(query);
+            pst.setString(1,type);
+            pst.setString(2,year);
+            pst.setString(3,sem);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                RoomAllocation ad = new RoomAllocation();
+                ad.setType(rs.getString(1));
+                ad.setAcademicYear(rs.getString(2));
+                ad.setSemester(rs.getString(3));
+                ad.setSubject(rs.getString(4));
+                ad.setLecIns(rs.getString(5));
+                ad.setDay(rs.getString(6));
+                ad.setTimeFrom(rs.getString(7));
+                ad.setTimeTo(rs.getString(8));
+                ad.setRoom(rs.getString(9));
+                list.add(ad);
+                
+
+            }
+            return list;
+            
+        } catch (Exception e) {
+            System.out.println(e);
+
+            return null;
+        }
+
+    }
 }
